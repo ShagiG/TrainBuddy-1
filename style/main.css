@@ -1,0 +1,12 @@
+#header {
+  height: 50px;
+  background-color: #193E58;
+  border: none;
+}
+
+.logo-container img {
+  width: 100%;
+  object-fit: contain;
+}
+
+/*# sourceMappingURL=main.css.map */
