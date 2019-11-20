@@ -2,11 +2,56 @@
   height: 50px;
   background-color: #193E58;
   border: none;
+  padding: 10px 5px;
 }
 
-.logo-container img {
-  width: 100%;
+.main-container img {
+  height: 20px;
   object-fit: contain;
+}
+
+.navigation-bar {
+  position: fixed;
+  bottom: 0;
+  border-top: 0.5px solid rgba(51, 51, 51, 0.5);
+  width: 100%;
+  height: 50px;
+  padding: 13px 0;
+  z-index: 5;
+  background-color: white;
+}
+.navigation-bar svg {
+  vertical-align: top;
+}
+
+#footer {
+  height: 160px;
+  width: 100%;
+  background-color: #193E58;
+  border: none;
+  padding: 20px 10px;
+  bottom: 0;
+  position: absolute;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #f2f2f2;
+  text-shadow: none;
+}
+#footer p {
+  text-align: center;
+  margin: 5px;
+}
+#footer ul {
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+}
+#footer svg {
+  color: #0084E3;
 }
 
 /*# sourceMappingURL=main.css.map */

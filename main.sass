@@ -5,12 +5,58 @@ $primaryThree: #193E58
 $danger: #EB5757
 $success: #75E394
 
+$gray6: #f2f2f2
+$lightBlack: rgba(51, 51, 51, 0.5)
+
+@mixin font($family, $weight, $size, $spacing)
+    font-family: $family
+    font-style: normal
+    font-weight: $weight
+    font-size: $size
+    letter-spacing: $spacing
+
 #header
     height: 50px
     background-color: $primaryThree
     border: none
+    padding: 10px 5px
 
-.logo-container
+.main-container
     img
-        width: 100%
+        height: 20px
         object-fit: contain
+
+
+.navigation-bar
+    position: fixed
+    bottom: 0
+    border-top: 0.5px solid $lightBlack
+    width: 100%
+    height: 50px
+    padding: 13px 0
+    z-index: 5
+    background-color: white
+    svg
+        vertical-align: top
+
+#footer
+    height: 160px
+    width: 100%
+    background-color: $primaryThree
+    border: none
+    padding: 20px 10px
+    bottom: 0
+    position: absolute
+    @include font('Roboto', 300, 9px, 0.05em)
+    text-transform: uppercase
+    color: $gray6
+    text-shadow: none
+    p
+        text-align: center
+        margin: 5px
+    ul
+        text-decoration: none
+        list-style: none
+        padding: 0
+    svg
+        color: $primaryOne
