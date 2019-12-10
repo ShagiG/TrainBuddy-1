@@ -1,0 +1,55 @@
+$primaryOne: #0084E3
+$primaryTwo: #5B53FF
+$primaryThree: #193E58
+
+$danger: #EB5757
+$success: #75E394
+
+$gray6: #f2f2f2
+$lightBlack: rgba(51, 51, 51, 0.5)
+
+@mixin font($family, $weight, $size, $spacing)
+    font-family: $family
+    font-style: normal
+    font-weight: $weight
+    font-size: $size
+    letter-spacing: $spacing
+
+.fav-items
+    padding: 15px
+    width: 100%
+    display: grid
+    grid-template-columns: auto
+    color: #ffffff
+    text-shadow: none
+    .fav-item
+        height: 160px
+        border-radius: 10px
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25)
+        background: linear-gradient(0deg, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5)),  url("/assets/images/Background/Colombo.jpg")
+        background-size: cover
+        p
+            text-align: center
+            text-transform: uppercase
+            margin: 0
+        .distance-txt
+            @include font('Roboto', 300, 9px, 0.1em)
+            line-height: 12px
+            margin: 10px auto auto
+        div
+            height: 116px
+            padding: 32px 0
+            .district
+                justify-content: center
+                @include font('Roboto', 900, 36px, 0.15em)
+                line-height: 40px
+            .place
+                @include font('Lato', 300, 12px, 0.05em)
+                line-height: 16px
+                justify-content: center
+        .user-owner
+            @include font('Lato', 300, 9px, 0.1em)
+            vertical-align: middle
+            line-height: 12px
+            margin: 0 8px 10px
+            text-align: left
