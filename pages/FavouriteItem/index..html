@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../style/main.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVql75Qc_Y5oGvrxdcNRNMhBlZEzTdk1o"></script>
     <style>
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
@@ -43,9 +44,14 @@
                 <div class="ui-block-b avatar-small"></div>
             </div>
         </div>
-        <!-- Google map integration -->
+        <!-- Google map -->
         <div data-role="content">
-            <div id="map"></div>
+           <div class="container">
+               <div class="row">
+                   <div class="col-md-12" style="
+                   height: 100vh;
+               ">
+                        <div id="map"></div>
             <script>
                 var map;
                 function initMap() {
@@ -54,9 +60,12 @@
                         zoom: 8
                     });
                 }
+                initMap()
             </script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYFaJrEcySsmrQQzFh8CLFW6ZKJMPjJMg&callback=initMap" async
-                defer></script>
+                   </div>
+               </div>
+           </div>
+           
         </div>
 
 
