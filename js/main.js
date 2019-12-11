@@ -42,3 +42,11 @@ function contactHtmlFromObject(snap) {
   html += "</div>";
   return html;
 }
+
+//load favourite Item page
+$(document).on("pagebeforeshow", "#favourites_page", function() {
+  $(document).on("click", ".mail-list-btn", function() {
+    //Change page
+    $.mobile.changePage("../FavouriteItem/index.html");
+  });
+});
