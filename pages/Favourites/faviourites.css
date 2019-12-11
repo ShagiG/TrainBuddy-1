@@ -1,0 +1,65 @@
+.fav-items {
+  padding: 15px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  color: #ffffff;
+  text-shadow: none;
+}
+.fav-items .fav-item {
+  margin-bottom: 15px;
+  height: 160px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(0deg, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5)), url("/assets/images/Background/Colombo.jpg");
+  background-size: cover;
+}
+.fav-items .fav-item p {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+.fav-items .fav-item .distance-txt {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  line-height: 12px;
+  margin: 10px auto auto;
+}
+.fav-items .fav-item div {
+  height: 116px;
+  padding: 32px 0;
+}
+.fav-items .fav-item div .district {
+  justify-content: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  letter-spacing: 0.15em;
+  line-height: 40px;
+}
+.fav-items .fav-item div .place {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  line-height: 16px;
+  justify-content: center;
+}
+.fav-items .fav-item .user-owner {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  vertical-align: middle;
+  line-height: 12px;
+  margin: 0 8px 10px;
+  text-align: left;
+}
+
+/*# sourceMappingURL=faviourites.css.map */
