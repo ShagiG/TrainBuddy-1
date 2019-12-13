@@ -11,6 +11,8 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+var autocomplete, place;
+
 //create firebase database reference
 var dbRef = firebase.database();
 var faviouritesRef = dbRef.ref("faviourites");
@@ -45,8 +47,47 @@ function contactHtmlFromObject(snap) {
 
 //load favourite Item page
 $(document).on("pagebeforeshow", "#favourites_page", function() {
-  $(document).on("click", ".mail-list-btn", function() {
+  $(document).on("click", ".fav-item", function() {
     //Change page
     $.mobile.changePage("../FavouriteItem/index.html");
+    // $.mobile.changePage("../FavouriteItem/index.html", { dataUrl : "second.html?paremeter=123", data : { 'paremeter' : '123' }, reloadPage : false, changeHash : true });
   });
 });
+
+//Function to call database save function
+$(document).on("click", ".share-btn", function() {
+  writeUserData();
+  console.log(place.geometry.location.lat());
+});
+
+//write data to database
+function writeUserData(userId, name, email, imageUrl) {
+  firebase
+    .database()
+    .ref("newsFeed")
+    .push()
+    .set(capturedMoment);
+}
+
+
+//to get autocomplete places
+
+function initAutocomplete() {
+  // Create the autocomplete object
+  autocomplete = new google.maps.places.Autocomplete(
+    document.getElementById("pac-input")
+  );
+  autocomplete.addListener("place_changed", function getPlaceDetails() {
+    place = autocomplete.getPlace();
+  });
+}
+
+var capturedMoment = {
+  description: "name",
+  long: place ? place.geometry.location.lng() : "",
+  lat: place ? place.geometry.location.lat() : "",
+  district: "imageUrl",
+  landmark: "imageUrl",
+  imageUrl: "imageUrl",
+  isFavourite: false
+};
