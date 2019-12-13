@@ -11,18 +11,31 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-//create firebase database reference
-var dbRef = firebase.database();
-var faviouritesRef = dbRef.ref("faviourites");
-
-//load older conatcts as well as any newly added one...
-faviouritesRef.on("child_added", function(snapshot) {
-  $("#fav-items").append(contactHtmlFromObject(snapshot.val()));
+$(function() {
+  $("#footer").load("/components/footer.html");
+  $("#navigation-bar").load("/components/navigationBar.html");
+  $("#header").load("/components/header.html");
 });
 
+//create firebase database reference
+let dbRef = firebase.database();
+let faviouritesRef = dbRef.ref("newsFeed");
+
+//load and sync faviourite items
+try {
+  faviouritesRef.on("child_added", function(snapshot) {
+    $(".fav-item-loading").css("display", "none");
+    if (snapshot.val().isFavourite) {
+      $("#fav-items").append(contactHtmlFromObject(snapshot.val()));
+    }
+  });
+} catch (error) {
+  console.log(error);
+}
+
 function contactHtmlFromObject(snap) {
-  var distance = "103km Away";
-  var html = "";
+  let distance = "103km Away";
+  let html = "";
   html += '<div class="fav-item">';
   html += '<p class="distance-txt">' + distance + "</p>";
   html += '<div class="location">';
