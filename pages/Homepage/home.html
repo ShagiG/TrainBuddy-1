@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TrainBuddy | Homepage </title>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Roboto:100, 300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/main.css" />
+    <link rel="stylesheet" href="homepage.css" />
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/GradientLetter.js"></script>
+  </head>
+
+  <body>
+    <div data-role="page">
+      <!-- header -->
+      <div data-role="header" id="header">
+        <div class="ui-grid-a main-container">
+          <div class="ui-block-a logo-container">
+            <img class="logo-img" src="/assets/images/Logos/TrainBuddyLogo.png"/>
+          </div>
+          <div class="ui-block-b avatar-small"></div>
+        </div>
+      </div>
+
+      <!---intro face -->
+      <div data-role="intro">
+          <div class="ui-grid-a intro-face" id="intro-face" >
+            <div class="intro-container">
+                <img class="intro-img" src="/assets/images/Logos/TrainBuddyLogo.png" alt="logo">
+                <div class="text-container">
+                    <p id="logo-text">TRAVEL, HUNT & EARN </p>
+                </div>  
+            </div>
+          </div>
+      </div>
+
+      <!--Description landing-->
+      <div data-role="description">
+        <div class="ui-grid-content description-landing" id="description-landing">
+          <div class="description-container">
+              <p id="intro-heading">What is TRAIN BUDDY?</p>
+              <p id="intro-body">TrainBuddy is a treasure hunt mobile web application encouraging users to visit
+                                and explore the best places in the country.
+              </p>
+              <!--intro video-->
+              <div class="video-container">
+                <video id="intro-video" src="/assets/video/introVideo.mp4" width="335" height= "155" autoplay></video>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <!--services-->
+      <div data-role="service-content">
+        <div class="service-info">
+          <p id="services-heading">SERVICES</p>
+          <div class="image-container">
+            <div id="train-container">
+              <svg xmlns="http://www.w3.org/2000/svg" width="39" height="50" stroke-width="0" viewBox="0 0 512 512" >
+                <path id="svg-image" d="M393.7 455.9l-50-48c-5.6-5.4-14.4-5.2-19.8.4-5.4 5.6-5.2 14.4.4 19.8l6.1 5.9H181.5l6.1-5.9c5.6-5.4 5.8-14.2.4-19.8-5.4-5.6-14.2-5.8-19.8-.4l-50 48c-5.6 5.4-5.8 14.2-.4 19.8 2.7 2.9 6.4 4.3 10.1 4.3 3.5 0 7-1.3 9.7-3.9l14.7-14.1h207.2l14.7 14.1c2.7 2.6 6.2 3.9 9.7 3.9 3.7 0 7.4-1.4 10.1-4.3 5.5-5.6 5.3-14.4-.3-19.8z"/>
+                <path id="svg-image" d="M337 48h-17c0-8.8-7.2-16-16-16h-96c-8.8 0-16 7.2-16 16h-15c-35.3 0-65 27.7-65 63v236c0 35.3 144 65 144 65s144-29.7 144-65V111c0-35.3-27.7-63-63-63zm-81 304c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm96-160c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16v-64c0-8.8 7.2-16 16-16h160c8.8 0 16 7.2 16 16v64z"/>
+                <circle id="svg-image" cx="256" cy="304" r="30.5"/>
+              </svg>
+                
+            </div>
+          </div>  
+        </div>
+      </div>
+          
+
+      <!-- footer -->
+      <div data-role="footer" id="footer">
+        <div class="ui-grid-b">
+          <div class="ui-block-a">
+            <ul class="navigation-list">
+              <li>Home</li>
+              <li>About Us</li>
+              <li>Contact</li>
+              <li>Camera</li>
+              <li>Privacy and Policy</li>
+            </ul>
+          </div>
+          <div class="ui-block-b">
+            <ul class="navigation-list">
+              <li>NewsFeed</li>
+              <li>Faviourites</li>
+              <li>Bookings</li>
+              <li>Settings</li>
+              <li>Profile</li>
+            </ul>
+          </div>
+          <div align="center" class="ui-block-c social-media-icons">
+            <p>Connect with us</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-facebook"
+            >
+              <path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-twitter"
+            >
+              <path
+                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-instagram"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </div>
+        </div>
+        <div class="ui-grid-a">
+          <p class="rights-txt">All rights reserved 2019</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
