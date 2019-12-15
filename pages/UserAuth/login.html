@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>TrainBuddy | Register</title>
+    <title>TrainBuddy | Login</title>
     <link
       rel="stylesheet"
       href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
@@ -35,7 +35,7 @@
   </head>
 
   <body>
-    <div data-role="page" id="signup-page">
+    <div data-role="page" id="login-page">
         <!-- header -->
         <div data-role="header" id="header">
           <!-- Loaded through JS -->
@@ -43,7 +43,7 @@
 
         <!--logo-->
         <div class="ui-grid-contain logo-display">
-          <img class="logo-img" src="/assets/icons/logodark.svg"/>
+          <img class="login-img" src="/assets/icons/logodark.svg"/>
         </div>
 
         <!--login form-->
@@ -63,15 +63,12 @@
               <button class="ui-btn signup-btn" type="submit">LOGIN</button>
             </div>
 
-            <div class="link-container">
-              <a href="register.html" id="login-link">Don't Have An Account? </a>
-              <a href="forgotpassword.html" id="login-link">Forgot Password?</a>
+            <div class="ui-grid-a link-container">
+              <a href="register.html" class="page-link">Don't Have An Account? </a><br/>
+              <a href="forgotpassword.html" class="page-link" id="forgotpw-link">Forgot Password?</a>
             </div>
           </form>
       </div>
-
-
-
 
         <!-- footer -->
         <div data-role="footer" id="footer">
