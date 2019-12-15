@@ -31,11 +31,17 @@
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
 
-    <script src="/js/main.js"></script>
-
     <!-- Google maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVql75Qc_Y5oGvrxdcNRNMhBlZEzTdk1o"></script>
-    
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVql75Qc_Y5oGvrxdcNRNMhBlZEzTdk1o"></script> -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVql75Qc_Y5oGvrxdcNRNMhBlZEzTdk1o&libraries=places&callback=initMap"
+      async
+      defer
+    ></script>
+    <script src="/js/main.js"></script>
+    <script src="./favouriteItem.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"></link>
     <style>
       /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
@@ -45,7 +51,7 @@
 
       /* Optional: Makes the sample page fill the window. */
       html,
-      body { 
+      body {
         height: 100%;
         margin: 0;
         padding: 0;
@@ -66,25 +72,75 @@
           </div>
           <div class="ui-block-b avatar-small"></div>
         </div>
-        <!-- Google map -->
-        <div data-role="content">
-            <input type="search" name="search" id="search-basic" value="" />
+      </div>
+      <!-- Google map -->
+      <div data-role="content">
+        <input
+          type="search"
+          name="searchforPlaces"
+          id="searchforPlaces"
+          value=""
+        />
 
-           <div class="container">
-               <div class="row">
-                   <div class="col-md-12" style="height: 100vh;">
-                        <div id="map"></div>
-            <script>
-                var map;
-                function initMap() {
-                  map = new google.maps.Map(document.getElementById("map"), {
-                    center: { lat: 7.2906, lng: 80.6337 },
-                    zoom: 15
-                  });
-                }
-                initMap();
-              </script>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12" style="height: 100vh;">
+              <div id="map"></div>
             </div>
+            <label for="text-basic">DESCRIPTION</label>
+            <p>Sri Dalada Maligawa or the Temple of the Sacred Tooth Relic is a Buddhist temple in the city of Kandy, Sri Lanka. It is located in the royal palace complex of the former Kingdom of Kandy, which houses the relic of the tooth of the Buddha.</p>
+            <p>120KM from here</p>
+            <button>TRAVEL HERE</button>
+            <label for="text-basic">RELATED PLACES</label>
+            <div class="related-places">
+              <div class="row">
+                <div class="col-md-4"><img style="width: 90px;
+                  height: 90px;" src="../../assets/images/Background/kandy.jpg"></div>
+                <div class="col-md-4"><img style="width: 90px;
+                  height: 90px;" src="../../assets/images/Background/kandy.jpg"></div>
+                <div class="col-md-4"><img style="width: 90px;
+                  height: 90px;" src="../../assets/images/Background/kandy.jpg"></div>
+                <div class="col-md-4"><img style="width: 90px;
+                  height: 90px;" src="../../assets/images/Background/kandy.jpg"></div>
+              </div>
+              
+            </div>
+            <label for="text-basic">RATE AND REVIEW</label>
+            <section class='rating-widget'>
+  
+              <!-- Rating Stars Box -->
+              <div class='rating-stars text-center'>
+                <ul id='stars'>
+                  <li class='star' title='Poor' data-value='1'>
+                    <i class='fa fa-star fa-fw'></i>
+                  </li>
+                  <li class='star' title='Fair' data-value='2'>
+                    <i class='fa fa-star fa-fw'></i>
+                  </li>
+                  <li class='star' title='Good' data-value='3'>
+                    <i class='fa fa-star fa-fw'></i>
+                  </li>
+                  <li class='star' title='Excellent' data-value='4'>
+                    <i class='fa fa-star fa-fw'></i>
+                  </li>
+                  <li class='star' title='WOW!!!' data-value='5'>
+                    <i class='fa fa-star fa-fw'></i>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- <div class='success-box'>
+                <div class='clearfix'></div>
+                <img alt='tick image' width='32' src='data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0MjYuNjY3IDQyNi42NjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQyNi42NjcgNDI2LjY2NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxwYXRoIHN0eWxlPSJmaWxsOiM2QUMyNTk7IiBkPSJNMjEzLjMzMywwQzk1LjUxOCwwLDAsOTUuNTE0LDAsMjEzLjMzM3M5NS41MTgsMjEzLjMzMywyMTMuMzMzLDIxMy4zMzMgIGMxMTcuODI4LDAsMjEzLjMzMy05NS41MTQsMjEzLjMzMy0yMTMuMzMzUzMzMS4xNTcsMCwyMTMuMzMzLDB6IE0xNzQuMTk5LDMyMi45MThsLTkzLjkzNS05My45MzFsMzEuMzA5LTMxLjMwOWw2Mi42MjYsNjIuNjIyICBsMTQwLjg5NC0xNDAuODk4bDMxLjMwOSwzMS4zMDlMMTc0LjE5OSwzMjIuOTE4eiIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K'/>
+                <div class='text-message'></div>
+                <div class='clearfix'></div>
+              </div>
+               -->
+              
+              
+            </section>
+            <textarea cols="40" rows="8" name="comment-text" id="comment-text" value="" placeholder="Write A Review"></textarea>
+
           </div>
         </div>
       </div>
