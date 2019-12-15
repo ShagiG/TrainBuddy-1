@@ -4,6 +4,7 @@
 
 .input-label {
   padding: 15px 0px 0px 8px;
+  text-shadow: none;
 }
 
 .button-container {
@@ -15,23 +16,61 @@
   text-color: #ffffff;
 }
 
-#login-link {
+.page-link {
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 300;
+  font-weight: 300 !important;
   font-size: 11px;
   letter-spacing: 0.05em;
-  color: #333333;
+  color: #333333 !important;
+  padding: 10px 100px 0px 115px;
 }
 
-.link-container {
-  padding: 0px 117px 30px 117px;
+#forgotpw-link {
+  padding: 0px 100px 10px 120px;
 }
 
 .logo-display {
-  padding: 118px 19px 507px 19px;
-  width: 100%;
-  height: auto;
+  padding: 118px 0px 0px 88px;
+}
+
+.text-display {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #0084E3;
+  padding: 14px 0px 10px 17px;
+}
+
+.email-container {
+  padding: 0px 20px 0px 17px;
+}
+
+#email-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-shadow: none;
+}
+
+.btn-container {
+  padding: 10px 0px 183px 0px;
+}
+
+#verify-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-shadow: none;
+  color: #EB5757;
 }
 
 /*# sourceMappingURL=userauth.css.map */

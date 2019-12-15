@@ -15,11 +15,14 @@ $lightBlack: rgba(51, 51, 51, 0.5)
     font-size: $size
     letter-spacing: $spacing
 
+//register.html and login.html styles
+
 .auth-form
     padding: 12px 16px
 
 .input-label
     padding: 15px 0px 0px 8px
+    text-shadow: none
 
 .button-container
     padding: 0px 18px 0px 18px
@@ -28,17 +31,58 @@ $lightBlack: rgba(51, 51, 51, 0.5)
     text-align: center
     text-color: #ffffff
 
-#login-link
-    @include font('Roboto', 300, 11px, 0.05em)
-    color: #333333
+.page-link
+    @include font('Roboto', 300 !important, 11px, 0.05em)
+    color: #333333 !important
+    padding: 10px 100px 0px 115px
 
-.link-container
-    padding: 0px 117px 30px 117px
+#forgotpw-link
+    padding: 0px 100px 10px 120px
+
 
 .logo-display
-    padding: 118px 19px 507px 19px
-    width: 100%
-    height: auto
+    padding: 118px 0px 0px 88px
+
+// Forgotpassword.html style
+
+.text-display
+    @include font('Roboto', normal, 12px, 0.1em)
+    color:  #0084E3
+    padding: 14px 0px 10px 17px
+
+.email-container
+    padding: 0px 20px 0px 17px
+
+#email-text
+    @include font('Roboto', normal, 18px, 0.1em)
+    text-align: center
+    text-shadow: none
+
+.btn-container
+    padding: 10px 0px 183px 0px
+
+#verify-text
+    @include font('Roboto', normal, 18px, 0.1em)
+    text-align: center
+    text-shadow: none
+    color: #EB5757
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    
+    
 
 
 
