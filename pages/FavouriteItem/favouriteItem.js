@@ -1,20 +1,3 @@
-//to get autocomplete places
-// function initAutocomplete() {
-//   // Create the autocomplete object
-//   autocomplete = new google.maps.places.Autocomplete(
-//     document.getElementById("searchforPlaces")
-//   );
-//  }
-
-// var map;
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById("map"), {
-//     center: { lat: 7.2906, lng: 80.6337 },
-//     zoom: 15
-//   });
-//   initAutocomplete();
-// }
-
 //initialize google map
 function initMap() {
   //pass long and lat of the place
@@ -50,6 +33,19 @@ function initMap() {
     infowindow.close();
     marker.setVisible(false);
     var place = autocomplete.getPlace();
+    capturedMoment.long = place ? place.geometry.location.lng() : "";
+    capturedMoment.lat = place ? place.geometry.location.lat() : "";
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var currentLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        setDistance(getDistanceValue(currentLocation));
+      });
+    }
+
     if (!place.geometry) {
       // User entered the name of a Place that was not suggested and
       // pressed the Enter key, or the Place Details request failed.
@@ -119,18 +115,36 @@ $(document).ready(function() {
         .data("value"),
       10
     );
-    var msg = "";
-    if (ratingValue > 1) {
-      msg = "Thanks! You rated this " + ratingValue + " stars.";
-    } else {
-      msg =
-        "We will improve ourselves. You rated this " + ratingValue + " stars.";
-    }
-    //   responseMessage(msg);
   });
 });
 
-//   function responseMessage(msg) {
-//     $('.success-box').fadeIn(200);
-//     $('.success-box div.text-message').html("<span>" + msg + "</span>");
-//   }
+$(document).ready(function() {
+    initMap();
+});
+
+//set distance from current location
+function setDistance(dKM) {
+  document.getElementById("distance").innerHTML = dKM + "KM from here";
+}
+
+//get place distance from current location
+var getDistanceValue = function(currentLocation) {
+  var rad = function(x) {
+    return (x * Math.PI) / 180;
+  };
+
+  var R = 6378137; // Earth’s mean radius in meter
+  var dLat = rad(currentLocation.lat - capturedMoment.lat);
+  var dLong = rad(currentLocation.lng - capturedMoment.long);
+  var a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(rad(capturedMoment.lat)) *
+      Math.cos(rad(currentLocation.lat)) *
+      Math.sin(dLong / 2) *
+      Math.sin(dLong / 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = R * c;
+  var dinKm = d * 0.001;
+
+  return Math.round(dinKm); // returns the distance in Kilometer
+};
