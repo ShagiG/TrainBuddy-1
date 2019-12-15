@@ -28,8 +28,10 @@
   padding: 0px 117px 30px 117px;
 }
 
-.logo-container {
+.logo-display {
   padding: 118px 19px 507px 19px;
+  width: 100%;
+  height: auto;
 }
 
 /*# sourceMappingURL=userauth.css.map */
