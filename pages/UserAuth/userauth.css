@@ -1,0 +1,35 @@
+.auth-form {
+  padding: 12px 16px;
+}
+
+.input-label {
+  padding: 15px 0px 0px 8px;
+}
+
+.button-container {
+  padding: 0px 18px 0px 18px;
+}
+
+.signup-btn {
+  text-align: center;
+  text-color: #ffffff;
+}
+
+#login-link {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: #333333;
+}
+
+.link-container {
+  padding: 0px 117px 30px 117px;
+}
+
+.logo-container {
+  padding: 118px 19px 507px 19px;
+}
+
+/*# sourceMappingURL=userauth.css.map */

@@ -41,29 +41,29 @@
           <!-- Loaded through JS -->
         </div>
 
-        <!--logo container-->
-        <div class="ui-grid-contain" id="logo-container">
-            <div class="ui-block-a logo-container">
-              <div class="intro-container">
-                <img class="logo-img" src="/assets/images/Logos/TrainBuddyLogo.png"/>
-              </div>
-            </div>
-        </div>
-
-        <!--login form-->
+        <!--Register form-->
         <div class="ui-grid-a form-content">
             <form method="get" action="">
-              <fieldset class="ui-field-contain form-container">
-              
-                <label for="username" class="ui-accessible input-label">USERNAME </label>
-                <input class="inputs" type="text" name="username" id="username" value="" placeholder="Username"/>                       
+              <fieldset class="ui-field-contain">
+              <div class="auth-form">
+                <label for="username" class="input-label">USERNAME </label>
+                <input class="text-input" type="text" name="username" data-role="none" placeholder="Username"/>
+               
+                <label for="password" class="input-label">PASSWORD </label>
+                <input class="text-input" type="password" name="password" data-role="none" placeholder="Password"/>
+              </div>
+              </fieldset>
 
-                <label for="password" class="ui-accessible input-label">PASSWORD </label>
-                <input class="inputs" type="password" name="password" id="password" value="" placeholder="Password"/>
-            </fieldset>
+              <div class="ui-field-contian button-container">
+                <button class="ui-btn signup-btn" type="submit">LOGIN</button>
+              </div>
+
+              <div class="link-container">
+                <a href="register.html" id="login-link">Don't Have An Account? </a>
+                <a href="forgotpassword.html" id="login-link">Forgot Password?</a>
+              </div>
             </form>
         </div>
-
 
 
 
