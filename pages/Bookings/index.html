@@ -20,8 +20,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../style/main.css" />
-    <link rel="stylesheet" href="/pages/NewsFeed/newsfeed.css" />
-
+    <link rel="stylesheet" href="/pages/Bookings/bookings.css" />
     <!-- Bootstrap -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -50,7 +49,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
 
     <script src="/js/main.js"></script>
-    <script src="/pages/NewsFeed/newsfeed.js"></script>
+    <script src="/pages/Bookings/bookings.js"></script>
   </head>
 
   <body>
@@ -60,11 +59,53 @@
         <!-- Loaded through JS -->
       </div>
 
-      <div id="feed-items" class="feed-items"></div>
+      <div data-role="tabs" id="tabs">
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#past-list" data-ajax="false">Past Trips</a></li>
+            <li><a href="#upcome-list" data-ajax="false">Upcoming Trips</a></li>
+          </ul>
+        </div>
+        <!-- Tabs -->
+        <div id="past-list" class="past-list">
+          <div class="booking-element-loading">
+            <div class="ui-grid-a top-row">
+              <div class="load-space"></div>
+            </div>
+            <hr />
+            <div class="load-space content-load"></div>
+            <div class="ui-grid-b tick-info">
+              <div class="load-space"></div>
+            </div>
+            <hr />
+            <div class="load-space"></div>
+          </div>
+        </div>
+
+        <div id="upcome-list" class="upcome-list">
+          <div class="booking-element-loading">
+            <div class="ui-grid-a top-row">
+              <div class="load-space"></div>
+            </div>
+            <hr />
+            <div class="load-space content-load"></div>
+            <div class="ui-grid-b tick-info">
+              <div class="load-space"></div>
+            </div>
+            <hr />
+            <div class="load-space"></div>
+          </div>
+        </div>
+      </div>
 
       <!-- Navigation Bar -->
       <div id="navigation-bar" class="ui-grid-d navigation-bar">
         <!-- Loaded through JS -->
+      </div>
+
+      <!-- footer -->
+      <div data-role="footer" id="footer">
+        <!-- Footer added through JS -->
       </div>
     </div>
   </body>

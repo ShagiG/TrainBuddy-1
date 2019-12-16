@@ -1,13 +1,9 @@
-//create firebase database reference
-let dbRef = firebase.database();
-let faviouritesRef = dbRef.ref("newsFeed");
-
 //Favourite Item Array
 let favItems = [];
 
 //load and sync faviourite items
 try {
-  faviouritesRef.on("child_added", function(snapshot) {
+  feedRef.on("child_added", snapshot => {
     $(".fav-item-loading").css("display", "none");
     if (snapshot.val().isFavourite) {
       favItems.push(snapshot.val());
@@ -21,11 +17,11 @@ try {
 function createList(listItems) {
   document.getElementById("fav-items").innerHTML = "";
   for (let i = 0; i < listItems.length; i++) {
-    $("#fav-items").append(contactHtmlFromObject(listItems[i]));
+    $("#fav-items").append(createItem(listItems[i]));
   }
 }
 
-function contactHtmlFromObject(snap) {
+function createItem(snap) {
   let distance = 103;
   let html = "";
   html += '<div class="fav-item">';
