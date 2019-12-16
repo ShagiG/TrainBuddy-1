@@ -155,7 +155,11 @@
 
       <!-- Floating Btn -->
       <div class="floating-btn">
-        <button class="mail-list-btn" data-toggle="modal" data-target="#emailModal">>
+        <button
+          class="mail-list-btn"
+          data-toggle="modal"
+          data-target="#emailModal"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -188,27 +192,59 @@
       </div>
 
       <!-- email dialog-->
-      <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div
+        class="modal fade"
+        id="emailModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-body">
-              <label for="receiver-mail" class="input-label">RECEIVER'S MAIL </label>
-              <input class="text-input" type="text" name="receiver-mail" data-role="none" placeholder="EMAIL"/>
-                         
+              <label for="receiver-mail" class="input-label"
+                >RECEIVER'S MAIL
+              </label>
+              <input
+                class="text-input"
+                type="text"
+                name="receiver-mail"
+                data-role="none"
+                placeholder="Email"
+              />
+
               <label for="email-subject" class="input-label">SUBJECT </label>
-              <input class="text-input" type="text" name="subject" data-role="none" placeholder="SUBJECT"/>
-  
-              <label for="email-msg" class="input-label"></label>      
-              <textarea class="text-input" name="email-msg" data-role="none" placeholder="TYPE YOUR MESSAGE HERE"></textarea> 
-            </div>
-  
-            <div class="ui-field-contian button-container">
-              <button class="ui-btn submit-btn" type="submit">SUBMIT</button>
-              <button class="ui-btn cancel-btn" type="submit">CANCEL</button>
+              <input
+                class="text-input"
+                type="text"
+                name="subject"
+                data-role="none"
+                placeholder="Subject"
+              />
+
+              <label for="email-msg" class="input-label"></label>
+              <textarea
+                style="height: 100px;"
+                class="text-input"
+                name="email-msg"
+                data-role="none"
+                placeholder="You can tell something..."
+              ></textarea>
+              <button
+                class="prime-btn submit-btn"
+                type="submit"
+                data-role="none"
+              >
+                send email
+              </button>
+              <button class="cancel-btn" type="submit" data-role="none">
+                CANCEL
+              </button>
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </div>
   </body>
 </html>

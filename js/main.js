@@ -40,7 +40,7 @@ $(document).on("click", "#camera-icon", function() {
 });
 
 $(document).on("click", "#train-icon", function() {
-  window.location.href = "/pages/Bookings/index.html";
+  window.location.href = "/pages/BookTicket/index.html";
 });
 
 $(document).on("click", "#settings-icon", function() {
