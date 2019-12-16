@@ -6,7 +6,7 @@ try {
   feedRef.on("child_added", snapshot => {
     $(".fav-item-loading").css("display", "none");
     if (snapshot.val().isFavourite) {
-      favItems.push(snapshot.val());
+      favItems.push(snapshot);
     }
     createList(favItems);
   });
@@ -21,10 +21,15 @@ function createList(listItems) {
   }
 }
 
-function createItem(snap) {
+function navigatePage(itemId) {
+  window.location.href = "../FavouriteItem/index.html?favItemId=" + itemId;
+}
+
+function createItem(snapshot) {
+  let snap = snapshot.val();
   let distance = 103;
   let html = "";
-  html += '<div class="fav-item">';
+  html += `<div class="fav-item" onClick="navigatePage('${snapshot.key}')">`;
   html += '<p class="distance-txt">' + distance + "km Away</p>";
   //   html += "<span>km Away</span>";
   html += '<div class="location">';

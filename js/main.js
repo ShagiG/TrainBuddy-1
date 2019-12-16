@@ -18,7 +18,6 @@ let feedRef = dbRef.ref("newsFeed");
 let bookingRef = dbRef.ref("bookings");
 
 var autocomplete, place;
-var capturedMoment = {};
 
 //Load the components when document is ready
 $(function() {
