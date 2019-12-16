@@ -11,6 +11,12 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+//create firebase database reference
+let dbRef = firebase.database();
+let feedRef = dbRef.ref("newsFeed");
+//Reference to the booking list
+let bookingRef = dbRef.ref("bookings");
+
 var autocomplete, place;
 var capturedMoment = {};
 
@@ -35,7 +41,7 @@ $(document).on("click", "#camera-icon", function() {
 });
 
 $(document).on("click", "#train-icon", function() {
-  window.location.href = "#";
+  window.location.href = "/pages/Bookings/index.html";
 });
 
 $(document).on("click", "#settings-icon", function() {
