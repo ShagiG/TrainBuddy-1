@@ -108,4 +108,34 @@
   padding: 10px 0px 0px 0px;
 }
 
+.sucessModal {
+  padding: 10px 0px 0px 0px;
+}
+
+.successmodal-body {
+  width: 100%;
+}
+
+.modal-content {
+  height: 458px;
+}
+
+.successmodal-body {
+  padding: 98px 95px 0px 95px;
+}
+
+.successmsg-body {
+  padding: 16px 21px 127px 20px;
+}
+
+#success-msg {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  color: #000000;
+  text-align: center;
+}
+
 /*# sourceMappingURL=faviourites.css.map */

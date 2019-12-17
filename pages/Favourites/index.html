@@ -49,6 +49,9 @@
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
 
+    <!--Email-->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
     <script src="/js/main.js"></script>
     <script src="/pages/Favourites/favourites.js"></script>
   </head>
@@ -208,8 +211,9 @@
               </label>
               <input
                 class="text-input"
-                type="text"
+                type="email"
                 name="receiver-mail"
+                id="email-to"
                 data-role="none"
                 placeholder="Email"
               />
@@ -219,6 +223,7 @@
                 class="text-input"
                 type="text"
                 name="subject"
+                id="email-subject"
                 data-role="none"
                 placeholder="Subject"
               />
@@ -227,6 +232,7 @@
               <textarea
                 style="height: 100px;"
                 class="text-input"
+                id="email-body"
                 name="email-msg"
                 data-role="none"
                 placeholder="You can tell something..."
@@ -235,6 +241,7 @@
                 class="prime-btn submit-btn"
                 type="submit"
                 data-role="none"
+                onclick="sendEmail()"
               >
                 send email
               </button>
@@ -245,6 +252,31 @@
           </div>
         </div>
       </div>
+
+      <!--succuess dialog-->
+      <div
+        class="modal fade"
+        id="successModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="successmodal-body">
+              <svg id="circle-img" xmlns="http://www.w3.org/2000/svg" width="161" height="161" viewBox="0 0 24 24" fill="none" stroke="#75E394" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div class="successmsg-body">
+              <p id="success-msg">SUCCESSFULLY SENT!</p>
+            </div>    
+            </div>
+          </div>
+        </div>
+        </div>
     </div>
   </body>
 </html>

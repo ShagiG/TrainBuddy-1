@@ -98,3 +98,25 @@ $(document).on("change", "#order-by", e => {
   if (orderValue === "desc") favItems.reverse();
   createList(favItems);
 });
+
+//Send email function to export favourites list
+function sendEmail(){
+
+  // getting the value of the send email modal inputs
+  var receiver = document.getElementById("email-to").value;
+  var emailSubject = document.getElementById("email-subject").value;
+  var emailBody = document.getElementById("email-body").value;
+  var exportList = document.getElementById("favourites_page").html
+  snapshot.val
+
+  Email.send({
+    Host: "smtp.gmail.com",
+    Username : "trainbuddytest@gmail.com",
+    Password : "Buddy678",
+    To : receiver,
+    From : "trainbuddytest@gmail.com",
+    Subject : emailSubject,
+    Body : emailBody +  favItems.toString,
+  }).then(
+  )
+}
