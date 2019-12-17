@@ -106,8 +106,6 @@ function sendEmail(){
   var receiver = document.getElementById("email-to").value;
   var emailSubject = document.getElementById("email-subject").value;
   var emailBody = document.getElementById("email-body").value;
-  var exportList = document.getElementById("favourites_page").html
-  snapshot.val
 
   Email.send({
     Host: "smtp.gmail.com",
