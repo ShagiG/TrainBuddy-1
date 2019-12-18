@@ -1,5 +1,22 @@
 //Favourite Item Array
 let favItems = [];
+//Current location
+var locationInfo = {
+  currLat: 0,
+  currLng: 0
+};
+
+$(function() {
+  if (navigator.geolocation) {
+    //Get Current Location
+    navigator.geolocation.getCurrentPosition(position => {
+      locationInfo = {
+        currLat: position.coords.latitude,
+        currLng: position.coords.longitude
+      };
+    });
+  }
+});
 
 //load and sync faviourite items
 try {
@@ -25,11 +42,32 @@ function navigatePage(itemId) {
   window.location.href = "../FavouriteItem/index.html?favItemId=" + itemId;
 }
 
+function getLocation(tarLng, tarLat) {
+  var rad = function(x) {
+    return (x * Math.PI) / 180;
+  };
+  var R = 6378137; // Earth’s mean radius in meter
+  var dLat = rad(locationInfo.currLat - tarLat);
+  var dLong = rad(locationInfo.currLng - tarLng);
+  var a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(rad(tarLat)) *
+      Math.cos(rad(locationInfo.currLat)) *
+      Math.sin(dLong / 2) *
+      Math.sin(dLong / 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = R * c;
+  var dinKm = d * 0.001;
+
+  return Math.round(dinKm);
+}
+
 function createItem(snapshot) {
   let snap = snapshot.val();
-  let distance = 103;
+  let distance = getLocation(snap.long, snap.lat);
   let html = "";
-  html += `<div class="fav-item" onClick="navigatePage('${snapshot.key}')">`;
+  html += `<div class="fav-item" style="background: linear-gradient(0deg, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5)),  url(${snap.imageUrl})
+        " onClick="navigatePage('${snapshot.key}')">`;
   html += '<p class="distance-txt">' + distance + "km Away</p>";
   //   html += "<span>km Away</span>";
   html += '<div class="location">';
@@ -71,8 +109,8 @@ $(document).on("change", "#sort-by", e => {
   let orderValue = document.getElementById("order-by").value;
 
   favItems.sort((a, b) => {
-    if (a[sortValue] < b[sortValue]) return -1;
-    if (a[sortValue] > b[sortValue]) return 1;
+    if (a.val()[sortValue] < b.val()[sortValue]) return -1;
+    if (a.val()[sortValue] > b.val()[sortValue]) return 1;
     return 0;
   });
 
@@ -89,8 +127,8 @@ $(document).on("change", "#order-by", e => {
   console.log(sortValue);
 
   favItems.sort((a, b) => {
-    if (a[sortValue] < b[sortValue]) return -1;
-    if (a[sortValue] > b[sortValue]) return 1;
+    if (a.val()[sortValue] < b.val()[sortValue]) return -1;
+    if (a.val()[sortValue] > b.val()[sortValue]) return 1;
     return 0;
   });
 
@@ -100,8 +138,7 @@ $(document).on("change", "#order-by", e => {
 });
 
 //Send email function to export favourites list
-function sendEmail(){
-
+function sendEmail() {
   // getting the value of the send email modal inputs
   var receiver = document.getElementById("email-to").value;
   var emailSubject = document.getElementById("email-subject").value;
@@ -109,12 +146,11 @@ function sendEmail(){
 
   Email.send({
     Host: "smtp.gmail.com",
-    Username : "trainbuddytest@gmail.com",
-    Password : "Buddy678",
-    To : receiver,
-    From : "trainbuddytest@gmail.com",
-    Subject : emailSubject,
-    Body : emailBody +  favItems.toString,
-  }).then(
-  )
+    Username: "trainbuddytest@gmail.com",
+    Password: "Buddy678",
+    To: receiver,
+    From: "trainbuddytest@gmail.com",
+    Subject: emailSubject,
+    Body: emailBody + favItems.toString
+  }).then();
 }

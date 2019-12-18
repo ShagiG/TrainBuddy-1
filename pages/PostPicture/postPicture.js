@@ -1,12 +1,16 @@
 //Function to call database save function
-$(document).on("click", ".share-btn", function() {
+$(document).on("click", "#share-btn", function() {
   writeUserData();
 });
 
 //write data to database
-function writeUserData(userId, name, email, imageUrl) {
+function writeUserData() {
   dbRef
     .ref("newsFeed")
+    .push()
+    .set(capturedMoment);
+  dbRef
+    .ref("myPosts")
     .push()
     .set(capturedMoment);
 }
@@ -25,6 +29,9 @@ function initAutocomplete() {
     capturedMoment.landmark = place ? place.name : "";
     capturedMoment.description = "This a really nice place you should travel";
     capturedMoment.createdAt = firebase.database.ServerValue.TIMESTAMP;
+    capturedMoment.likes = 0;
+    capturedMoment.isFavourite = false;
+    capturedMoment.author = "Thivagar Mahendran";
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {

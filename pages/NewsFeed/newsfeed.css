@@ -11,7 +11,17 @@
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
 }
 .feed-items .feed .head {
-  padding: 15px 0;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 15px 10px;
+}
+.feed-items .feed .body-cont {
+  padding: 0 10px;
+}
+.feed-items .feed .buttons {
+  padding: 0 10px;
+  display: grid;
+  grid-template-columns: 15% 15% 15% 55%;
 }
 .feed-items p {
   margin: 0;
@@ -46,10 +56,11 @@
 .feed-items .like-count {
   font-family: "Lato";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.05em;
-  color: #000000;
+  color: #193E58;
+  margin: 10px 0;
 }
 .feed-items img {
   max-width: 100%;

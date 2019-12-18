@@ -12,8 +12,7 @@
   height: 160px;
   border-radius: 10px;
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
-  background: linear-gradient(0deg, rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.5)), url("/assets/images/Background/Colombo.jpg");
-  background-size: cover;
+  background-size: cover !important;
 }
 .fav-items .fav-item p, .fav-items .fav-item-loading p {
   text-align: center;
@@ -136,6 +135,17 @@
   letter-spacing: 0.05em;
   color: #000000;
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .fav-items {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  .fav-items .fav-item, .fav-items .fav-item-loading {
+    margin: 5px;
+  }
 }
 
 /*# sourceMappingURL=faviourites.css.map */

@@ -62,7 +62,7 @@ function initMap() {
         var place = autocomplete.getPlace();
         capturedMoment.long = place ? place.geometry.location.lng() : "";
         capturedMoment.lat = place ? place.geometry.location.lat() : "";
-       
+
         locationInfo.placelat = capturedMoment.lat;
         locationInfo.placelng = capturedMoment.long;
 
