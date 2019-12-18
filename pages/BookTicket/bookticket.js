@@ -1,3 +1,19 @@
+$(() => {
+  $("#booking-btn").click(() => {
+    window.location.href = "/pages/Bookings/index.html";
+  });
+});
+
+// try {
+//   dbRef.ref('/trains').on("child_added", snapshot => {
+//     if (snapshot.val().author === "Thivagar Mahendran") {
+//       $("#my-feed").append(createHtmlItem(snapshot.val(), snapshot.key));
+//     }
+//   });
+// } catch (error) {
+//   console.log(error);
+// }
+
 function createTrainCard() {
   let html = "";
   html = `<div class="train-avail">

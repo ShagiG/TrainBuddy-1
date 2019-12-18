@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>TrainBuddy | NewsFeed</title>
+    <title>TrainBuddy | Profile</title>
     <link
       rel="stylesheet"
       href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
@@ -20,7 +20,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../style/main.css" />
-    <link rel="stylesheet" href="/pages/NewsFeed/newsfeed.css" />
+    <link rel="stylesheet" href="/pages/Profile/profile.css" />
 
     <!-- Bootstrap -->
     <script
@@ -50,7 +50,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
 
     <script src="/js/main.js"></script>
-    <script src="/pages/NewsFeed/newsfeed.js"></script>
+    <script src="/pages/Profile/profile.js"></script>
   </head>
 
   <body>
@@ -60,24 +60,38 @@
         <!-- Loaded through JS -->
       </div>
 
-      <div class="search" id="search">
-        <input
-          class="search-bar"
-          id="search-bar"
-          type="search"
-          placeholder="Search for Places"
-          data-role="none"
-        />
+      <div class="profile-section">
+        <div class="main-section">
+          <div class="avatar-img">
+            <img
+              src="/assets/images/profile/myavatar.jpg"
+              id="profile-avatar"
+              class="avatar-img"
+            />
+          </div>
+          <div class="full-name">
+            <p>Thivagar Mahendran</p>
+          </div>
+          <div class="tot-points">
+            <div class="points">
+              <img src="/assets/icons/PointIcon.svg" />
+              <p id="point-show"></p>
+            </div>
+          </div>
 
-        <img src="/assets/icons/search.svg" class="filter-icon" />
+          <button id="leader-btn" class="navigate-btn" data-role="none">
+            Leaderboard
+          </button>
+          <button id="book-btn" class="navigate-btn" data-role="none">
+            Book Ticket
+          </button>
+          <button id="booking-btn" class="navigate-btn" data-role="none">
+            Bookings
+          </button>
+        </div>
+
+        <div id="my-feed" class="my-posts-section"></div>
       </div>
-      <div
-        data-role="listview"
-        data-filter="true"
-        data-input="#search-bar"
-        id="feed-items"
-        class="feed-items"
-      ></div>
 
       <!-- Navigation Bar -->
       <div id="navigation-bar" class="ui-grid-d navigation-bar">

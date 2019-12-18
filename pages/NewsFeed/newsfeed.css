@@ -83,4 +83,15 @@
   display: none;
 }
 
+@media screen and (min-width: 1024px) {
+  .feed-items {
+    padding: 2% 25%;
+  }
+}
+@media screen and (width: 667px) {
+  .feed-items {
+    padding: 2% 20%;
+  }
+}
+
 /*# sourceMappingURL=newsfeed.css.map */

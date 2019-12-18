@@ -1,6 +1,18 @@
+let imageUrl;
+let capturedMoment = {};
+let myCapturedMoment = {};
+
 //Function to call database save function
 $(document).on("click", "#share-btn", function() {
   writeUserData();
+});
+
+$(function() {
+  imageUrl = window.localStorage.getItem("image");
+  $("#captured-image").attr("src", atob(imageUrl));
+  $("#cancel-btn").click(() => {
+    window.location.href = "/pages/NewsFeed/index.html";
+  });
 });
 
 //write data to database
@@ -12,7 +24,7 @@ function writeUserData() {
   dbRef
     .ref("myPosts")
     .push()
-    .set(capturedMoment);
+    .set(myCapturedMoment);
 }
 
 //to get autocomplete places
@@ -23,15 +35,38 @@ function initAutocomplete() {
   );
   autocomplete.addListener("place_changed", function getPlaceDetails() {
     place = autocomplete.getPlace();
+    let district;
+    for (let i = 0; i < place.address_components.length; i++) {
+      let addressType = place.address_components[i].types[0];
+      if (addressType === "administrative_area_level_2") {
+        district = place.address_components[i].long_name;
+      }
+    }
+    console.log(district);
     capturedMoment.long = place ? place.geometry.location.lng() : "";
     capturedMoment.lat = place ? place.geometry.location.lat() : "";
-    capturedMoment.imageUrl = "images/imageKandy.jpeg";
+    capturedMoment.imageUrl = atob(imageUrl);
     capturedMoment.landmark = place ? place.name : "";
-    capturedMoment.description = "This a really nice place you should travel";
+    capturedMoment.district = district;
+    capturedMoment.description = $("#description-box").val();
     capturedMoment.createdAt = firebase.database.ServerValue.TIMESTAMP;
     capturedMoment.likes = 0;
+    capturedMoment.isLiked = false;
     capturedMoment.isFavourite = false;
     capturedMoment.author = "Thivagar Mahendran";
+    capturedMoment.authorImg = "/assets/images/profile/myavatar.jpg";
+
+    myCapturedMoment.long = place ? place.geometry.location.lng() : "";
+    myCapturedMoment.lat = place ? place.geometry.location.lat() : "";
+    myCapturedMoment.imageUrl = atob(imageUrl);
+    myCapturedMoment.landmark = place ? place.name : "";
+    myCapturedMoment.district = district;
+    myCapturedMoment.description = $("#description-box").val();
+    myCapturedMoment.createdAt = firebase.database.ServerValue.TIMESTAMP;
+    myCapturedMoment.likes = 0;
+    myCapturedMoment.score = 2;
+    myCapturedMoment.isFavourite = false;
+    myCapturedMoment.authorImg = "/assets/images/profile/myavatar.jpg";
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {

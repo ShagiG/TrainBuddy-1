@@ -47,6 +47,10 @@ $(document).on("click", "#settings-icon", function() {
   window.location.href = "/pages/Settings/index.html";
 });
 
+$(document).on("click", "#avatar-img", function() {
+  window.location.href = "/pages/Profile/index.html";
+});
+
 //Range slider popup
 $(document).on("input", "#distance-range", function() {
   let control = $(this),

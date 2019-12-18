@@ -54,7 +54,7 @@
           <div class="img-form">
             <div class="img-viewer">
               <img
-                src="/assets/images/Background/kandy.jpg"
+                id="captured-image"
                 alt="captured-image"
                 class="captured-photo"
               />
@@ -75,14 +75,15 @@
           <input
             class="text-input"
             type="text"
+            name="searchforPlaces"
+            id="pac-input"
             value=""
             placeholder="Add location"
-            data-role="none"
           />
           <button class="prime-btn" id="share-btn" data-role="none">
             Share
           </button>
-          <button class="cancel-btn" data-role="none">
+          <button id="cancel-btn" class="cancel-btn" data-role="none">
             Cancel
           </button>
         </div>
