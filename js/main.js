@@ -36,7 +36,7 @@ $(document).on("click", "#star-icon", function() {
 });
 
 $(document).on("click", "#camera-icon", function() {
-  window.location.href = "#";
+  window.location.href = "/pages/Camera/index.html";
 });
 
 $(document).on("click", "#train-icon", function() {
@@ -44,7 +44,7 @@ $(document).on("click", "#train-icon", function() {
 });
 
 $(document).on("click", "#settings-icon", function() {
-  window.location.href = "#";
+  window.location.href = "/pages/Settings/index.html";
 });
 
 //Range slider popup

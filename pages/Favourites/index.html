@@ -48,7 +48,10 @@
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
-
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVql75Qc_Y5oGvrxdcNRNMhBlZEzTdk1o&libraries=places"
+      defer
+    ></script>
     <!--Email-->
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
@@ -267,18 +270,29 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="successmodal-body">
-              <svg id="circle-img" xmlns="http://www.w3.org/2000/svg" width="161" height="161" viewBox="0 0 24 24" fill="none" stroke="#75E394" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
+              <svg
+                id="circle-img"
+                xmlns="http://www.w3.org/2000/svg"
+                width="161"
+                height="161"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#75E394"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-check-circle"
+              >
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
               </svg>
             </div>
             <div class="successmsg-body">
               <p id="success-msg">SUCCESSFULLY SENT!</p>
-            </div>    
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -45,84 +45,52 @@
     <div data-role="page" id="favourites_page">
       <!-- header -->
       <div data-role="header" id="header">
-          <!-- Loaded through JS -->
-        </div>
-      <div data-role="content">
-      <form>
-      <div class="row">
-
-        <div class="col-md-4">
-            <img src="/assets/images/Background/kandy.jpg" alt="captured-image" class="captured-photo">
-        </div>
-        <div class="col-md-8">
-          <!-- <label for="textarea-1">Textarea:</label> -->
-          <textarea name="description-box" id="description-box"></textarea>
-                    
-        </div>
+        <!-- Loaded through JS -->
       </div>
-    </form>
-    <button class="share-btn">
-            
-              <path
-                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-              ></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
+
+      <div class="page-content">
+        <p class="page-title">POST PICTURE</p>
+        <form>
+          <div class="img-form">
+            <div class="img-viewer">
+              <img
+                src="/assets/images/Background/kandy.jpg"
+                alt="captured-image"
+                class="captured-photo"
+              />
+            </div>
+            <div class="caption">
+              <textarea
+                placeholder="Say something about this place..."
+                class="text-input"
+                name="description-box"
+                id="description-box"
+                data-role="none"
+              ></textarea>
+            </div>
+          </div>
+        </form>
+        <div class="location-cont">
+          <label>Add Location</label>
+          <input
+            class="text-input"
+            type="text"
+            value=""
+            placeholder="Add location"
+            data-role="none"
+          />
+          <button class="prime-btn" id="share-btn" data-role="none">
             Share
           </button>
-
-          <button class="cancel-btn">
-                  <path
-                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                  ></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                Cancel
-              </button>
-
-      
-
-      <div class="search-bar">
-        <input
-          class="control"
-          type="text"
-          name="pac-input"
-          id="pac-input"
-          value=""
-          placeholder="Add location"
-        />
-      </div>
-    </div>
-      <div class="floating-btn">
-        <button class="mail-list-btn">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-mail"
-          >
-            <path
-              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-            ></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-          Export list
-        </button>
+          <button class="cancel-btn" data-role="none">
+            Cancel
+          </button>
+        </div>
       </div>
 
       <!-- Navigation Bar -->
       <div id="navigation-bar" class="ui-grid-d navigation-bar">
-          <!-- Loaded through JS -->
-      </div>
-      <!-- footer -->
-      <div data-role="footer" id="footer">
-          <!-- Footer added through JS -->
+        <!-- Loaded through JS -->
       </div>
     </div>
   </body>
