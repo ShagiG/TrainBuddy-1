@@ -2,11 +2,17 @@
 function initMap() {
   //pass long and lat of the place
   //   console.log("getUrlParameter", getUrlParameter("favItemId"));
-  var myLatLng = { lat: 0, lng: 0 };
+  let myLatLng = { lat: 0, lng: 0 };
+  let comments_ratings = { comment: "", ratings: 2 };
+  let ratingVal = 0;
+  let comments = "";
   dbRef
     .ref("newsFeed/" + getUrlParameter("favItemId"))
     .once("value")
     .then(snapshot => {
+      ratingVal = snapshot.val().rating;
+      comments = snapshot.val().comments;
+
       myLatLng.lat = snapshot.val().lat;
       myLatLng.lng = snapshot.val().long;
       var map = new google.maps.Map(document.getElementById("map"), {
@@ -62,7 +68,7 @@ function initMap() {
         var place = autocomplete.getPlace();
         capturedMoment.long = place ? place.geometry.location.lng() : "";
         capturedMoment.lat = place ? place.geometry.location.lat() : "";
-       
+
         locationInfo.placelat = capturedMoment.lat;
         locationInfo.placelng = capturedMoment.long;
 
@@ -84,6 +90,31 @@ function initMap() {
         }
         marker.setPosition(place.geometry.location);
         marker.setVisible(true);
+      });
+      //add rating stars
+      let starsArr = document.getElementById("stars").children;
+      for (let i = 0; i < ratingVal; i++) {
+        $(starsArr[i]).addClass("selected");
+      }
+
+      //add comments
+      $("#add_review").click(function() {
+        let updatedRating = {};
+        updatedRating[
+          "newsFeed/" + getUrlParameter("favItemId") + "/comments"
+        ] = $("#comment-text").val();
+
+        firebase
+          .database()
+          .ref()
+          .update(updatedRating, function(error) {
+           //if comment saved successfully it will load the comment below
+            if (error) {
+              console.log("Error", error);
+            } else {
+              $("#added-comment").text($("#comment-text").val());
+            }
+          });
       });
     });
 }
@@ -138,12 +169,23 @@ $(document).ready(function() {
         .data("value"),
       10
     );
+    writeUserData(ratingValue, getUrlParameter("favItemId"));
   });
 });
 
 $(document).ready(function() {
   initMap();
 });
+
+function writeUserData(rating, key) {
+  let updatedRating = {};
+  updatedRating["newsFeed/" + key + "/rating"] = rating;
+
+  firebase
+    .database()
+    .ref()
+    .update(updatedRating);
+}
 
 //set distance from current location
 function setDistance(dKM) {
