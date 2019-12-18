@@ -18,12 +18,16 @@ $(function() {
   }
 });
 
+//Export list array
+let expList = [];
+
 //load and sync faviourite items
 try {
   feedRef.on("child_added", snapshot => {
     $(".fav-item-loading").css("display", "none");
     if (snapshot.val().isFavourite) {
       favItems.push(snapshot);
+      expList.push(snapshot.val());
     }
     createList(favItems);
   });
@@ -139,18 +143,36 @@ $(document).on("change", "#order-by", e => {
 
 //Send email function to export favourites list
 function sendEmail() {
-  // getting the value of the send email modal inputs
-  var receiver = document.getElementById("email-to").value;
-  var emailSubject = document.getElementById("email-subject").value;
-  var emailBody = document.getElementById("email-body").value;
+  var doc = new jsPDF();
+  var specialElementHandlers = {
+    "#fav-items": function(element, renderer) {
+      return true;
+    }
+  };
 
-  Email.send({
-    Host: "smtp.gmail.com",
-    Username: "trainbuddytest@gmail.com",
-    Password: "Buddy678",
-    To: receiver,
-    From: "trainbuddytest@gmail.com",
-    Subject: emailSubject,
-    Body: emailBody + favItems.toString
-  }).then();
+  $("#submit").click(function() {
+    doc.fromHTML($("#fav-items").html(), 15, 15, {
+      width: 170,
+      elementHandlers: specialElementHandlers
+    });
+
+    var pdfBase64 = doc.output("datauristring");
+
+    // getting the value of the send email modal inputs
+    var receiver = document.getElementById("email-to").value;
+    var emailSubject = document.getElementById("email-subject").value;
+    var emailBody = document.getElementById("email-body").value;
+    var favlist = JSON.stringify(expList);
+
+    Email.send({
+      Host: "smtp.gmail.com",
+      Username: "trainbuddytest@gmail.com",
+      Password: "Buddy678",
+      To: receiver,
+      From: "trainbuddytest@gmail.com",
+      Subject: emailSubject,
+      Body: emailBody,
+      Attachments: [{}]
+    }).then();
+  });
 }
