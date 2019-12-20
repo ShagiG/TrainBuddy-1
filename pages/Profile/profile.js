@@ -4,7 +4,7 @@ let cuser = {};
 
 $(function() {
   $("#leader-btn").click(() => {
-    window.location.href = "#";
+    window.location.href = "/pages/ARDemo/index.html";
   });
   $("#book-btn").click(() => {
     window.location.href = "/pages/BookTicket/index.html";

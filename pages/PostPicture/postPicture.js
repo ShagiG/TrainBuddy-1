@@ -56,7 +56,7 @@ function initAutocomplete() {
     capturedMoment.isFavourite = false;
     capturedMoment.author = firebase.auth().currentUser.displayName;
     capturedMoment.authorId = firebase.auth().currentUser.uid;
-    capturedMoment.authorImg = "/assets/images/profile/myavatar.jpg";
+    capturedMoment.authorImg = firebase.auth().currentUser.photoURL;
 
     myCapturedMoment.long = place ? place.geometry.location.lng() : "";
     myCapturedMoment.lat = place ? place.geometry.location.lat() : "";
