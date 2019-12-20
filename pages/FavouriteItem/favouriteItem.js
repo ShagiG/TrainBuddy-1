@@ -233,7 +233,7 @@ function writeUserData(rating, key) {
 
 //set distance from current location
 function setDistance(dKM) {
-  document.getElementById("distance").innerHTML = dKM + "KM from here";
+  document.getElementById("distance").innerHTML = dKM + "KM Away";
 }
 
 //create comment section

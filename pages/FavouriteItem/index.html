@@ -70,7 +70,6 @@
       <div data-role="header" id="header">
         <!-- Loaded through JS -->
       </div>
-      <!-- Google map -->
 
       <div class="search" id="search">
         <input
@@ -81,129 +80,100 @@
           data-role="none"
         />
       </div>
-      <div class="map-img">
-        <div id="main-img" class="favourite_item_img">
-          <div>
-            TEST
+
+      <div id="main-img" class="favourite_item_img">
+        <div class="contents">
+          <div class="district">
+            <p id="district">Kandy</p>
           </div>
-        </div>
-
-        <div id="map"></div>
-      </div>
-
-      <div class="description">
-        <label for="text-basic">DESCRIPTION</label>
-        <p id="place_description"></p>
-        <p id="distance"></p>
-        <button
-          class="prime-btn"
-          data-role="none"
-          id="travel_herebtn"
-          onclick="bookingPage()"
-        >
-          TRAVEL HERE
-        </button>
-      </div>
-
-      <label for="text-basic">RELATED PLACES</label>
-      <div class="related-places">
-        <div class="related-places-imgs">
-          <div class="related-place">
-            <img
-              style="width: 90px;
-                  height: 90px;"
-              src="../../assets/images/Background/kandy.jpg"
-            />
-          </div>
-
-          <div class="related-place">
-            <img
-              style="width: 90px;
-                  height: 90px;"
-              src="../../assets/images/Background/kandy.jpg"
-            />
-          </div>
-
-          <div class="related-place">
-            <img
-              style="width: 90px;
-                  height: 90px;"
-              src="../../assets/images/Background/kandy.jpg"
-            />
-          </div>
-
-          <div class="related-place">
-            <img
-              style="width: 90px;
-                  height: 90px;"
-              src="../../assets/images/Background/kandy.jpg"
-            />
+          <div id="place" class="place">
+            <p id="place">Dalada Maligawa</p>
           </div>
         </div>
       </div>
-      <label for="text-basic">RATE AND REVIEW</label>
-      <section class="rating-widget">
-        <!-- Rating Stars Box -->
-        <div class="rating-stars text-center">
-          <ul id="stars">
-            <li class="star" title="Poor" data-value="1">
-              <i class="fa fa-star fa-fw"></i>
-            </li>
-            <li class="star" title="Fair" data-value="2">
-              <i class="fa fa-star fa-fw"></i>
-            </li>
-            <li class="star" title="Good" data-value="3">
-              <i class="fa fa-star fa-fw"></i>
-            </li>
-            <li class="star" title="Excellent" data-value="4">
-              <i class="fa fa-star fa-fw"></i>
-            </li>
-            <li class="star" title="WOW!!!" data-value="5">
-              <i class="fa fa-star fa-fw"></i>
-            </li>
-          </ul>
-        </div>
 
-        <div class="success-box">
-          <div class="clearfix"></div>
-          <img
-            alt="tick image"
-            width="32"
-            src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0MjYuNjY3IDQyNi42NjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQyNi42NjcgNDI2LjY2NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxwYXRoIHN0eWxlPSJmaWxsOiM2QUMyNTk7IiBkPSJNMjEzLjMzMywwQzk1LjUxOCwwLDAsOTUuNTE0LDAsMjEzLjMzM3M5NS41MTgsMjEzLjMzMywyMTMuMzMzLDIxMy4zMzMgIGMxMTcuODI4LDAsMjEzLjMzMy05NS41MTQsMjEzLjMzMy0yMTMuMzMzUzMzMS4xNTcsMCwyMTMuMzMzLDB6IE0xNzQuMTk5LDMyMi45MThsLTkzLjkzNS05My45MzFsMzEuMzA5LTMxLjMwOWw2Mi42MjYsNjIuNjIyICBsMTQwLjg5NC0xNDAuODk4bDMxLjMwOSwzMS4zMDlMMTc0LjE5OSwzMjIuOTE4eiIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K"
-          />
-          <div class="text-message"></div>
-          <div class="clearfix"></div>
+      <div class="detail-container">
+        <div class="map-img">
+          <div id="map"></div>
         </div>
-      </section>
-      <textarea
-        cols="40"
-        rows="8"
-        name="comment-text"
-        id="comment-text"
-        value=""
-        placeholder="Write A Review"
-      ></textarea>
-
-      <div>
-          <a
-            data-toggle="collapse"
-            href="#collapseExample"
-            aria-expanded="false"
-            aria-controls="collapseExample"
+        <div class="description">
+          <p class="page-title">DESCRIPTION</p>
+          <p id="place_description"></p>
+          <p id="distance"></p>
+          <button
+            class="prime-btn"
+            data-role="none"
+            id="travel_herebtn"
+            onclick="bookingPage()"
           >
-            view comments
-          </a>
-        <div class="collapse" id="collapseExample">
-          <div class="card" id="comment-section">
-            
-          </div>
+            TRAVEL HERE
+          </button>
         </div>
       </div>
 
-      <div>
-        <button id="add_review" name="add_review">
-          Add Review
-        </button>
+      <div class="bottom-container">
+        <div class="related-places">
+          <p class="page-title">RELATED POSTS</p>
+        </div>
+        <div class="rating">
+          <p class="page-title">RATE AND REVIEW</p>
+          <section class="rating-widget">
+            <!-- Rating Stars Box -->
+            <div class="rating-stars text-center">
+              <ul id="stars">
+                <li class="star" title="Poor" data-value="1">
+                  <i class="fa fa-star fa-fw"></i>
+                </li>
+                <li class="star" title="Fair" data-value="2">
+                  <i class="fa fa-star fa-fw"></i>
+                </li>
+                <li class="star" title="Good" data-value="3">
+                  <i class="fa fa-star fa-fw"></i>
+                </li>
+                <li class="star" title="Excellent" data-value="4">
+                  <i class="fa fa-star fa-fw"></i>
+                </li>
+                <li class="star" title="WOW!!!" data-value="5">
+                  <i class="fa fa-star fa-fw"></i>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <textarea
+            cols="40"
+            rows="8"
+            name="comment-text"
+            id="comment-text"
+            value=""
+            placeholder="Write A Review"
+          ></textarea>
+
+          <div>
+            <a
+              data-toggle="collapse"
+              href="#collapseExample"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              View Comments
+            </a>
+            <div class="collapse" id="collapseExample">
+              <div class="card" id="comment-section"></div>
+            </div>
+          </div>
+
+          <div>
+            <button
+              class="prime-btn"
+              id="add_review"
+              name="add_review"
+              data-role="none"
+            >
+              Add Review
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- Navigation Bar -->

@@ -1,3 +1,20 @@
+$primaryOne: #0084E3
+$primaryTwo: #5B53FF
+$primaryThree: #193E58
+
+$danger: #EB5757
+$success: #75E394
+
+$gray6: #f2f2f2
+$lightBlack: rgba(51, 51, 51, 0.5)
+
+@mixin font($family, $weight, $size, $spacing)
+    font-family: $family
+    font-style: normal
+    font-weight: $weight
+    font-size: $size
+    letter-spacing: $spacing
+
 .favourite_item_img
     height: 200px
     background-size: cover !important
@@ -70,6 +87,25 @@ pre
     & p
         font-size: 14px
 
+.contents
+    padding: 130px 10px 0
+
+#district
+    @include font('Roboto', 900, 36px, 0.15em)
+    text-transform: uppercase
+    color: #ffffff
+    text-shadow: none
+    line-height: 42px
+    margin: 0
+
+#place
+    @include font('Lato', 300, 12px, 0.05em)
+    text-transform: uppercase
+    color: #ffffff
+    text-shadow: none
+    line-height: 14px
+    margin: 0
+
 #a-footer
     margin: 20px 0
 
@@ -105,6 +141,10 @@ pre
         display: inline-block
         color: #888
 
+#comment-section
+    @include font('Roboto', 700, 16px, 0.1em)
+    text-transform: uppercase
+
 .rating-stars ul
     list-style-type: none
     padding: 0
@@ -124,3 +164,40 @@ pre
 
     & > li.star.selected > i.fa
         color: #0084E3
+
+.bottom-container
+    padding: 15px
+    display: grid
+    grid-template-columns: auto
+
+.detail-container
+    display: grid
+    grid-template-columns: auto
+    .description
+        padding: 10px
+    #distance
+        @include font('Roboto', 900, 16px, 0.1em)
+
+@media screen and ( min-width: 768px)
+    .detail-container
+        display: grid
+        grid-template-columns: 60% 40%
+        .description
+            padding: 10px
+
+    .bottom-container
+        display: grid
+        grid-template-columns: 60% 40%
+
+    .favourite_item_img
+        height: 400px
+        background-size: cover !important
+
+    .contents
+        padding: 300px 20px 0
+
+    #district
+        @include font('Roboto', 900, 46px, 0.15em)
+        margin: 10px 0
+    #place
+        @include font('Lato', 300, 16px, 0.05em)
