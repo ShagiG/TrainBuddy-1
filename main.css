@@ -66,6 +66,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: none;
+  text-transform: uppercase;
 }
 
 .prime-btn {
@@ -322,6 +323,8 @@ input[type=range]:active + output {
   background-color: #193E58;
   border: none;
   padding: 20px 10px;
+  margin-top: 100px;
+  position: sticky;
   bottom: 0;
   text-transform: uppercase;
   color: #f2f2f2;
@@ -335,6 +338,12 @@ input[type=range]:active + output {
   text-decoration: none;
   list-style: none;
   padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  #footer {
+    position: absolute;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
