@@ -1,0 +1,56 @@
+body {
+  background-color: #f7f7f7;
+}
+
+img {
+  width: 100%;
+  margin: 25px 0;
+}
+
+a {
+  font-family: "Roboto", monospace;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-shadow: none;
+  letter-spacing: 0.1em;
+  color: red;
+  margin: 0 40%;
+}
+
+.wishes p {
+  font-family: "Lato", monospace;
+  font-weight: 900;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(168.06deg, #5B53FF 9.21%, #56B7FF 90.79%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+.won-txt {
+  margin: 5px 0;
+  font-family: "Roboto", monospace;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: none;
+}
+
+.points {
+  margin: 5px 0;
+  font-family: "Roboto", monospace;
+  font-weight: 900;
+  font-size: 85px;
+  text-align: center;
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(168.06deg, #5B53FF 9.21%, #56B7FF 90.79%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+/*# sourceMappingURL=congrats.css.map */

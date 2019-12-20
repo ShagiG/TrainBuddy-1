@@ -1,5 +1,6 @@
 //Global Variable
 let totalPoints = 0;
+let treasurePoints = 0;
 let cuser = {};
 
 $(function() {
@@ -23,12 +24,20 @@ $(function() {
       $("#profile-avatar").attr({ src: user.photoURL });
 
       try {
-        dbRef.ref(`myPosts/${cuser.uid}`).on("child_added", snapshot => {
+        dbRef.ref(`myPosts/${user.uid}`).on("child_added", snapshot => {
           totalPoints += parseInt(snapshot.val().score);
           $("#point-show").html(totalPoints);
           $("#my-feed").append(
             createHtmlItem(snapshot.val(), snapshot.key, cuser.displayName)
           );
+        });
+      } catch (error) {
+        console.log(error);
+      }
+      try {
+        dbRef.ref(`treasures/${user.uid}`).on("child_added", snapshot => {
+          totalPoints += 450;
+          $("#point-show").html(totalPoints);
         });
       } catch (error) {
         console.log(error);

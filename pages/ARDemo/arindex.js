@@ -12,7 +12,7 @@ function verifyMarker() {
           });
       }
     });
-    window.location.href = "/pages/Profile/index.html";
+    window.location.href = "congrats.html";
   } else {
     console.log("not visible");
   }
