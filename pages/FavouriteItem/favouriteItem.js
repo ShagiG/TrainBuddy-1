@@ -6,6 +6,7 @@ function initMap() {
   let comments_ratings = { comment: "", ratings: 2 };
   let ratingVal = 0;
   let comments = "";
+  let placeData={};
   dbRef
     .ref("newsFeed/" + getUrlParameter("favItemId"))
     .once("value")
@@ -16,10 +17,14 @@ function initMap() {
           snapshot.val().imageUrl
         })`
       );
+      placeData = snapshot.val();
       ratingVal = snapshot.val().rating;
       comments = snapshot.val().comments;
       description = snapshot.val().description;
+      //set text values 
       $("#place_description").html(description);
+      $("#district").append(placeData.district);
+      $("#place").append(placeData.landmark);
 
       myLatLng.lat = snapshot.val().lat;
       myLatLng.lng = snapshot.val().long;
@@ -139,8 +144,8 @@ function initMap() {
         dbRef
           .ref("newsFeed/" + getUrlParameter("favItemId") + "/comments")
           .on("child_added", snapshot => {
-            console.log(snapshot.val());
             $("#comment-section").append(createComment(snapshot.val()));
+           
           });
       } catch (error) {
         console.log(error);
