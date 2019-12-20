@@ -10,8 +10,16 @@ function initMap() {
     .ref("newsFeed/" + getUrlParameter("favItemId"))
     .once("value")
     .then(snapshot => {
+      $("#main-img").css(
+        "background",
+        `linear-gradient(0deg, rgba(0, 0, 0, 0.65) 35.42%, rgba(255, 255, 255, 0) 100%), url(${
+          snapshot.val().imageUrl
+        })`
+      );
       ratingVal = snapshot.val().rating;
       comments = snapshot.val().comments;
+      description = snapshot.val().description;
+      $("#place_description").html(description);
 
       myLatLng.lat = snapshot.val().lat;
       myLatLng.lng = snapshot.val().long;
@@ -101,22 +109,47 @@ function initMap() {
       $("#add_review").click(function() {
         let updatedRating = {};
         updatedRating[
-          "newsFeed/" + getUrlParameter("favItemId") + "/comments"
+          "newsFeed/" + getUrlParameter("favItemId") + "/comments/"
         ] = $("#comment-text").val();
 
         firebase
           .database()
           .ref()
-          .update(updatedRating, function(error) {
-           //if comment saved successfully it will load the comment below
-            if (error) {
-              console.log("Error", error);
-            } else {
-              $("#added-comment").text($("#comment-text").val());
-            }
+          .child("newsFeed/" + getUrlParameter("favItemId") + "/comments/")
+          .push()
+          .set({
+            comment: $("#comment-text").val()
           });
+
+        // firebase
+        //   .database()
+        //   .ref()
+        //   .push().set(updatedRating, function(error) {
+        //     //if comment saved successfully it will load the comment below
+        //     if (error) {
+        //       console.log("Error", error);
+        //     } else {
+        //       $("#added-comment").text($("#comment-text").val());
+        //     }
+        //   });
       });
+
+      //load and sync comments
+      try {
+        dbRef
+          .ref("newsFeed/" + getUrlParameter("favItemId") + "/comments")
+          .on("child_added", snapshot => {
+            console.log(snapshot.val());
+            $("#comment-section").append(createComment(snapshot.val()));
+          });
+      } catch (error) {
+        console.log(error);
+      }
     });
+}
+
+function bookingPage() {
+  window.location.href = "../BookTicket/index.html";
 }
 
 //Function for to give stars as reviews
@@ -169,9 +202,20 @@ $(document).ready(function() {
         .data("value"),
       10
     );
+    var msg = "";
+    if (ratingValue >= 1) {
+      msg = "Thanks! You rated this " + ratingValue + " stars.";
+    }
+    responseMessage(msg);
+
     writeUserData(ratingValue, getUrlParameter("favItemId"));
   });
 });
+
+function responseMessage(msg) {
+  $(".success-box").fadeIn(200);
+  $(".success-box div.text-message").html("<span>" + msg + "</span>");
+}
 
 $(document).ready(function() {
   initMap();
@@ -190,6 +234,15 @@ function writeUserData(rating, key) {
 //set distance from current location
 function setDistance(dKM) {
   document.getElementById("distance").innerHTML = dKM + "KM from here";
+}
+
+//create comment section
+function createComment(snap) {
+  let html = "";
+  html += `<div class="card-body">
+          ${snap.comment}
+          </div>`;
+  return html;
 }
 
 //get place distance from current location
