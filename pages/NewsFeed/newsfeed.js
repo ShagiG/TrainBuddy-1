@@ -5,6 +5,7 @@ let feeds = [];
 try {
   feedRef.on("child_added", snapshot => {
     feeds.push(snapshot.val());
+    $(".feed-loading").css("display", "none");
     $("#feed-items").append(createHtmlItem(snapshot.val(), snapshot.key));
     if (snapshot.val().isLiked) {
       $("#unlike-" + snapshot.key).css("display", "none");

@@ -1,5 +1,6 @@
 //Global Variable
 let totalPoints = 0;
+let cuser = {};
 
 $(function() {
   $("#leader-btn").click(() => {
@@ -11,29 +12,32 @@ $(function() {
   $("#booking-btn").click(() => {
     window.location.href = "/pages/Bookings/index.html";
   });
-});
 
-try {
-  feedRef.on("child_added", snapshot => {
-    if (snapshot.val().author === "Thivagar Mahendran") {
-      $("#my-feed").append(createHtmlItem(snapshot.val(), snapshot.key));
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      cuser.displayName = user.displayName;
+      cuser.email = user.email;
+      cuser.photoURL = user.photoURL;
+      cuser.uid = user.uid;
+
+      $("#profile-avatar").attr({ src: user.photoURL });
+
+      try {
+        dbRef.ref(`myPosts/${cuser.uid}`).on("child_added", snapshot => {
+          totalPoints += parseInt(snapshot.val().score);
+          $("#point-show").html(totalPoints);
+          $("#my-feed").append(
+            createHtmlItem(snapshot.val(), snapshot.key, cuser.displayName)
+          );
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
   });
-} catch (error) {
-  console.log(error);
-}
+});
 
-try {
-  dbRef.ref("/myPosts").on("child_added", snapshot => {
-    totalPoints += parseInt(snapshot.val().points);
-    $("#point-show").html(totalPoints);
-    console.log(snapshot.val().points);
-  });
-} catch (error) {
-  console.log(error);
-}
-
-function createHtmlItem(snap, id) {
+function createHtmlItem(snap, id, author) {
   let html = "";
   let date = new Date(snap.createdAt);
   let refinedDate =
@@ -50,7 +54,7 @@ function createHtmlItem(snap, id) {
   html += `<img class="avatar-img" src="${snap.authorImg}" />`;
   html += "</div>";
   html += '<div class="name-date">';
-  html += '<p class="full-name">' + snap.author + "</p>";
+  html += '<p class="full-name">' + author + "</p>";
   html += '<p class="date-time">' + refinedDate + " at " + refinedTime + "</p>";
   html += "</div>";
   html += "</div>";

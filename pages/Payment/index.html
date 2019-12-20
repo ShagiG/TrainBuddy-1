@@ -50,7 +50,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
 
     <script src="/js/main.js"></script>
-    <script src="/pages/Profile/payment.js"></script>
+    <script src="/pages/Payment/payment.js"></script>
   </head>
 
   <body>
@@ -62,60 +62,32 @@
 
       <div class="payment-section">
         <div class="points-section">
-          <p>USE POINTS</p>
-          <p>1450</p>
-          <button id="minus-btn" data-role="none">
-            -
-          </button>
-          <p>350</p>
-          <button id="plus-btn" data-role="none">
-            +
-          </button>
+          <div>
+            <p class="main-txt">USE POINTS</p>
+          </div>
+          <div>
+            <button id="minus-btn" data-role="none">-</button>
+          </div>
+          <div>
+            <p class="spend-points">350/1025</p>
+          </div>
+          <div>
+            <button id="plus-btn" data-role="none">+</button>
+          </div>
         </div>
 
-        <div class="payment-confirmation-section">
-          <div class="pay-conf">
-            <p>PAYMENT CONFIRMATION</p>
-          </div>
-          <div class="destination">
-              <p>10.40 AM</p>
-              <p>COLOMBO FORT</p>
-              <p>02.55 PM</p>
-              <p>GALLE RAILWAY</p>
-          </div>
-          <div class="ticket-class">
-              <p>SECOND CLASS</p>
-              <p>LKR 460.0</p>
-              <p>SEATS</p>
-              <p>05</p>
-          </div>
+        <div class="confirmation-section"></div>
 
-          <div class="ticket-summary">
-              <p>5 X LKR 460.0</p>  
-              <p>- LKR 350</p>
-          </div>
-
-          <div class="total">
-              <p name="item_value">LKR 1950.00</p>
-          </div>
-        
-        </div>
-
-        <div class="payment-method-section">
-            <input type="radio" name="payment-method" value="visa"> Visa<br>
-            <input type="radio" name="payment-method" value="paypal"> PayPal<br>
-            <input type="radio" name="payment-method" value="stripe"> Stripe
-        </div>
+        <div class="payment-method-section"></div>
 
         <div class="payment-buttons">
-            <button id="paynow-btn" >
-                PAY NOW
-              </button>
-            <button id="cancel-btn">
-                CANCEL
-              </button>
+          <button id="paynow-btn">
+            PAY NOW
+          </button>
+          <button id="cancel-btn">
+            CANCEL
+          </button>
         </div>
-
       </div>
       <!-- Navigation Bar -->
       <div id="navigation-bar" class="ui-grid-d navigation-bar">

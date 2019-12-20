@@ -59,102 +59,87 @@
       <div data-role="header" id="header">
         <!-- Loaded through JS -->
       </div>
-      <div>
-          <div>
-                <label>basic info</label>
+
+      <div class="settings-section">
+        <div class="main-section">
+          <div class="avatar-img">
+            <img
+              src="/assets/images/profile/myavatar.jpg"
+              id="profile-avatar"
+              class="avatar-img"
+            />
           </div>
-          <div>
-              <img style="width: 90px; height: 90px;" src="/assets/images/Background/Galle.jpg" alt="">
-              <a href="">Change Profile Picture</a>
+          <div class="full-name">
+            <p>Thivagar Mahendran</p>
           </div>
-            
-      </div>
-      <div>
-        <div>
-          <label>firstname</label>
+
+          <label for="Name" class="input-label">First Name </label>
           <input
+            id="firstname-input"
             class="text-input"
             type="text"
-            name="firstname"
             data-role="none"
-            placeholder="Firstname"
+            placeholder="Name"
           />
-        </div>
-
-        <div>
-          <label>lastname</label>
+          <label for="Name" class="input-label">Last Name </label>
           <input
+            id="lastname-input"
             class="text-input"
             type="text"
-            name="lastname"
             data-role="none"
-            placeholder="Lastname"
+            placeholder="Name"
+          />
+          <label for="dob" class="input-label">DOB </label>
+          <input
+            id="dob"
+            class="text-input"
+            type="date"
+            name="date"
+            data-role="none"
+            placeholder="DOB"
           />
         </div>
-
-        <div>
-          <label>username</label>
+        <div class="password-section">
+          <label for="password" class="input-label">Old Password </label>
           <input
+            id="old-pw-input"
             class="text-input"
             type="text"
-            name="username"
+            name="password"
             data-role="none"
-            placeholder="Username"
+            placeholder="Password"
           />
-        </div>
-
-        <div>
-          <label>date of birth</label>
+          <label for="password" class="input-label">New Password </label>
           <input
+            id="new-pw-input"
             class="text-input"
             type="text"
-            name="dob"
+            name="password"
             data-role="none"
-            placeholder="Date of Birth"
+            placeholder="Password"
           />
-        </div>
-      </div>
-      <div>
-        <div>
-          <label>old password</label>
+          <label for="password" class="input-label">Confirm Password </label>
           <input
+            id="conf-pw-input"
             class="text-input"
-            type="password"
-            name="oldpassword"
+            type="text"
+            name="password"
             data-role="none"
-            placeholder="Old password"
+            placeholder="Password"
           />
-        </div>
 
-        <div>
-          <label>new password</label>
-          <input
-            class="text-input"
-            type="password"
-            name="oldpassword"
-            data-role="none"
-            placeholder="New password"
-          />
+          <button id="change-btn" class="prime-btn" data-role="none">
+            Change Password
+          </button>
         </div>
-        <div>
-          <label>confirm password</label>
-          <input
-            class="text-input"
-            type="password"
-            name="oldpassword"
-            data-role="none"
-            placeholder="Confirm password"
-          />
+        <div class="btn-section">
+          <button id="change-btn" class="navigate-btn" data-role="none">
+            Add Payment
+          </button>
+          <button id="logout-btn" class="cancel-btn" data-role="none">
+            Logout
+          </button>
         </div>
-        <div>
-          <button>CHANGE PASSWORD</button>
-          <a href="forgotpassword.html" class="page-link" id="forgotpw-link">Forgot Password?</a>
-        </div>
-      </div>
-      <div>
-            <button class="prime-btn" data-role="none">PAYMENT METHODS</button>
-            <button class="cancel-btn" data-role="none">LOGOUT</button>
-
       </div>
 
       <!-- Navigation Bar -->
@@ -165,61 +150,6 @@
       <!-- footer -->
       <div data-role="footer" id="footer">
         <!-- Footer added through JS -->
-      </div>
-
-      <!-- email dialog-->
-      <div
-        class="modal fade"
-        id="emailModal"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-body">
-              <label for="receiver-mail" class="input-label"
-                >RECEIVER'S MAIL
-              </label>
-              <input
-                class="text-input"
-                type="text"
-                name="receiver-mail"
-                data-role="none"
-                placeholder="Email"
-              />
-
-              <label for="email-subject" class="input-label">SUBJECT </label>
-              <input
-                class="text-input"
-                type="text"
-                name="subject"
-                data-role="none"
-                placeholder="Subject"
-              />
-
-              <label for="email-msg" class="input-label"></label>
-              <textarea
-                style="height: 100px;"
-                class="text-input"
-                name="email-msg"
-                data-role="none"
-                placeholder="You can tell something..."
-              ></textarea>
-              <button
-                class="prime-btn submit-btn"
-                type="submit"
-                data-role="none"
-              >
-                send email
-              </button>
-              <button class="cancel-btn" type="submit" data-role="none">
-                CANCEL
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </body>

@@ -7,10 +7,21 @@
     <title>Document</title>
   </head>
 
+  <!-- Jquery -->
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+
   <!-- AR.js by @jerome_etienne - github: https://github.com/jeromeetienne/ar.js - info: https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf -->
   <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
-  <script src="/pages/ARDemo/main.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/pages/ARDemo/arindex.js"></script>
   <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs="sourceType: webcam;">
       <a-entity rotation="0 0 0">
@@ -23,10 +34,5 @@
       <!-- <a-marker-camera preset="hiro"></a-marker-camera> -->
       <a-marker emitevents="true" preset="hiro" id="amarker"></a-marker>
     </a-scene>
-
-    <!-- Navigation Bar -->
-    <div id="navigation-bar" class="ui-grid-d navigation-bar">
-      <!-- Loaded through JS -->
-    </div>
   </body>
 </html>

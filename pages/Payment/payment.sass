@@ -15,38 +15,37 @@ $lightBlack: rgba(51, 51, 51, 0.5)
     font-size: $size
     letter-spacing: $spacing
 
-.points-section
+.payment-section
     display: grid
     grid-template-columns: auto
+    padding: 15px
     margin-bottom: 60px
-    .main-section
-        padding: 20px
-    .avatar-img
-        img
-            margin: 10px 0
-            max-width: 40%
-            margin: auto
-            display: block
-    .full-name
-        p
-            @include font('Roboto', 500, 18px, 0.15em)
-            line-height: 21px
-            text-transform: uppercase
-            text-align: center
-            margin: 20px 0
-    .tot-points
-        margin: 20px 0
-    .points
-        display: grid
-        grid-template-columns: auto auto
-        background: linear-gradient(125.17deg, #5B53FF 9.21%, #56B7FF 90.79%)
-        border-radius: 35px
-        margin: 0 35%
-        padding: 5px 10px
-        p
-            @include font('Roboto', 400, 18px, 0.15em)
-            margin: 0
-            color: #ffffff
+    p.main-txt
+        @include font('Roboto', 900, 13px, 0.15em)
+        color: $primaryTwo
+.points-section
+    border: 0.5px solid #00000085
+    padding: 15px
+    border-radius: 10px
+    display: grid
+    grid-template-columns: 45% 15% 25% 15%
+    .send-points
+        @include font('Lato', 600, 10px,0.15em)
+        text-align: center
+    button
+        font-weight: 900
+        font-size: 15px
+        line-height: 5px
+        margin: auto
+        display: block
+        height: 35px
+        width: 35px
+        background: transparent
+        border-radius: 100%
+    #minus-btn
+        border: 3px solid $danger
+    #plus-btn
+        border: 3px solid $success
 
 .payment-confirmation
     width: 100%

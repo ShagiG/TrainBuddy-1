@@ -22,9 +22,10 @@ function writeUserData() {
     .push()
     .set(capturedMoment);
   dbRef
-    .ref("myPosts")
+    .ref(`myPosts/${firebase.auth().currentUser.uid}`)
     .push()
     .set(myCapturedMoment);
+  window.location.href = "/pages/NewsFeed/index.html";
 }
 
 //to get autocomplete places
@@ -53,7 +54,8 @@ function initAutocomplete() {
     capturedMoment.likes = 0;
     capturedMoment.isLiked = false;
     capturedMoment.isFavourite = false;
-    capturedMoment.author = "Thivagar Mahendran";
+    capturedMoment.author = firebase.auth().currentUser.displayName;
+    capturedMoment.authorId = firebase.auth().currentUser.uid;
     capturedMoment.authorImg = "/assets/images/profile/myavatar.jpg";
 
     myCapturedMoment.long = place ? place.geometry.location.lng() : "";
@@ -66,7 +68,8 @@ function initAutocomplete() {
     myCapturedMoment.likes = 0;
     myCapturedMoment.score = 2;
     myCapturedMoment.isFavourite = false;
-    myCapturedMoment.authorImg = "/assets/images/profile/myavatar.jpg";
+    myCapturedMoment.author = firebase.auth().currentUser.displayName;
+    myCapturedMoment.authorImg = firebase.auth().currentUser.photoURL;
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position) {

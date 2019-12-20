@@ -63,7 +63,7 @@
       <div class="search" id="search">
         <input
           class="search-bar"
-          id="search-bar"
+          id="feed-search-bar"
           type="search"
           placeholder="Search for Places"
           data-role="none"
@@ -74,10 +74,44 @@
       <div
         data-role="listview"
         data-filter="true"
-        data-input="#search-bar"
+        data-input="#feed-search-bar"
         id="feed-items"
         class="feed-items"
-      ></div>
+      >
+        <div class="feed-loading">
+          <div class="head-loading">
+            <div class="load"></div>
+          </div>
+          <div class="body-loading">
+            <div class="load"></div>
+          </div>
+          <div class="bottom-loading">
+            <div class="load"></div>
+          </div>
+        </div>
+        <div class="feed-loading">
+          <div class="head-loading">
+            <div class="load"></div>
+          </div>
+          <div class="body-loading">
+            <div class="load"></div>
+          </div>
+          <div class="bottom-loading">
+            <div class="load"></div>
+          </div>
+        </div>
+        <div class="feed-loading">
+          <div class="head-loading">
+            <div class="load"></div>
+          </div>
+          <div class="body-loading">
+            <div class="load"></div>
+          </div>
+          <div class="bottom-loading">
+            <div class="load"></div>
+          </div>
+        </div>
+      </div>
 
       <!-- Navigation Bar -->
       <div id="navigation-bar" class="ui-grid-d navigation-bar">

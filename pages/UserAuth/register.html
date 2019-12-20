@@ -30,68 +30,118 @@
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-storage.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/pages/UserAuth//userAuth.js"></script>
   </head>
 
   <body>
     <div data-role="page" id="signup-page">
-        <!-- header -->
-        <div data-role="header" id="header">
-          <!-- Loaded through JS -->
+      <!-- header -->
+      <div data-role="header" id="header">
+        <!-- Loaded through JS -->
+      </div>
+
+      <!--Register form-->
+      <div class="form-content">
+        <div class="auth-form">
+          <label for="name" class="input-label">Full Name</label>
+          <input
+            id="full-name"
+            class="text-input"
+            type="text"
+            name="name"
+            data-role="none"
+            placeholder="Name"
+          />
+
+          <label for="gender" class="input-label">Gender</label>
+          <select id="gender" class="text-input" data-role="none">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <label for="dob" class="input-label">DOB </label>
+          <input
+            id="dob"
+            class="text-input"
+            type="date"
+            name="date"
+            data-role="none"
+            placeholder="DOB"
+          />
+
+          <label for="email" class="input-label">EMAIL </label>
+          <input
+            id="email-input"
+            class="text-input"
+            type="email"
+            name="email"
+            data-role="none"
+            placeholder="Email"
+          />
+
+          <label for="password" class="input-label">PASSWORD </label>
+          <input
+            id="password-input"
+            class="text-input"
+            type="password"
+            name="password"
+            data-role="none"
+            placeholder="Password"
+          />
+
+          <label for="confirmpassword" class="input-label"
+            >CONFRIM PASSWORD
+          </label>
+          <input
+            id="conf-pw"
+            class="text-input"
+            type="confirmpassword"
+            name="confirmpassword"
+            data-role="none"
+            placeholder="Password"
+          />
+          <label for="file-upload" class="custom-file-upload">
+            <i class="fa fa-cloud-upload"></i> Upload Image
+          </label>
+          <input
+            class="file-input"
+            id="file-upload"
+            name="upload_cont_img"
+            type="file"
+            data-role="none"
+          />
+          <button id="signup-btn" class="prime-btn" data-role="none">
+            SIGNUP
+          </button>
+
+          <div class="link-container">
+            <p>
+              <a
+                data-ajax="false"
+                href="/pages/UserAuth/login.html"
+                data-role="none"
+                >Already Have An Account?
+              </a>
+            </p>
+          </div>
         </div>
+      </div>
 
-        <!--Register form-->
-        <div class="form-content">
-            <form method="get" action="">
-              <fieldset class="ui-field-contain">
-              <div class="auth-form">
-                <label for="name" class="input-label">NAME </label>
-                <input class="text-input" type="text" name="name" data-role="none" placeholder="Name"/>
-
-                <label for="username" class="input-label">USERNAME </label>
-                <input class="text-input" type="text" name="username" data-role="none" placeholder="Username"/>
-
-                <label for="gender" class="input-label">GENDER </label>
-                <select class="text-input" data-native-menu="false">
-                          <option value="Male">Male</option>
-                          <option value="Female">Female</option>
-                          <option value="Other">Other</option>
-                      </select>
-
-                <label for="dob" class="input-label">DOB </label>
-                <input class="text-input" type="date" name="date" data-role="none" placeholder="DOB"/>
-
-                <label for="email" class="input-label">EMAIL </label>
-                <input class="text-input" type="email" name="email" data-role="none" placeholder="Email"/>
-               
-                <label for="password" class="input-label">PASSWORD </label>
-                <input class="text-input" type="password" name="password" data-role="none" placeholder="Password"/>
-
-                <label for="confirmpassword" class="input-label">CONFRIM PASSWORD </label>
-                <input class="text-input" type="confirmpassword" name="confirmpassword" data-role="none" placeholder="Password"/>
-              </div>
-              </fieldset>
-
-              <div class="ui-field-contian button-container">
-                <button class="ui-btn signup-btn" type="submit">SIGNUP</button>
-              </div>
-
-              <div class="link-container">
-                <a href="login.html" class="page-link">Already Have An Account? </a>
-              </div>
-
-            </form>
-        </div>
-
-
-
-        <!-- footer -->
-        <div data-role="footer" id="footer">
+      <!-- footer -->
+      <div data-role="footer" id="footer">
         <!-- Footer added through JS -->
-        </div>
-
+      </div>
+      <div
+        data-role="popup"
+        id="positionWindow"
+        class="ui-content"
+        data-theme="a"
+      >
+        <p>I am positioned to the window.</p>
+      </div>
     </div>
-
-
   </body>
+</html>

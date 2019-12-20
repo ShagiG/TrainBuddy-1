@@ -13,17 +13,30 @@ firebase.initializeApp(firebaseConfig);
 
 //create firebase database reference
 let dbRef = firebase.database();
+//Reference to the newsfeed
 let feedRef = dbRef.ref("newsFeed");
 //Reference to the booking list
 let bookingRef = dbRef.ref("bookings");
 
-var autocomplete, place;
-
+//Map Variables
+let autocomplete, place;
+let currentUser = {};
 //Load the components when document is ready
 $(function() {
   $("#footer").load("/components/footer.html");
   $("#navigation-bar").load("/components/navigationBar.html");
   $("#header").load("/components/header.html");
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      currentUser.displayName = user.displayName;
+      currentUser.email = user.email;
+      currentUser.photoURL = user.photoURL;
+      currentUser.uid = user.uid;
+
+      $("#avatar-img").attr({ src: user.photoURL });
+    }
+  });
 });
 
 //Page Navigation
