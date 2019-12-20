@@ -116,5 +116,14 @@ $lightBlack: rgba(51, 51, 51, 0.5)
         padding: 15px
         display: grid
         grid-template-columns: 50% 50%
+        grid-template-rows: 200px 200px
         .fav-item, .fav-item-loading
             margin: 5px
+            height: auto
+            div
+                height: 145px
+                .district
+                    @include font('Roboto', 900, 42px, 0.15em)
+                    line-height: 55px
+                .place
+                    @include font('Lato', 300, 14px, 0.05em)

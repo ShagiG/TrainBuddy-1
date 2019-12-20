@@ -1,0 +1,45 @@
+$primaryOne: #0084E3
+$primaryTwo: #5B53FF
+$primaryThree: #193E58
+
+$danger: #EB5757
+$success: #75E394
+
+$gray6: #f2f2f2
+$lightBlack: rgba(51, 51, 51, 0.5)
+
+@mixin font($family, $weight, $size, $spacing)
+    font-family: $family
+    font-style: normal
+    font-weight: $weight
+    font-size: $size
+    letter-spacing: $spacing
+
+.main-contents
+    display: grid
+    grid-template-columns: auto
+    p
+        margin: 0 0 5px
+        @include font('Roboto', 500, 14px, 0.15em)
+
+.add-payment
+    padding: 15px
+    border: 0.15px solid #3434348a
+
+.payment-methods
+    padding: 15px
+    border: 0.15px solid #3434348a
+
+.card-grid
+    border: 0.5px solid #343434
+    border-radius: 10px
+    padding: 10px 15px
+    margin: 10px 0
+
+@media screen and ( min-width: 768px)
+    .main-contents
+        padding: 10px
+        display: grid
+        grid-template-columns: 50% 50%
+        .add-payment, .payment-methods
+            margin: 5px

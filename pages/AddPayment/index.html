@@ -20,7 +20,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../style/main.css" />
-    <link rel="stylesheet" href="faviourites.css" />
+    <link rel="stylesheet" href="/pages/AddPayment/addpayment.css" />
 
     <!-- Bootstrap -->
     <script
@@ -63,125 +63,95 @@
       <div data-role="header" id="header">
         <!-- Loaded through JS -->
       </div>
-      <div class="payment-methods">
-        <label for="payment-methods" class="input-label"
-          >PAYMENT METHODS
-        </label>
-        <div>
-          <input
-            class="text-input"
-            type="number"
-            name="subject"
-            id="credit-debit-card-m"
-            data-role="none"
-            placeholder="**** 4852"
-          />
-        </div>
 
-        <div>
-          <input
-            class="text-input"
-            type="text"
-            name="subject"
-            id="paypal-m"
-            data-role="none"
-            placeholder="Paypal"
-          />
-        </div>
-
-        <div>
-          <input
-            class="text-input"
-            type="text"
-            name="subject"
-            id="stripe-m"
-            data-role="none"
-            placeholder="Stripe"
-          />
-        </div>
-      </div>
-      <div class="add-payment">
-        <label for="payment-methods" class="input-label"
-          >Add New Payment
-        </label>
-
-        <div>
-          <input
-            class="text-input"
-            type="number"
-            name="subject"
-            id="card-no"
-            data-role="none"
-            placeholder="Card Number"
-          />
-        </div>
-
-        <div class="ui-grid-a">
-          <div class="ui-block-a left-sec">
-            <label class="input-label">Exp. Date</label>
-            <input class="text-input" type="date" data-role="none" />
+      <div class="main-contents">
+        <div class="payment-methods">
+          <p class="page-title">Payment Methods</p>
+          <div class="ui-grid-b card-grid">
+            <div class="ui-block-a"><p>**** 4258</p></div>
+            <div class="ui-block-b">
+              <p style="text-align: center;">05/2025</p>
+            </div>
+            <div class="ui-block-c">
+              <img style="float: right;" src="/assets/icons/trash-2.svg" />
+            </div>
           </div>
-          <div class="ui-block-b right-sec">
-            <label class="input-label">CVV</label>
-            <input class="text-input" type="number" data-role="none" />
+          <div class="ui-grid-b card-grid">
+            <div class="ui-block-a"><p>**** 4258</p></div>
+            <div class="ui-block-b">
+              <p style="text-align: center;">05/2025</p>
+            </div>
+            <div class="ui-block-c">
+              <img style="float: right;" src="/assets/icons/trash-2.svg" />
+            </div>
+          </div>
+          <div class="ui-grid-b card-grid">
+            <div class="ui-block-a"><p>**** 4258</p></div>
+            <div class="ui-block-b">
+              <p style="text-align: center;">05/2025</p>
+            </div>
+            <div class="ui-block-c">
+              <img style="float: right;" src="/assets/icons/trash-2.svg" />
+            </div>
           </div>
         </div>
 
-        <div>
-          <label for="countries" class="input-label">Country </label>
-          <select name="countries" data-role="none">
-            <option value="Srilanka">Sri lanka</option>
-            <option value="China">China</option>
-            <option value="USA">USA</option>
-            <option value="Japan">Japan</option>
-            <option value="Korea">Korea</option>
-            <option value="Sweden">Sweden</option>
-            <option value="India">India</option>
-          </select>
-
-          <input
-            class="text-input"
-            type="text"
-            name="subject"
-            id="country"
-            data-role="none"
-            placeholder="Country"
-          />
-        </div>
-
-        <div>
-          <label for="payment-methods" class="input-label">ZIPCODE </label>
-          <input
-            class="text-input"
-            type="text"
-            name="subject"
-            id="zip-code"
-            data-role="none"
-            placeholder="Zip Code"
-          />
-        </div>
-        <div>
-          <button
-            class="prime-btn submit-btn"
-            id="submit"
-            type="submit"
-            data-role="none"
-          >
+        <div class="add-payment">
+          <p class="page-title">Add Card</p>
+          <div>
+            <label class="input-label">Card Number</label>
+            <input
+              class="text-input"
+              type="number"
+              name="subject"
+              id="card-no"
+              data-role="none"
+              placeholder="Card Number"
+            />
+          </div>
+          <div class="ui-grid-a">
+            <div class="ui-block-a left-sec">
+              <label class="input-label">Exp. Date</label>
+              <input class="text-input" type="date" data-role="none" />
+            </div>
+            <div class="ui-block-b right-sec">
+              <label class="input-label">CVV</label>
+              <input class="text-input" type="number" data-role="none" />
+            </div>
+          </div>
+          <div>
+            <label for="countries" class="input-label">Country </label>
+            <input
+              class="text-input"
+              type="text"
+              name="subject"
+              id="country"
+              data-role="none"
+              placeholder="Country"
+            />
+          </div>
+          <div>
+            <label for="payment-methods" class="input-label">ZIPCODE </label>
+            <input
+              class="text-input"
+              type="text"
+              name="subject"
+              id="zip-code"
+              data-role="none"
+              placeholder="Zip Code"
+            />
+          </div>
+          <button class="prime-btn submit-btn" id="submit" data-role="none">
             ADD CARD
+          </button>
+          <button class="cancel-btn" id="submit" type="submit" data-role="none">
+            GO BACK / CONTINUE
           </button>
         </div>
       </div>
-      <div>
-        <button
-          class="prime-btn"
-          id="submit"
-          type="submit"
-          data-role="none"
-        >
-          GO BACK / CONTINUE
-        </button>
-      </div>
-      <div class="add-new-payment"></div>
+
+      <div></div>
+
       <!-- Navigation Bar -->
       <div id="navigation-bar" class="ui-grid-d navigation-bar">
         <!-- Loaded through JS -->

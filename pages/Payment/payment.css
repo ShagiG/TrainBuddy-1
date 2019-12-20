@@ -1,7 +1,7 @@
 .payment-section {
   display: grid;
   grid-template-columns: auto;
-  padding: 15px;
+  padding: 15px 10px;
   margin-bottom: 60px;
 }
 .payment-section p.main-txt {
@@ -14,89 +14,126 @@
 }
 
 .points-section {
-  border: 0.5px solid #00000085;
-  padding: 15px;
+  border: 0.5px solid rgba(51, 51, 51, 0.25);
+  padding: 10px 15px;
   border-radius: 10px;
-  display: grid;
-  grid-template-columns: 45% 15% 25% 15%;
 }
-.points-section .send-points {
+.points-section p.spend-points {
   font-family: "Lato";
   font-style: normal;
-  font-weight: 600;
-  font-size: 10px;
+  font-weight: 900;
+  font-size: 16px;
   letter-spacing: 0.15em;
   text-align: center;
-}
-.points-section button {
-  font-weight: 900;
-  font-size: 15px;
-  line-height: 5px;
-  margin: auto;
-  display: block;
-  height: 35px;
-  width: 35px;
-  background: transparent;
-  border-radius: 100%;
-}
-.points-section #minus-btn {
-  border: 3px solid #EB5757;
-}
-.points-section #plus-btn {
-  border: 3px solid #75E394;
+  margin: 0;
 }
 
-.payment-confirmation {
-  width: 100%;
-  color: #ffffff;
+.confirmation-section {
+  background-color: #F7F7F7;
+}
+.confirmation-section img {
+  margin: auto;
+  display: block;
+}
+.confirmation-section p {
+  margin: 0;
   text-shadow: none;
 }
-.payment-confirmation .feed {
-  margin-bottom: 15px;
-  height: auto;
-  border: 0.4px solid #0000004d;
+.confirmation-section hr {
+  margin: 5px 0;
 }
-.payment-confirmation .feed .head {
-  display: grid;
-  grid-template-columns: 15% 85%;
-  padding: 15px 10px;
+.confirmation-section .tick-info {
+  margin-bottom: 35px;
 }
-.payment-confirmation .feed .body-cont {
-  padding: 0 10px 15px;
-}
-.payment-confirmation p {
-  margin: 0;
-  text-align: left;
-}
-.payment-confirmation .full-name {
+.confirmation-section .type {
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.05em;
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: #5B53FF;
   text-transform: uppercase;
-  color: #000000;
 }
-.payment-confirmation .date-time, .payment-confirmation .location {
+.confirmation-section .time-txt {
   font-family: "Lato";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.confirmation-section .class-txt {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
   font-size: 12px;
   letter-spacing: 0.05em;
-  color: #9597A1;
+  text-transform: uppercase;
 }
-.payment-confirmation .caption {
+.confirmation-section .place-txt {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.confirmation-section .one-price {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.confirmation-section .price {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
   letter-spacing: 0.05em;
-  color: #000;
+  text-transform: uppercase;
+  text-align: right;
+  color: #0084E3;
+}
+
+.pay-checkout {
+  border: 0.5px solid rgba(51, 51, 51, 0.25);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.payment-methods {
+  border: 0.5px solid rgba(51, 51, 51, 0.25);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.card-grid {
+  border: 0.5px solid #343434;
+  border-radius: 10px;
+  padding: 10px 15px;
   margin: 10px 0;
 }
-.payment-confirmation img {
+.card-grid img {
   max-width: 100%;
-  max-height: 100%;
+}
+.card-grid p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+.card-grid .det-txt {
+  color: #5B53FF;
+}
+
+@media screen and (min-width: 768px) {
+  .payment-section {
+    padding: 20px 150px;
+  }
 }
 
 /*# sourceMappingURL=payment.css.map */

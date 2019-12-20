@@ -61,32 +61,138 @@
       </div>
 
       <div class="payment-section">
-        <div class="points-section">
-          <div>
+        <div class="ui-grid-a points-section">
+          <div class="ui-block-a">
             <p class="main-txt">USE POINTS</p>
           </div>
-          <div>
-            <button id="minus-btn" data-role="none">-</button>
-          </div>
-          <div>
-            <p class="spend-points">350/1025</p>
-          </div>
-          <div>
-            <button id="plus-btn" data-role="none">+</button>
+          <div class="ui-block-b">
+            <div class="ui-grid-b">
+              <div class="ui-block-a">
+                <img
+                  style="float: left;"
+                  src="/assets/icons/minus-circle.svg"
+                />
+              </div>
+              <div class="ui-block-b">
+                <p class="spend-points">350</p>
+              </div>
+              <div class="ui-block-c">
+                <img
+                  style="float: right;"
+                  src="/assets/icons/plus-circle.svg"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="confirmation-section"></div>
+        <div class="confirmation-section">
+          <div class="pay-checkout">
+            <div class="ui-grid-a type-badge">
+              <p class="type">Payment Confirmation</p>
+            </div>
+            <hr />
+            <div class="ui-grid-b tick-info">
+              <div class="ui-block-a">
+                <p class="time-txt">10.40AM</p>
+                <p class="place-txt">Colombo</p>
+              </div>
+              <div class="ui-block-b arrow">
+                <img src="/assets/icons/arrow-right.svg" />
+              </div>
+              <div class="ui-block-c" style="text-align: right;">
+                <p class="time-txt">02.40PM</p>
+                <p class="place-txt">Kandy</p>
+              </div>
+            </div>
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <p class="class-txt">Second Class</p>
+              </div>
+              <div class="ui-block-b" style="text-align: right;">
+                <p class="one-price">LKR350</p>
+              </div>
+            </div>
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <p class="class-txt">Seats</p>
+              </div>
+              <div class="ui-block-b" style="text-align: right;">
+                <p class="one-price">x5</p>
+              </div>
+            </div>
+            <hr />
+            <div class="ui-grid-a">
+              <p class="price">LKR350.00</p>
+            </div>
+          </div>
+        </div>
 
-        <div class="payment-method-section"></div>
+        <div class="payment-method-section">
+          <div class="payment-methods">
+            <p class="page-title">Payment Methods</p>
+            <form>
+              <div class="ui-grid-b card-grid">
+                <div class="ui-block-a">
+                  <input
+                    name="pay"
+                    value="card"
+                    class="radio"
+                    type="radio"
+                    data-role="none"
+                  />
+                </div>
+                <div class="ui-block-b">
+                  <p style="text-align: center;">**** 4258</p>
+                </div>
+                <div class="ui-block-c">
+                  <p class="det-txt" style="text-align: right;">05/2025</p>
+                </div>
+              </div>
 
-        <div class="payment-buttons">
-          <button id="paynow-btn">
-            PAY NOW
-          </button>
-          <button id="cancel-btn">
-            CANCEL
-          </button>
+              <div class="ui-grid-b card-grid">
+                <div class="ui-block-a">
+                  <input
+                    name="pay"
+                    value="card"
+                    class="radio"
+                    type="radio"
+                    data-role="none"
+                  />
+                </div>
+                <div class="ui-block-b">
+                  <p style="text-align: center;">**** 4258</p>
+                </div>
+                <div class="ui-block-c">
+                  <p class="det-txt" style="text-align: right;">05/2025</p>
+                </div>
+              </div>
+
+              <div class="ui-grid-b card-grid">
+                <div class="ui-block-a">
+                  <input
+                    name="pay"
+                    value="stripe"
+                    class="radio"
+                    type="radio"
+                    data-role="none"
+                  />
+                </div>
+                <div class="ui-block-b">
+                  <img src="/assets/icons/stripe.svg" />
+                </div>
+                <div class="ui-block-c">
+                  <p class="det-txt" style="text-align: right;">STRIPE</p>
+                </div>
+              </div>
+            </form>
+            <button class="prime-btn" id="paynow-btn" data-role="none">
+              PAY NOW
+            </button>
+            <button class="cancel-btn" id="cancel-btn" data-role="none">
+              CANCEL
+            </button>
+          </div>
         </div>
       </div>
       <!-- Navigation Bar -->

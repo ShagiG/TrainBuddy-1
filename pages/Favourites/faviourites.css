@@ -138,9 +138,29 @@
     padding: 15px;
     display: grid;
     grid-template-columns: 50% 50%;
+    grid-template-rows: 200px 200px;
   }
   .fav-items .fav-item, .fav-items .fav-item-loading {
     margin: 5px;
+    height: auto;
+  }
+  .fav-items .fav-item div, .fav-items .fav-item-loading div {
+    height: 145px;
+  }
+  .fav-items .fav-item div .district, .fav-items .fav-item-loading div .district {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 42px;
+    letter-spacing: 0.15em;
+    line-height: 55px;
+  }
+  .fav-items .fav-item div .place, .fav-items .fav-item-loading div .place {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.05em;
   }
 }
 

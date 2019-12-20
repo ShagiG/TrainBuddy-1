@@ -14,6 +14,13 @@ try {
       $("#unlike-" + snapshot.key).css("display", "block");
       $("#liked-" + snapshot.key).css("display", "none");
     }
+    if (snapshot.val().isFavourite) {
+      $("#unstar-" + snapshot.key).css("display", "none");
+      $("#starred-" + snapshot.key).css("display", "block");
+    } else {
+      $("#unstar-" + snapshot.key).css("display", "block");
+      $("#starred-" + snapshot.key).css("display", "none");
+    }
   });
 } catch (error) {
   console.log(error);
@@ -55,6 +62,37 @@ function likeItem(key) {
         .update(updatedVal);
 
       $(`#likes-${key}`).html(updLikes);
+    });
+}
+
+function favItem(key) {
+  let updatedVal = {};
+  let isFav;
+
+  dbRef
+    .ref("/newsFeed/" + key)
+    .once("value")
+    .then(snap => {
+      isFav = snap.val().isFavourite;
+
+      if (!isFav) {
+        $("#unstar-" + key).css("display", "none");
+        $("#starred-" + key).css("display", "block");
+
+        console.log(isFav);
+        updatedVal["newsFeed/" + key + "/isFavourite"] = true;
+      } else {
+        $("#unstar-" + key).css("display", "block");
+        $("#starred-" + key).css("display", "none");
+
+        console.log(isFav);
+        updatedVal["newsFeed/" + key + "/isFavourite"] = false;
+      }
+
+      let success = firebase
+        .database()
+        .ref()
+        .update(updatedVal);
     });
 }
 
@@ -121,9 +159,9 @@ function createHtmlItem(snap, id) {
   html += "</button>";
   html += "</div>";
   html += '<div class="fav-btn-cont">';
-  html += '<button class="fav-btn" data-role="none" style="float: right;">';
-  html += '<img class="unstar" src="/assets/icons/heart.svg" />';
-  html += '<img class="starred" src="/assets/icons/Active/heart.svg" />';
+  html += `<button class="fav-btn" data-role="none" style="float: right;" onClick="favItem('${id}')">`;
+  html += `<img id="unstar-${id}" class="unstar" src="/assets/icons/heart.svg" />`;
+  html += `<img id="starred-${id}" class="starred" src="/assets/icons/Active/heart.svg" />`;
   html += "</button>";
   html += "</div>";
   html += "</div>";
