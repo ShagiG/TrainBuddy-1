@@ -57,6 +57,7 @@ $(function() {
 
 //Send email function to export favourites list
 function sendEmail() {
+
     // getting the value of the send email modal inputs
     var receiver = document.getElementById("email-to").value;
     Email.send({
