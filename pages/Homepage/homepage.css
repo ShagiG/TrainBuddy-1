@@ -152,8 +152,44 @@
   background-color: #0084e325;
 }
 
+.team-members {
+  text-shadow: none;
+}
+
+.team-info {
+  background-color: #63acb921;
+  border-top: 0.5px solid #0244503b;
+}
+
 .member {
-  width: 50%;
+  width: 50% !important;
+  align-content: center;
+}
+
+.members-img {
+  margin: 10px 50px;
+}
+
+.member-description {
+  text-align: center;
+  color: #343434;
+}
+
+.member-name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.member-info {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  letter-spacing: 0.05em;
 }
 
 /*# sourceMappingURL=homepage.css.map */
