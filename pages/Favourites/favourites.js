@@ -7,6 +7,10 @@ var locationInfo = {
 };
 
 $(function() {
+  $(".floating-btn").click(function(){
+    $("#success-body").css("display", "none");
+    $("#main-body").css("display", "block");
+  })
   if (navigator.geolocation) {
     //Get Current Location
     navigator.geolocation.getCurrentPosition(position => {
@@ -141,6 +145,7 @@ $(document).on("change", "#order-by", e => {
   createList(favItems);
 });
 
+
 //Send email function to export favourites list
 function sendEmail() {
   var doc = new jsPDF();
@@ -162,7 +167,6 @@ function sendEmail() {
     var receiver = document.getElementById("email-to").value;
     var emailSubject = document.getElementById("email-subject").value;
     var emailBody = document.getElementById("email-body").value;
-    var favlist = JSON.stringify(expList);
 
     Email.send({
       Host: "smtp.gmail.com",
@@ -172,7 +176,13 @@ function sendEmail() {
       From: "trainbuddytest@gmail.com",
       Subject: emailSubject,
       Body: emailBody,
-      Attachments: [{}]
-    }).then();
+      Attachments: [{
+        name : "fav-list.pdf",
+        data : pdfBase64
+      }]
+    }).then(() =>{
+      $("#main-body").css("display", "none");
+      $("#success-body").css("display", "block");
+    });
   });
 }
