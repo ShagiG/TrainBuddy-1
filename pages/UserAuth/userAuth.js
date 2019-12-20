@@ -73,12 +73,3 @@ function sendEmail() {
       $("#forgotpassword2-page").css("display", "block");
   });
 }
-
-$("#forgotpw-proceed").click(function(){
-
-  .then(() =>{
-    $("#forgotpassword2-page").css("display", "none");
-    $("#forgotpassword3-page").css("display", "block");
-    
-  })
-})
