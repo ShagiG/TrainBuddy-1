@@ -61,19 +61,10 @@
       </div>
 
       <div class="search-form">
-        <div class="from-input">
-          <label>From</label>
-          <input
-            class="text-input"
-            type="text"
-            name="receiver-mail"
-            data-role="none"
-            placeholder="Email"
-          />
-        </div>
         <div class="to-input">
           <label>Where To</label>
           <input
+            id="to-input"
             class="text-input"
             type="text"
             placeholder="Where To"
@@ -81,14 +72,8 @@
           />
         </div>
         <div class="ui-grid-a">
-          <div class="ui-block-a left-sec">
-            <label class="input-label">Calendar</label>
-            <input class="text-input" type="date" data-role="none" />
-          </div>
-          <div class="ui-block-b right-sec">
-            <label class="input-label">Time</label>
-            <input class="text-input" type="time" data-role="none" />
-          </div>
+          <label class="input-label">Calendar</label>
+          <input id="date" class="text-input" type="date" data-role="none" />
         </div>
         <div class="ui-grid-a">
           <div class="ui-block-a left-sec">
@@ -96,20 +81,20 @@
             <select
               id="class-type"
               class="custom-select"
-              name="order-by"
+              name="class-type"
               data-role="none"
             >
-              <option value="asce">First Class</option>
-              <option value="desc">Second Class</option>
-              <option value="desc">Third Class</option>
+              <option value="FirstClass">First Class</option>
+              <option value="SecondClass">Second Class</option>
+              <option value="ThirdClass">Third Class</option>
             </select>
           </div>
           <div class="ui-block-b right-sec">
             <label class="input-label">Seats</label>
             <select
-              id="seats"
+              id="seats-input"
               class="custom-select"
-              name="sort-by"
+              name="seats-input"
               data-role="none"
             >
               <option value="1">1</option>
@@ -120,26 +105,31 @@
             </select>
           </div>
         </div>
-        <button class="prime-btn" data-role="none">search</button>
       </div>
 
-      <div class="train-list" id="train-list">
-        <div class="train-avail">
+      <div
+        data-role="listview"
+        data-filter="true"
+        data-input="#to-input"
+        class="train-list"
+        id="train-list"
+      >
+        <div id="train-one" class="train-avail">
           <div class="ui-grid-a type-badge">
             <p class="type">Express</p>
           </div>
           <hr />
           <div class="ui-grid-b tick-info">
             <div class="ui-block-a">
-              <p class="time-txt">10.40AM</p>
+              <p id="start-time-1" class="time-txt">10.40AM</p>
               <p class="place-txt">Colombo</p>
             </div>
             <div class="ui-block-b arrow">
               <img src="/assets/icons/arrow-right.svg" />
             </div>
             <div class="ui-block-c" style="text-align: right;">
-              <p class="time-txt">02.40PM</p>
-              <p class="place-txt">Kandy</p>
+              <p id="end-time-1" class="time-txt">02.40PM</p>
+              <p id="destination-1" class="place-txt">Kandy</p>
             </div>
           </div>
           <div class="ui-grid-a">
@@ -152,7 +142,38 @@
           </div>
           <hr />
           <div class="ui-grid-a">
-            <p class="price">LKR350.00</p>
+            <p id="price-1" class="price">350</p>
+          </div>
+        </div>
+        <div id="train-two" class="train-avail">
+          <div class="ui-grid-a type-badge">
+            <p class="type">Express</p>
+          </div>
+          <hr />
+          <div class="ui-grid-b tick-info">
+            <div class="ui-block-a">
+              <p id="start-time-2" class="time-txt">01.30AM</p>
+              <p class="place-txt">Colombo</p>
+            </div>
+            <div class="ui-block-b arrow">
+              <img src="/assets/icons/arrow-right.svg" />
+            </div>
+            <div class="ui-block-c" style="text-align: right;">
+              <p id="end-time-2" class="time-txt">05.55PM</p>
+              <p id="destination-2" class="place-txt">Hatton</p>
+            </div>
+          </div>
+          <div class="ui-grid-a">
+            <div class="ui-block-a">
+              <p class="train-name">Udaratta manikke</p>
+            </div>
+            <div class="ui-block-b" style="text-align: right;">
+              <p class="duration">04H 25MIN</p>
+            </div>
+          </div>
+          <hr />
+          <div class="ui-grid-a">
+            <p id="price-2" class="price">450.00</p>
           </div>
         </div>
       </div>

@@ -1,50 +1,32 @@
+let items = [];
 $(() => {
   $("#booking-btn").click(() => {
     window.location.href = "/pages/Bookings/index.html";
   });
+
+  $(".train-avail").click(e => {
+    let id = e.target.id;
+    console.log(id);
+    if (id === "train-one") {
+      window.localStorage.setItem("seat", $("#seats-input").val());
+      window.localStorage.setItem("class", $("#class-type").val());
+      window.localStorage.setItem("seat", $("#seats-input").val());
+      window.localStorage.setItem("date", $("#date").val());
+      window.localStorage.setItem("start", $("#start-time-1").text());
+      window.localStorage.setItem("end", $("#end-time-1").text());
+      window.localStorage.setItem("dest", $("#destination-1").text());
+      window.localStorage.setItem("price", $("#price-1").text());
+      window.location.href = "/pages/Payment/index.html";
+    } else {
+      window.localStorage.setItem("class", $("#class-type").val());
+      window.localStorage.setItem("seat", $("#seats-input").val());
+      window.localStorage.setItem("date", $("#date").val());
+      window.localStorage.setItem("start", $("#start-time-2").text());
+      window.localStorage.setItem("end", $("#end-time-2").text());
+      window.localStorage.setItem("dest", $("#destination-2").text());
+      window.localStorage.setItem("price", $("#price-2").text());
+
+      window.location.href = "/pages/Payment/index.html";
+    }
+  });
 });
-
-// try {
-//   dbRef.ref('/trains').on("child_added", snapshot => {
-//     if (snapshot.val().author === "Thivagar Mahendran") {
-//       $("#my-feed").append(createHtmlItem(snapshot.val(), snapshot.key));
-//     }
-//   });
-// } catch (error) {
-//   console.log(error);
-// }
-
-function createTrainCard() {
-  let html = "";
-  html = `<div class="train-avail">
-          <div class="ui-grid-a type-badge">
-            <p class="type">Express</p>
-          </div>
-          <hr />
-          <div class="ui-grid-b tick-info">
-            <div class="ui-block-a">
-              <p class="time-txt">10.40AM</p>
-              <p class="place-txt">Colombo</p>
-            </div>
-            <div class="ui-block-b arrow">
-              <img src="/assets/icons/arrow-right.svg" />
-            </div>
-            <div class="ui-block-c" style="text-align: right;">
-              <p class="time-txt">02.40PM</p>
-              <p class="place-txt">Kandy</p>
-            </div>
-          </div>
-          <div class="ui-grid-a">
-            <div class="ui-block-a">
-              <p class="train-name">Udaratta manikke</p>
-            </div>
-            <div class="ui-block-b" style="text-align: right;">
-              <p class="duration">04H 15MIN</p>
-            </div>
-          </div>
-          <hr />
-          <div class="ui-grid-a">
-            <p class="price">LKR350</p>
-          </div>
-        </div>`;
-}

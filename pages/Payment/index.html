@@ -48,7 +48,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
-
+    <script src="https://checkout.stripe.com/checkout.js"></script>
     <script src="/js/main.js"></script>
     <script src="/pages/Payment/payment.js"></script>
   </head>
@@ -69,15 +69,17 @@
             <div class="ui-grid-b">
               <div class="ui-block-a">
                 <img
+                  id="minus-btn"
                   style="float: left;"
                   src="/assets/icons/minus-circle.svg"
                 />
               </div>
               <div class="ui-block-b">
-                <p class="spend-points">350</p>
+                <p id="use-points" class="spend-points"></p>
               </div>
               <div class="ui-block-c">
                 <img
+                  id="plus-btn"
                   style="float: right;"
                   src="/assets/icons/plus-circle.svg"
                 />
@@ -94,23 +96,23 @@
             <hr />
             <div class="ui-grid-b tick-info">
               <div class="ui-block-a">
-                <p class="time-txt">10.40AM</p>
+                <p id="start-time" class="time-txt">10.40AM</p>
                 <p class="place-txt">Colombo</p>
               </div>
               <div class="ui-block-b arrow">
                 <img src="/assets/icons/arrow-right.svg" />
               </div>
               <div class="ui-block-c" style="text-align: right;">
-                <p class="time-txt">02.40PM</p>
-                <p class="place-txt">Kandy</p>
+                <p id="end-time" class="time-txt">02.40PM</p>
+                <p id="destination" class="place-txt">Kandy</p>
               </div>
             </div>
             <div class="ui-grid-a">
               <div class="ui-block-a">
-                <p class="class-txt">Second Class</p>
+                <p id="class" class="class-txt">Second Class</p>
               </div>
               <div class="ui-block-b" style="text-align: right;">
-                <p class="one-price">LKR350</p>
+                <p id="price" class="one-price">350</p>
               </div>
             </div>
             <div class="ui-grid-a">
@@ -118,12 +120,12 @@
                 <p class="class-txt">Seats</p>
               </div>
               <div class="ui-block-b" style="text-align: right;">
-                <p class="one-price">x5</p>
+                <p id="seats" class="one-price">5</p>
               </div>
             </div>
             <hr />
             <div class="ui-grid-a">
-              <p class="price">LKR350.00</p>
+              <p id="tot-price" class="price">LKR350.00</p>
             </div>
           </div>
         </div>
@@ -176,6 +178,7 @@
                     class="radio"
                     type="radio"
                     data-role="none"
+                    checked
                   />
                 </div>
                 <div class="ui-block-b">
