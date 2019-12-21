@@ -15,7 +15,7 @@
       function navigate() {
         window.location.href = "/pages/Profile/index.html";
       }
-      setInterval(this.navigate, 12000);
+      // setInterval(this.navigate, 12000);
     </script>
   </head>
 
@@ -25,6 +25,7 @@
         <div class="wishes">
           <p>Congratulations</p>
         </div>
+        <hr />
         <div class="trophy-container">
           <img src="/assets/video/trophy.gif" />
         </div>
@@ -32,7 +33,15 @@
           <p class="won-txt">You have won</p>
           <p class="points">450</p>
           <p class="won-txt">points</p>
-          <p><a href="/pages/Profile/index.html">Dismiss</a></p>
+          <hr />
+          <button
+            id="dismiss-btn"
+            class="cancel-btn"
+            data-role="none"
+            onclick="navigate()"
+          >
+            Dismiss
+          </button>
         </div>
       </div>
     </div>
