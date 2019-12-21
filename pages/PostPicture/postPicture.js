@@ -4,6 +4,8 @@ let myCapturedMoment = {};
 
 //Function to call database save function
 $(document).on("click", "#share-btn", function() {
+  $(".lds-hourglass").css("display", "block");
+  $("#share-btn").css("display", "none");
   writeUserData();
 });
 
@@ -20,12 +22,24 @@ function writeUserData() {
   dbRef
     .ref("newsFeed")
     .push()
-    .set(capturedMoment);
-  dbRef
-    .ref(`myPosts/${firebase.auth().currentUser.uid}`)
-    .push()
-    .set(myCapturedMoment);
-  window.location.href = "/pages/NewsFeed/index.html";
+    .set(capturedMoment, error => {
+      if (error) {
+        alert(error);
+      } else {
+        dbRef
+          .ref(`myPosts/${firebase.auth().currentUser.uid}`)
+          .push()
+          .set(myCapturedMoment, err => {
+            if (err) {
+              console.log(err);
+            } else {
+              $(".lds-hourglass").css("display", "none");
+              $("#share-btn").css("display", "block");
+              window.location.href = "/pages/NewsFeed/index.html";
+            }
+          });
+      }
+    });
 }
 
 //to get autocomplete places

@@ -4,6 +4,8 @@ let treasurePoints = 0;
 let cuser = {};
 
 $(function() {
+  $(".lds-hourglass").css("display", "block");
+  $("#hour-glass").css("display", "block");
   $("#treasure-btn").click(() => {
     window.location.href = "/pages/ARDemo/index.html";
   });
@@ -24,6 +26,7 @@ $(function() {
       cuser.photoURL = user.photoURL;
       cuser.uid = user.uid;
 
+      $(".lds-hourglass").css("display", "none");
       $("#profile-avatar").attr({ src: user.photoURL });
 
       try {
@@ -50,6 +53,7 @@ $(function() {
 });
 
 function createHtmlItem(snap, id, author) {
+  $("#hour-glass").css("display", "none");
   let html = "";
   let date = new Date(snap.createdAt);
   let refinedDate =
