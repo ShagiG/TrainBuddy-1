@@ -1,10 +1,10 @@
-//Load all Newsfeed Items
+//Load all Bookings Items
 try {
-  let idNo = 0;
   bookingRef.on("child_added", snapshot => {
-    idNo++;
+    let dateInput = new Date(snapshot.val().date);
+    let dateNow = new Date();
     $(".booking-element-loading").css("display", "none");
-    if (snapshot.val().isComplete) {
+    if (dateNow > dateInput) {
       $("#past-list").append(createPastItem(snapshot.val()));
     } else {
       $("#upcome-list").append(createCurrItem(snapshot.val(), snapshot.key));

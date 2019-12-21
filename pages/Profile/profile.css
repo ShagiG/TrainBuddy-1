@@ -97,4 +97,11 @@
   max-height: 100%;
 }
 
+@media screen and (min-width: 1024px) {
+  .profile-section {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+
 /*# sourceMappingURL=profile.css.map */
