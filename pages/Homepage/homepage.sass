@@ -25,9 +25,9 @@ $lightBlack: rgba(51, 51, 51, 0.5)
     z-index: 10
     text-align: center
     color: #0084E3
-    
+
 #intro-face
-    width: 100%   
+    width: 100%
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)), url('/assets/images/Background/homepageBg.jpg')
     background-size: cover
     height: 207px
@@ -38,27 +38,25 @@ $lightBlack: rgba(51, 51, 51, 0.5)
 
 .text-container
     text-align: center
-    
+
 #logo-text
     @include font('Roboto', normal, 12px, 0.05em)
     text-shadow: none
     color: #ffffff
-    
 
 .intro-container
-    padding: 63px 82px 102px 81px
-    width:100%
+    margin: auto
+    display: block
+    padding: 75px 10px
+    width: 75%
 
 #description-landing
     text-align: center
-
-.description-container
-    padding: 10px 20px
+    padding: 50px 20px
 
 #intro-body
-     @include font('Roboto', normal, 14px,0.05em)
-     text-align: justify
-     //padding: 0 20px
+    @include font('Roboto', normal, 14px, 0.01em)
+    text-align: justify
 
 #intro-heading
     @include font('Roboto', 900, 16px,0.1em)
@@ -73,6 +71,7 @@ $lightBlack: rgba(51, 51, 51, 0.5)
 .service-info
     text-align: center
     color: #F7FBFF
+    padding: 80px 10px
 
 .info-heading
     @include font('Roboto', 900, 16px,0.1em)
@@ -83,14 +82,17 @@ $lightBlack: rgba(51, 51, 51, 0.5)
     text-align: center
 
 .service-container
+    margin: auto
+    display: block
     width: 117px
     height: 117px
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15)
     border-radius: 100%
 
 .image-container
-    padding: 0px 129px 0px 129px
-    
+    margin: auto
+    display: block
+
 #svg-image
     fill: green
 
@@ -98,14 +100,12 @@ $lightBlack: rgba(51, 51, 51, 0.5)
     padding: 30px 29px 39px 29px
 
 .service-description
-    padding: 7px 0px 0px 0px
+    padding: 20px 50px
 
 .service-body
-     @include font('Roboto', normal, 12px,0.1em)
-     text-align: center
-     padding: 0px 81px 5px 81px
-     color:#343434
-
+    @include font('Roboto', normal, 12px,0.1em)
+    text-align: center
+    color: #343434
 
 .service-heading
     @include font('Roboto', 900, 16px,0.1em)
@@ -120,25 +120,25 @@ $lightBlack: rgba(51, 51, 51, 0.5)
 .auth-form
     padding: 12px 16px
 
-
 .user-feedback
+    padding: 70px 0
     border-top: 0.5px solid #3a3a3a75
-    background-color: #0084e325
 
 .team-members
     text-shadow: none
 
 .team-info
-    background-color: #63acb921
     border-top: 0.5px solid #0244503b
+    padding: 70px 0
 
 .member
     width: 50% !important
     align-content: center
-
+    margin: 45px 0
 
 .members-img
-    margin: 10px 50px
+    margin: auto
+    display: block
 
 .member-description
     text-align: center
@@ -151,4 +151,69 @@ $lightBlack: rgba(51, 51, 51, 0.5)
 .member-info
     @include font('Roboto', normal, 11px, 0.05em)
 
-    
+#footer-home
+    @include font('Roboto', 300, 9px, 0.05em)
+    height: 160px
+    width: 100%
+    background-color: $primaryThree
+    border: none
+    padding: 20px 10px
+    bottom: 0
+    text-transform: uppercase
+    color: $gray6
+    text-shadow: none
+    p
+        text-align: center
+        margin: 5px
+    ul
+        text-decoration: none
+        list-style: none
+        padding: 0
+
+@media screen and ( min-width: 768px)
+    #intro-body
+        @include font('Roboto', normal, 24px, 0.01em)
+        text-align: justify
+
+    #intro-heading
+        @include font('Roboto', 900, 36px, 0.05em)
+        background: -webkit-linear-gradient(168.06deg, #5B53FF 9.21%, #56B7FF 90.79%)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        text-shadow: none
+
+    .intro-img
+        padding: 100px 0 0
+        margin: auto
+        display: block
+        width: 60%
+        height: auto
+
+    #intro-face
+        width: 100%
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)), url('/assets/images/Background/homepageBg.jpg')
+        background-size: cover
+        height: 407px
+
+    #logo-text
+        @include font('Roboto', normal, 22px, 0.05em)
+        text-shadow: none
+        color: #ffffff
+        margin: 15px 0
+
+    #description-landing
+        text-align: center
+        padding: 100px 25px
+
+    .info-heading
+        @include font('Roboto', 900, 30px, 0.05em)
+        background: -webkit-linear-gradient(171.5deg, #5B53FF 9.21%, #56B7FF 90.79%)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        text-shadow: none
+        text-align: center
+
+    .service-body
+        @include font('Roboto', normal, 22px, 0.05em)
+        text-align: center
+        color: #343434

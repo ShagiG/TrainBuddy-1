@@ -4,8 +4,11 @@ let treasurePoints = 0;
 let cuser = {};
 
 $(function() {
-  $("#leader-btn").click(() => {
+  $("#treasure-btn").click(() => {
     window.location.href = "/pages/ARDemo/index.html";
+  });
+  $("#leader-btn").click(() => {
+    window.location.href = "/pages/Leaderboard/index.html";
   });
   $("#book-btn").click(() => {
     window.location.href = "/pages/BookTicket/index.html";
