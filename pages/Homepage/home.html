@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TrainBuddy | Homepage</title>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Roboto:100, 300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/main.css" />
+    <link rel="stylesheet" href="homepage.css" />
+
+    <!-- Bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+
+  <body>
+    <div data-role="page">
+      <!-- header -->
+      <div data-role="header" id="header">
+        <div class="ui-grid-a main-container">
+          <div class="ui-block-a logo-container">
+            <img
+              class="logo-img"
+              src="/assets/images/Logos/TrainBuddyLogo.png"
+            />
+          </div>
+          <div class="ui-block-b home-nav">
+            <a
+              id="nav-img"
+              data-toggle="collapse"
+              href="#collapseMenu"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseMenu"
+            >
+              <img src="/assets/icons/menu.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="collapse" id="collapseMenu">
+        <div class="card card-body">
+          <a href="#intro-face" data-ajax="false" data-role="none">ABOUT US</a>
+        </div>
+        <div class="card card-body">
+          <a href="#service-info" data-ajax="false" data-role="none"
+            >SERVICES</a
+          >
+        </div>
+        <div class="card card-body">
+          <a href="#team-info" data-ajax="false" data-role="none">OUR TEAM</a>
+        </div>
+        <div class="card card-body">
+          <a href="#user-feedback" data-ajax="false" data-role="none"
+            >GET IN TOUCH</a
+          >
+        </div>
+        <div class="card card-body">
+          <a
+            href="/pages/UserAuth/login.html"
+            data-ajax="false"
+            data-role="none"
+            >LOGIN</a
+          >
+        </div>
+        <div class="card card-body">
+          <a
+            href="/pages/UserAuth/register.html"
+            data-ajax="false"
+            data-role="none"
+            >SIGNUP</a
+          >
+        </div>
+      </div>
+
+      <!---intro face -->
+      <div data-role="intro">
+        <div class="ui-grid-a intro-face" id="intro-face">
+          <div class="intro-container">
+            <img
+              class="intro-img"
+              src="/assets/images/Logos/TrainBuddyLogo.png"
+              alt="logo"
+            />
+            <div class="text-container">
+              <p id="logo-text">TRAVEL, HUNT & EARN</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Description landing-->
+      <div class="ui-grid-content description-landing" id="description-landing">
+        <div class="description-container">
+          <p id="intro-heading">WHAT IS TRAIN BUDDY?</p>
+          <p id="intro-body">
+            Welcome to the leading train booking operating application of
+            SriLanka.TrainBuddy is a treasure hunt mobile web application
+            encouraging users to visit and explore the best places in the
+            country.
+          </p>
+          <!--intro video-->
+          <div class="video-container">
+            <video id="intro-video" loop autoplay>
+              <source src="/assets/video/introVideo.mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!--services-->
+      <div class="service-info" id="service-info">
+        <p class="info-heading">SERVICES</p>
+        <div id="booking-service service-cont">
+          <div class="image-container">
+            <div class="service-container">
+              <img
+                class="home-services-img"
+                src="/assets/icons/hometrain.svg"
+              />
+            </div>
+          </div>
+          <div class="service-description">
+            <p class="service-heading">TRAVEL</p>
+            <p class="service-body">
+              Travel to interesting, historic tourist places in one of the most
+              scenic country in the world without the hassle of last minute
+              bookings.
+            </p>
+          </div>
+        </div>
+        <div id="play-service service-cont">
+          <div class="image-container">
+            <div class="service-container">
+              <img class="home-services-img" src="/assets/icons/homeplay.svg" />
+            </div>
+          </div>
+          <div class="service-description">
+            <p class="service-heading">PLAY</p>
+            <p class="service-body">
+              Hunt for treasure and earn points to get discounts on your train
+              tickets.
+            </p>
+          </div>
+        </div>
+        <div id="earn-service service-cont">
+          <div class="image-container">
+            <div class="service-container">
+              <img
+                class="home-services-img"
+                src="/assets/icons/money-bag.svg"
+              />
+            </div>
+          </div>
+          <div class="service-description">
+            <p class="service-heading">EARN</p>
+            <p class="service-body">
+              Hunt for treasure and earn points. Earn money and get discounts
+              for train tickets. tickets
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!--our team-->
+      <div class="team-info" id="team-info">
+        <p class="info-heading">OUR TEAM</p>
+        <div id="team-members">
+          <div class="ui-grid-a team">
+            <div class="ui-block-a member">
+              <img
+                class="members-img"
+                src="/assets/icons/thivagarmahendran.svg"
+              />
+              <div class="member-description">
+                <p class="member-name">THIVAGAR MAHENDRAN</p>
+                <p class="member-info">W1654202/2016349</p>
+              </div>
+            </div>
+            <div class="ui-block-b member">
+              <img class="members-img" src="/assets/icons/ayoob.svg" />
+              <div class="member-description">
+                <p class="member-name">AYOOB NAZEEM</p>
+                <p class="member-info">w1654551/2016343</p>
+              </div>
+            </div>
+          </div>
+          <div class="ui-grid-b team">
+            <div class="ui-block-a member">
+              <img class="members-img" src="/assets/icons/shagiganesh.svg" />
+              <div class="member-description">
+                <p class="member-name">SHAGITHTHIYA GANESH</p>
+                <p class="member-info">W1654563/2016400</p>
+              </div>
+            </div>
+            <div class="ui-block-b member">
+              <img class="members-img" src="/assets/icons/kusal.svg" />
+              <div class="member-description">
+                <p class="member-name">KUSAL KAHADUWA</p>
+                <p class="member-info">W1628057/2015292</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- system feedback-->
+      <div class="ui-grid-contain user-feedback" id="user-feedback">
+        <div class="auth-form">
+          <p class="info-heading">LET US KNOW WHAT YOU THINK ABOUT US?</p>
+          <label for="username" class="input-label">Name </label>
+          <input
+            class="text-input"
+            type="text"
+            name="username"
+            data-role="none"
+            placeholder="Username"
+          />
+
+          <label for="feedback" class="input-label">Feedback </label>
+          <textarea
+            style="height: auto;"
+            class="text-input"
+            type="textarea"
+            rows="3"
+            name="feedback"
+            data-role="none"
+            placeholder="Add your feedback"
+          ></textarea>
+          <button class="prime-btn" data-role="none" type="submit">
+            SUBMIT FEEDBACK
+          </button>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <div data-role="footer" id="footer-home">
+        <div class="ui-grid-b">
+          <div class="ui-block-a">
+            <ul class="navigation-list">
+              <li>Home</li>
+              <li>About Us</li>
+              <li>Contact</li>
+              <li>Camera</li>
+              <li>Privacy and Policy</li>
+            </ul>
+          </div>
+
+          <div align="center" class="ui-block-c social-media-icons">
+            <p>Connect with us</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-facebook"
+            >
+              <path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-twitter"
+            >
+              <path
+                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-instagram"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </div>
+        </div>
+        <div class="ui-grid-a">
+          <p class="rights-txt">All rights reserved 2019</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

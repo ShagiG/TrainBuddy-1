@@ -1,0 +1,107 @@
+.profile-section {
+  display: grid;
+  grid-template-columns: auto;
+  margin-bottom: 60px;
+}
+.profile-section .main-section {
+  padding: 20px;
+}
+.profile-section .avatar-img img {
+  margin: 10px 0;
+  max-width: 40%;
+  margin: auto;
+  display: block;
+}
+.profile-section .full-name p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  line-height: 21px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 20px 0;
+}
+.profile-section .tot-points {
+  margin: 20px 0;
+}
+.profile-section .points {
+  display: grid;
+  grid-template-columns: auto auto;
+  background: linear-gradient(125.17deg, #5B53FF 9.21%, #56B7FF 90.79%);
+  border-radius: 35px;
+  margin: 0 35%;
+  padding: 5px 10px;
+}
+.profile-section .points p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.15em;
+  margin: 0;
+  color: #ffffff;
+}
+
+.my-posts-section {
+  width: 100%;
+  color: #ffffff;
+  text-shadow: none;
+}
+.my-posts-section .feed {
+  margin-bottom: 15px;
+  height: auto;
+  border: 0.4px solid #0000004d;
+}
+.my-posts-section .feed .head {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 15px 10px;
+}
+.my-posts-section .feed .body-cont {
+  padding: 0 10px 15px;
+}
+.my-posts-section p {
+  margin: 0;
+  text-align: left;
+}
+.my-posts-section .full-name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #000000;
+}
+.my-posts-section .date-time, .my-posts-section .location {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #9597A1;
+}
+.my-posts-section .caption {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: #000;
+  margin: 10px 0;
+}
+.my-posts-section img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .profile-section {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+
+/*# sourceMappingURL=profile.css.map */

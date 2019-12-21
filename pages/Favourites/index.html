@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TrainBuddy | Faviourites</title>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Roboto:100,300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/main.css" />
+    <link rel="stylesheet" href="faviourites.css" />
+
+    <!-- Bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Jquery -->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVql75Qc_Y5oGvrxdcNRNMhBlZEzTdk1o&libraries=places"
+      defer
+    ></script>
+    <!--Email-->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+
+    <script src="/js/main.js"></script>
+    <script src="/pages/Favourites/favourites.js"></script>
+  </head>
+
+  <body>
+    <div data-role="page" id="favourites_page">
+      <!-- header -->
+      <div data-role="header" id="header">
+        <!-- Loaded through JS -->
+      </div>
+
+      <div class="search" id="search">
+        <input
+          class="search-bar"
+          id="search-bar"
+          type="search"
+          placeholder="Search for Places"
+          data-role="none"
+        />
+        <a
+          data-toggle="collapse"
+          href="#collapseExample"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          <img src="/assets/icons/filter.svg" class="filter-icon" />
+        </a>
+      </div>
+      <div class="filter-widget collapse" id="collapseExample">
+        <div class="range-slider">
+          <label class="input-label">Max distance (KM)</label>
+          <input
+            id="distance-range"
+            class="distance-range"
+            type="range"
+            min="0"
+            max="1000"
+            step="5"
+            value="200"
+            data-thumbwidth="20"
+            data-role="none"
+          />
+          <output name="rangeVal">50</output>
+          <div class="ui-grid-b">
+            <div class="ui-block-a">
+              <p style="text-align: left;">0</p>
+            </div>
+            <div class="ui-block-b">
+              <p id="range-val" style="text-align: center;">0</p>
+            </div>
+            <div class="ui-block-c">
+              <p style="text-align: right;">1000</p>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="ui-grid-a drop-downs">
+          <div class="ui-block-a">
+            <label class="input-label">Order By</label>
+            <select
+              id="order-by"
+              class="custom-select"
+              name="order-by"
+              data-role="none"
+            >
+              <option value="asce">Ascending</option>
+              <option value="desc">Descending</option>
+            </select>
+          </div>
+          <div class="ui-block-b">
+            <label class="input-label">Sort By</label>
+            <select
+              id="sort-by"
+              class="custom-select"
+              name="sort-by"
+              data-role="none"
+            >
+              <option value="district">District</option>
+              <option value="author">Author</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Faviourite Item List -->
+      <div
+        id="fav-items"
+        class="fav-items"
+        data-role="listview"
+        data-filter="true"
+        data-input="#search-bar"
+      >
+        <div class="fav-item-loading">
+          <p class="distance-txt loading"></p>
+          <div class="location">
+            <p class="district loading"></p>
+            <p class="place loading"></p>
+          </div>
+
+          <p class="user-owner loading"></p>
+        </div>
+        <div class="fav-item-loading">
+          <p class="distance-txt loading"></p>
+          <div class="location">
+            <p class="district loading"></p>
+            <p class="place loading"></p>
+          </div>
+
+          <p class="user-owner loading"></p>
+        </div>
+        <div class="fav-item-loading">
+          <p class="distance-txt loading"></p>
+          <div class="location">
+            <p class="district loading"></p>
+            <p class="place loading"></p>
+          </div>
+
+          <p class="user-owner loading"></p>
+        </div>
+      </div>
+
+      <!-- Floating Btn -->
+      <div class="floating-btn">
+        <button
+          class="mail-list-btn"
+          data-toggle="modal"
+          data-target="#emailModal"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-mail"
+          >
+            <path
+              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+            ></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          Export list
+        </button>
+      </div>
+
+      <!-- Navigation Bar -->
+      <div id="navigation-bar" class="ui-grid-d navigation-bar">
+        <!-- Loaded through JS -->
+      </div>
+
+      <!-- footer -->
+      <div data-role="footer" id="footer">
+        <!-- Footer added through JS -->
+      </div>
+
+      <!-- email dialog-->
+      <div
+        class="modal fade"
+        id="emailModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <!--success modal-->
+            <div id="success-body" class="modal-body">
+              <div class="success-modal-box" id="successModal">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="successmodal-body">
+                      <svg
+                        id="circle-img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100"
+                        height="100"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#75E394"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-check-circle"
+                      >
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <div class="successmsg-body">
+                      <p id="success-msg">SUCCESSFULLY SENT!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="main-body" class="modal-body">
+              <label for="receiver-mail" class="input-label"
+                >RECEIVER'S MAIL
+              </label>
+              <input
+                class="text-input"
+                type="email"
+                name="receiver-mail"
+                id="email-to"
+                data-role="none"
+                placeholder="Email"
+              />
+
+              <label for="email-subject" class="input-label">SUBJECT </label>
+              <input
+                class="text-input"
+                type="text"
+                name="subject"
+                id="email-subject"
+                data-role="none"
+                placeholder="Subject"
+              />
+
+              <label for="email-msg" class="input-label"></label>
+              <textarea
+                style="height: 100px;"
+                class="text-input"
+                id="email-body"
+                name="email-msg"
+                data-role="none"
+                placeholder="You can tell something..."
+              ></textarea>
+              <button
+                class="prime-btn submit-btn"
+                id="submit"
+                type="submit"
+                data-role="none"
+                onclick="sendEmail()"
+              >
+                send email
+              </button>
+              <button
+                class="cancel-btn"
+                data-dismiss="modal"
+                type="submit"
+                data-role="none"
+              >
+                CANCEL
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

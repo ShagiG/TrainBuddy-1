@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TrainBuddy | Profile</title>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Roboto:100, 300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/main.css" />
+    <link rel="stylesheet" href="/pages/Payment/payment.css" />
+
+    <!-- Bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Jquery Mobile -->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/pages/Payment/payment.js"></script>
+  </head>
+
+  <body>
+    <div data-role="page">
+      <!-- header -->
+      <div data-role="header" id="header">
+        <!-- Loaded through JS -->
+      </div>
+
+      <div class="payment-section">
+        <div class="ui-grid-a points-section">
+          <div class="ui-block-a">
+            <p class="main-txt">USE POINTS</p>
+          </div>
+          <div class="ui-block-b">
+            <div class="ui-grid-b">
+              <div class="ui-block-a">
+                <img
+                  id="minus-btn"
+                  style="float: left;"
+                  src="/assets/icons/minus-circle.svg"
+                />
+              </div>
+              <div class="ui-block-b">
+                <p id="use-points" class="spend-points"></p>
+              </div>
+              <div class="ui-block-c">
+                <img
+                  id="plus-btn"
+                  style="float: right;"
+                  src="/assets/icons/plus-circle.svg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="confirmation-section">
+          <div class="pay-checkout">
+            <div class="ui-grid-a type-badge">
+              <p class="type">Payment Confirmation</p>
+            </div>
+            <hr />
+            <div class="ui-grid-b tick-info">
+              <div class="ui-block-a">
+                <p id="start-time" class="time-txt">10.40AM</p>
+                <p class="place-txt">Colombo</p>
+              </div>
+              <div class="ui-block-b arrow">
+                <img src="/assets/icons/arrow-right.svg" />
+              </div>
+              <div class="ui-block-c" style="text-align: right;">
+                <p id="end-time" class="time-txt">02.40PM</p>
+                <p id="destination" class="place-txt">Kandy</p>
+              </div>
+            </div>
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <p id="class" class="class-txt">Second Class</p>
+              </div>
+              <div class="ui-block-b" style="text-align: right;">
+                <p id="price" class="one-price">350</p>
+              </div>
+            </div>
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <p class="class-txt">Seats</p>
+              </div>
+              <div class="ui-block-b" style="text-align: right;">
+                <p id="seats" class="one-price">5</p>
+              </div>
+            </div>
+            <hr />
+            <div class="ui-grid-a">
+              <p id="tot-price" class="price">LKR350.00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="payment-method-section">
+          <div class="payment-methods">
+            <p class="page-title">Payment Methods</p>
+            <form>
+              <div class="ui-grid-b card-grid">
+                <div class="ui-block-a">
+                  <input
+                    name="pay"
+                    value="card"
+                    class="radio"
+                    type="radio"
+                    data-role="none"
+                  />
+                </div>
+                <div class="ui-block-b">
+                  <p style="text-align: center;">**** 4258</p>
+                </div>
+                <div class="ui-block-c">
+                  <p class="det-txt" style="text-align: right;">05/2025</p>
+                </div>
+              </div>
+
+              <div class="ui-grid-b card-grid">
+                <div class="ui-block-a">
+                  <input
+                    name="pay"
+                    value="card"
+                    class="radio"
+                    type="radio"
+                    data-role="none"
+                  />
+                </div>
+                <div class="ui-block-b">
+                  <p style="text-align: center;">**** 4258</p>
+                </div>
+                <div class="ui-block-c">
+                  <p class="det-txt" style="text-align: right;">05/2025</p>
+                </div>
+              </div>
+
+              <div class="ui-grid-b card-grid">
+                <div class="ui-block-a">
+                  <input
+                    name="pay"
+                    value="stripe"
+                    class="radio"
+                    type="radio"
+                    data-role="none"
+                    checked
+                  />
+                </div>
+                <div class="ui-block-b">
+                  <img src="/assets/icons/stripe.svg" />
+                </div>
+                <div class="ui-block-c">
+                  <p class="det-txt" style="text-align: right;">STRIPE</p>
+                </div>
+              </div>
+            </form>
+            <button class="prime-btn" id="paynow-btn" data-role="none">
+              PAY NOW
+            </button>
+            <button class="cancel-btn" id="cancel-btn" data-role="none">
+              CANCEL
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Navigation Bar -->
+      <div id="navigation-bar" class="ui-grid-d navigation-bar">
+        <!-- Loaded through JS -->
+      </div>
+    </div>
+  </body>
+</html>

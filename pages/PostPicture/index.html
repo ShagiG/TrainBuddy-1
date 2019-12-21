@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TrainBuddy | Post-Picture</title>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Roboto:100,300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/main.css" />
+    <link rel="stylesheet" href="postpicture.css" />
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+
+    <!-- Google maps -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVql75Qc_Y5oGvrxdcNRNMhBlZEzTdk1o&libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
+    <script src="/js/main.js"></script>
+    <script src="./postPicture.js"></script>
+  </head>
+
+  <body>
+    <div data-role="page" id="favourites_page">
+      <!-- header -->
+      <div data-role="header" id="header">
+        <!-- Loaded through JS -->
+      </div>
+
+      <div class="page-content">
+        <p class="page-title">POST PICTURE</p>
+        <form>
+          <div class="img-form">
+            <div class="img-viewer">
+              <img
+                id="captured-image"
+                alt="captured-image"
+                class="captured-photo"
+              />
+            </div>
+            <div class="caption">
+              <textarea
+                placeholder="Say something about this place..."
+                class="text-input"
+                name="description-box"
+                id="description-box"
+                data-role="none"
+              ></textarea>
+            </div>
+          </div>
+        </form>
+        <div class="location-cont">
+          <label>Add Location</label>
+          <input
+            class="text-input"
+            type="text"
+            name="searchforPlaces"
+            id="pac-input"
+            value=""
+            placeholder="Add location"
+          />
+          <!-- Loader -->
+          <div class="lds-hourglass"></div>
+          <button class="prime-btn" id="share-btn" data-role="none">
+            Share
+          </button>
+          <button id="cancel-btn" class="cancel-btn" data-role="none">
+            Cancel
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation Bar -->
+      <div id="navigation-bar" class="ui-grid-d navigation-bar">
+        <!-- Loaded through JS -->
+      </div>
+    </div>
+  </body>
+</html>

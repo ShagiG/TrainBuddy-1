@@ -1,0 +1,36 @@
+.page-content {
+  padding: 10px;
+}
+.page-content .img-form {
+  display: grid;
+  grid-template-columns: auto;
+  width: 100%;
+}
+.page-content .img-form textarea {
+  height: 100% !important;
+  margin: 0 !important;
+}
+.page-content .caption {
+  height: auto !important;
+}
+.page-content .img-viewer {
+  height: auto !important;
+}
+.page-content .img-viewer img {
+  width: 100%;
+}
+.page-content .location-cont {
+  margin: 40px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .page-content {
+    margin: 0 15%;
+  }
+  .page-content .img-form {
+    display: grid;
+    grid-template-columns: 25% 75%;
+  }
+}
+
+/*# sourceMappingURL=postpicture.css.map */

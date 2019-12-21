@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TrainBuddy | Profile</title>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Roboto:100, 300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/main.css" />
+    <link rel="stylesheet" href="/pages/Profile/profile.css" />
+
+    <!-- Bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Jquery Mobile -->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+
+    <script src="/js/main.js"></script>
+    <script src="/pages/Profile/profile.js"></script>
+  </head>
+
+  <body>
+    <div data-role="page">
+      <!-- header -->
+      <div data-role="header" id="header">
+        <!-- Loaded through JS -->
+      </div>
+
+      <div class="profile-section">
+        <div class="main-section">
+          <div class="avatar-img">
+            <!-- Loader -->
+            <div class="lds-hourglass"></div>
+            <img id="profile-avatar" class="avatar-img" />
+          </div>
+          <div class="full-name">
+            <p>Thivagar Mahendran</p>
+          </div>
+          <div class="tot-points">
+            <div class="points">
+              <img src="/assets/icons/PointIcon.svg" />
+              <p id="point-show">0</p>
+            </div>
+          </div>
+
+          <button id="treasure-btn" class="navigate-btn" data-role="none">
+            Find Treasure
+          </button>
+          <button id="leader-btn" class="navigate-btn" data-role="none">
+            Leaderoard
+          </button>
+          <button id="book-btn" class="navigate-btn" data-role="none">
+            Book Ticket
+          </button>
+          <button id="booking-btn" class="navigate-btn" data-role="none">
+            Bookings
+          </button>
+        </div>
+
+        <div id="my-feed" class="my-posts-section">
+          <!-- Loader -->
+          <div id="hour-glass" class="lds-hourglass"></div>
+        </div>
+      </div>
+
+      <!-- Navigation Bar -->
+      <div id="navigation-bar" class="ui-grid-d navigation-bar">
+        <!-- Loaded through JS -->
+      </div>
+    </div>
+  </body>
+</html>

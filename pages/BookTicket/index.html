@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TrainBuddy | Book Ticket</title>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Roboto:100, 300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/main.css" />
+    <link rel="stylesheet" href="/pages/BookTicket/bookticket.css" />
+
+    <!-- Bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Jquery Mobile -->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+
+    <script src="/js/main.js"></script>
+    <script src="/pages/BookTicket/bookticket.js"></script>
+  </head>
+
+  <body>
+    <div class="body-page" data-role="page">
+      <!-- header -->
+      <div data-role="header" id="header">
+        <!-- Loaded through JS -->
+      </div>
+
+      <div class="search-form">
+        <div class="to-input">
+          <label>Where To</label>
+          <input
+            id="to-input"
+            class="text-input"
+            type="text"
+            placeholder="Where To"
+            data-role="none"
+          />
+        </div>
+        <div class="ui-grid-a">
+          <label class="input-label">Calendar</label>
+          <input id="date" class="text-input" type="date" data-role="none" />
+        </div>
+        <div class="ui-grid-a">
+          <div class="ui-block-a left-sec">
+            <label class="input-label">Class</label>
+            <select
+              id="class-type"
+              class="custom-select"
+              name="class-type"
+              data-role="none"
+            >
+              <option value="FirstClass">First Class</option>
+              <option value="SecondClass">Second Class</option>
+              <option value="ThirdClass">Third Class</option>
+            </select>
+          </div>
+          <div class="ui-block-b right-sec">
+            <label class="input-label">Seats</label>
+            <select
+              id="seats-input"
+              class="custom-select"
+              name="seats-input"
+              data-role="none"
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="2">3</option>
+              <option value="2">4</option>
+              <option value="2">5</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div
+        data-role="listview"
+        data-filter="true"
+        data-input="#to-input"
+        class="train-list"
+        id="train-list"
+      >
+        <div id="train-one" class="train-avail">
+          <div class="ui-grid-a type-badge">
+            <p class="type">Express</p>
+          </div>
+          <hr />
+          <div class="ui-grid-b tick-info">
+            <div class="ui-block-a">
+              <p id="start-time-1" class="time-txt">10.40AM</p>
+              <p class="place-txt">Colombo</p>
+            </div>
+            <div class="ui-block-b arrow">
+              <img src="/assets/icons/arrow-right.svg" />
+            </div>
+            <div class="ui-block-c" style="text-align: right;">
+              <p id="end-time-1" class="time-txt">02.40PM</p>
+              <p id="destination-1" class="place-txt">Kandy</p>
+            </div>
+          </div>
+          <div class="ui-grid-a">
+            <div class="ui-block-a">
+              <p class="train-name">Udaratta manikke</p>
+            </div>
+            <div class="ui-block-b" style="text-align: right;">
+              <p class="duration">04H 15MIN</p>
+            </div>
+          </div>
+          <hr />
+          <div class="ui-grid-a">
+            <p id="price-1" class="price">350</p>
+          </div>
+        </div>
+        <div id="train-two" class="train-avail">
+          <div class="ui-grid-a type-badge">
+            <p class="type">Express</p>
+          </div>
+          <hr />
+          <div class="ui-grid-b tick-info">
+            <div class="ui-block-a">
+              <p id="start-time-2" class="time-txt">01.30AM</p>
+              <p class="place-txt">Colombo</p>
+            </div>
+            <div class="ui-block-b arrow">
+              <img src="/assets/icons/arrow-right.svg" />
+            </div>
+            <div class="ui-block-c" style="text-align: right;">
+              <p id="end-time-2" class="time-txt">05.55PM</p>
+              <p id="destination-2" class="place-txt">Hatton</p>
+            </div>
+          </div>
+          <div class="ui-grid-a">
+            <div class="ui-block-a">
+              <p class="train-name">Udaratta manikke</p>
+            </div>
+            <div class="ui-block-b" style="text-align: right;">
+              <p class="duration">04H 25MIN</p>
+            </div>
+          </div>
+          <hr />
+          <div class="ui-grid-a">
+            <p id="price-2" class="price">450.00</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Btn -->
+      <div class="floating-btn">
+        <button class="mail-list-btn" id="booking-btn">
+          Bookings
+        </button>
+      </div>
+
+      <!-- Navigation Bar -->
+      <div id="navigation-bar" class="ui-grid-d navigation-bar">
+        <!-- Loaded through JS -->
+      </div>
+      <!-- footer -->
+      <div data-role="none" id="footer">
+        <!-- Footer added through JS -->
+      </div>
+    </div>
+  </body>
+</html>

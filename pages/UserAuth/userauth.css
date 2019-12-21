@@ -1,0 +1,71 @@
+.auth-form {
+  margin-bottom: 60px;
+  padding: 12px 16px;
+}
+
+.link-container {
+  margin: 10px 0;
+}
+.link-container p {
+  text-align: center;
+  margin: 0;
+}
+.link-container a {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.logo-display {
+  padding: 50px 0;
+}
+.logo-display img {
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
+
+.text-display {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #0084E3;
+  padding: 14px 0px 10px 17px;
+}
+
+.email-container {
+  padding: 0px 20px 0px 17px;
+}
+
+#email-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-shadow: none;
+}
+
+.btn-container {
+  padding: 10px 0px 183px 0px;
+}
+
+#verify-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-shadow: none;
+  color: #EB5757;
+}
+
+/*# sourceMappingURL=userauth.css.map */

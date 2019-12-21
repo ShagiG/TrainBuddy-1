@@ -1,0 +1,147 @@
+.feed-items {
+  padding: 15px;
+  width: 100%;
+  color: #ffffff;
+  text-shadow: none;
+}
+.feed-items .feed {
+  margin-bottom: 15px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+}
+.feed-items .feed .head {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 15px 10px;
+}
+.feed-items .feed .body-cont {
+  padding: 0 10px;
+}
+.feed-items .feed .buttons {
+  padding: 0 10px;
+  display: grid;
+  grid-template-columns: 15% 15% 15% 55%;
+}
+.feed-items p {
+  margin: 0;
+  text-align: left;
+}
+.feed-items .full-name {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #000000;
+}
+.feed-items .date-time, .feed-items .location {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #9597A1;
+}
+.feed-items .caption {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: #000;
+  margin: 10px 0;
+}
+.feed-items .like-count {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #193E58;
+  margin: 10px 0;
+}
+.feed-items img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.feed-items button {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+}
+.feed-items button .unlike, .feed-items button .unstar, .feed-items button .comment {
+  margin: auto;
+  display: block;
+}
+
+.starred, .liked {
+  display: none;
+}
+
+.feed-loading {
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.load {
+  position: relative;
+  background-color: #d8d8d8;
+}
+.load::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, #ffffff91, transparent);
+  animation: load 1.5s infinite;
+}
+
+@keyframes load {
+  100% {
+    transform: translateX(100%);
+  }
+}
+.head-loading {
+  padding: 15px 10px;
+}
+
+.head-loading .load {
+  height: 50px;
+}
+
+.body-loading {
+  padding: 0 10px;
+}
+
+.body-loading .load {
+  height: 200px;
+}
+
+.bottom-loading {
+  padding: 15px 10px;
+}
+
+.bottom-loading .load {
+  height: 50px;
+}
+
+@media screen and (min-width: 1024px) {
+  .feed-items {
+    padding: 2% 25%;
+  }
+}
+@media screen and (width: 667px) {
+  .feed-items {
+    padding: 2% 20%;
+  }
+}
+
+/*# sourceMappingURL=newsfeed.css.map */

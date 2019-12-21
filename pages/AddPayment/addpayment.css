@@ -1,0 +1,42 @@
+.main-contents {
+  display: grid;
+  grid-template-columns: auto;
+}
+.main-contents p {
+  margin: 0 0 5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+}
+
+.add-payment {
+  padding: 15px;
+  border: 0.15px solid #3434348a;
+}
+
+.payment-methods {
+  padding: 15px;
+  border: 0.15px solid #3434348a;
+}
+
+.card-grid {
+  border: 0.5px solid #343434;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 10px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .main-contents {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  .main-contents .add-payment, .main-contents .payment-methods {
+    margin: 5px;
+  }
+}
+
+/*# sourceMappingURL=addpayment.css.map */

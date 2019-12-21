@@ -1,0 +1,129 @@
+$primaryOne: #0084E3
+$primaryTwo: #5B53FF
+$primaryThree: #193E58
+
+$danger: #EB5757
+$success: #75E394
+
+$gray6: #f2f2f2
+$lightBlack: rgba(51, 51, 51, 0.5)
+
+@mixin font($family, $weight, $size, $spacing)
+    font-family: $family
+    font-style: normal
+    font-weight: $weight
+    font-size: $size
+    letter-spacing: $spacing
+
+.fav-items
+    padding: 15px
+    width: 100%
+    display: grid
+    grid-template-columns: auto
+    color: #ffffff
+    text-shadow: none
+    .fav-item, .fav-item-loading
+        margin-bottom: 15px
+        padding: 10px 8px
+        height: 160px
+        border-radius: 10px
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25)
+        background-size: cover !important
+        p
+            text-align: center
+            text-transform: uppercase
+            margin: 0
+        .distance-txt
+            @include font('Roboto', 300, 9px, 0.1em)
+            line-height: 12px
+        div
+            height: 116px
+            padding: 32px 0
+            .district
+                justify-content: center
+                @include font('Roboto', 900, 36px, 0.15em)
+                line-height: 40px
+            .place
+                @include font('Lato', 300, 12px, 0.05em)
+                line-height: 16px
+                justify-content: center
+        .user-owner
+            @include font('Lato', 300, 9px, 0.1em)
+            vertical-align: middle
+            line-height: 12px
+            text-align: left
+
+    .fav-item-loading
+        background: #ffffff !important
+
+.loading
+    position: relative
+    background-color: #d8d8d8
+
+    &::after
+        display: block
+        content: ''
+        position: absolute
+        width: 100%
+        height: 100%
+        transform: translateX(-100%)
+        background: linear-gradient(90deg, transparent, #ffffff91, transparent)
+        animation: loading 1.5s infinite
+
+@keyframes loading
+    100%
+        transform: translateX(100%)
+
+.distance-txt.loading
+    height: 12px
+
+.district.loading
+    height: 40px
+
+.place.loading
+    height: 16px
+
+.user-owner.loading
+    height: 12px
+
+//email dialog styling
+.modal-dialog
+    padding: 10px 0px 0px 0px
+
+.emailModal
+    padding: 10px 0px 0px 0px
+
+//success modal styling
+.sucessModal
+    padding: 10px 0px 0px 0px
+
+.successmodal-body
+    width: 100%
+
+.successmodal-body
+    padding: 98px 95px 0px 95px
+
+.successmsg-body
+    padding: 16px 21px 127px 20px
+
+#success-msg
+    @include font('Roboto', 300, 24px, 0.05em)
+    color: #000000
+    text-align: center
+
+@media screen and ( min-width: 768px)
+    .fav-items
+        padding: 15px
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-template-rows: 200px 200px
+        .fav-item, .fav-item-loading
+            margin: 5px
+            height: auto
+            div
+                height: 145px
+                .district
+                    @include font('Roboto', 900, 42px, 0.15em)
+                    line-height: 55px
+                .place
+                    @include font('Lato', 300, 14px, 0.05em)

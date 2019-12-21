@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Congratulations</title>
+    <link rel="stylesheet" href="/pages/ARDemo/congrats.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Roboto:100, 300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/main.css" />
+    <script>
+      function navigate() {
+        window.location.href = "/pages/Profile/index.html";
+      }
+      // setInterval(this.navigate, 12000);
+    </script>
+  </head>
+
+  <body>
+    <div data-role="page">
+      <div class="main-container">
+        <div class="wishes">
+          <p>Congratulations</p>
+        </div>
+        <hr />
+        <div class="trophy-container">
+          <img src="/assets/video/trophy.gif" />
+        </div>
+        <div class="description">
+          <p class="won-txt">You have won</p>
+          <p class="points">450</p>
+          <p class="won-txt">points</p>
+          <hr />
+          <button
+            id="dismiss-btn"
+            class="cancel-btn"
+            data-role="none"
+            onclick="navigate()"
+          >
+            Dismiss
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

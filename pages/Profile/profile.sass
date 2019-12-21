@@ -1,0 +1,86 @@
+$primaryOne: #0084E3
+$primaryTwo: #5B53FF
+$primaryThree: #193E58
+
+$danger: #EB5757
+$success: #75E394
+
+$gray6: #f2f2f2
+$lightBlack: rgba(51, 51, 51, 0.5)
+
+@mixin font($family, $weight, $size, $spacing)
+    font-family: $family
+    font-style: normal
+    font-weight: $weight
+    font-size: $size
+    letter-spacing: $spacing
+
+.profile-section
+    display: grid
+    grid-template-columns: auto
+    margin-bottom: 60px
+    .main-section
+        padding: 20px
+    .avatar-img
+        img
+            margin: 10px 0
+            max-width: 40%
+            margin: auto
+            display: block
+    .full-name
+        p
+            @include font('Roboto', 500, 18px, 0.15em)
+            line-height: 21px
+            text-transform: uppercase
+            text-align: center
+            margin: 20px 0
+    .tot-points
+        margin: 20px 0
+    .points
+        display: grid
+        grid-template-columns: auto auto
+        background: linear-gradient(125.17deg, #5B53FF 9.21%, #56B7FF 90.79%)
+        border-radius: 35px
+        margin: 0 35%
+        padding: 5px 10px
+        p
+            @include font('Roboto', 400, 18px, 0.15em)
+            margin: 0
+            color: #ffffff
+
+.my-posts-section
+    width: 100%
+    color: #ffffff
+    text-shadow: none
+    .feed
+        margin-bottom: 15px
+        height: auto
+        border: 0.4px solid #0000004d
+        .head
+            display: grid
+            grid-template-columns: 15% 85%
+            padding: 15px 10px
+        .body-cont
+            padding: 0 10px 15px
+    p
+        margin: 0
+        text-align: left
+    .full-name
+        @include font('Roboto', 700, 14px, 0.05em)
+        text-transform: uppercase
+        color: #000000
+    .date-time, .location
+        @include font('Lato', 500, 12px, 0.05em)
+        color: #9597A1
+    .caption
+        @include font('Roboto', 400, 13px, 0.05em)
+        color: #000
+        margin: 10px 0
+    img
+        max-width: 100%
+        max-height: 100%
+
+@media screen and ( min-width: 1024px)
+    .profile-section
+        display: grid
+        grid-template-columns: auto auto

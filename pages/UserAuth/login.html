@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TrainBuddy | Login</title>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Roboto:100,300,400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/main.css" />
+    <link rel="stylesheet" href="userauth.css" />
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-storage.js"></script>
+
+    <script src="/js/main.js"></script>
+    <script src="/pages/UserAuth//userAuth.js"></script>
+  </head>
+
+  <body>
+    <div data-role="page" id="login-page">
+      <!-- header -->
+      <div data-role="header" id="header">
+        <!-- Loaded through JS -->
+      </div>
+
+      <!--logo-->
+      <div class="ui-grid-contain logo-display">
+        <img class="login-img" src="/assets/icons/logodark.svg" />
+      </div>
+
+      <!--login form-->
+      <div class="form-content">
+        <div class="auth-form">
+          <label for="username" class="input-label">Email </label>
+          <input
+            id="email-input"
+            class="text-input"
+            type="text"
+            name="email"
+            data-role="none"
+            placeholder="Email"
+          />
+
+          <label for="password" class="input-label">PASSWORD </label>
+          <input
+            id="password-input"
+            class="text-input"
+            type="password"
+            name="password"
+            data-role="none"
+            placeholder="Password"
+          />
+
+          <button
+            id="login-btn"
+            class="prime-btn"
+            data-role="none"
+            data-ajax="false"
+          >
+            LOGIN
+          </button>
+
+          <div class="link-container">
+            <p>
+              <a data-ajax="false" href="register.html" data-role="none"
+                >Don't Have An Account?
+              </a>
+            </p>
+            <p>
+              <a data-ajax="false" href="forgotpassword.html" data-role="none"
+                >Forgot Password?</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <div data-role="footer" id="footer">
+        <!-- Footer added through JS -->
+      </div>
+    </div>
+  </body>
+</html>

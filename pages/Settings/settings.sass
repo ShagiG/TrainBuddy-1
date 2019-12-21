@@ -1,0 +1,42 @@
+$primaryOne: #0084E3
+$primaryTwo: #5B53FF
+$primaryThree: #193E58
+
+$danger: #EB5757
+$success: #75E394
+
+$gray6: #f2f2f2
+$lightBlack: rgba(51, 51, 51, 0.5)
+
+@mixin font($family, $weight, $size, $spacing)
+    font-family: $family
+    font-style: normal
+    font-weight: $weight
+    font-size: $size
+    letter-spacing: $spacing
+
+.settings-section
+    display: grid
+    grid-template-columns: auto
+    margin-bottom: 60px
+    .main-section
+        border-bottom: 0.5px solid #33333388
+        padding: 20px
+    .password-section
+        border-bottom: 0.5px solid #33333388
+        padding: 20px
+    .btn-section
+        padding: 20px
+    .avatar-img
+        img
+            margin: 10px 0
+            max-width: 40%
+            margin: auto
+            display: block
+    .full-name
+        p
+            @include font('Roboto', 500, 18px, 0.15em)
+            line-height: 21px
+            text-transform: uppercase
+            text-align: center
+            margin: 20px 0

@@ -1,0 +1,242 @@
+.favourite_item_img {
+  height: 200px;
+  background-size: cover !important;
+}
+
+#map {
+  height: 215px;
+}
+
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  color: #555;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.text-center {
+  text-align: center;
+}
+
+a {
+  color: tomato;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2196f3;
+}
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #F5F5F5;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+}
+
+.header {
+  padding: 20px 0;
+  position: relative;
+  margin-bottom: 10px;
+}
+.header:after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #eee;
+  position: absolute;
+  left: 30%;
+  right: 30%;
+}
+.header h2 {
+  font-size: 3em;
+  font-weight: 300;
+  margin-bottom: 0.2em;
+}
+.header p {
+  font-size: 14px;
+}
+
+.contents {
+  padding: 130px 10px 0;
+}
+
+#district {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: none;
+  line-height: 42px;
+  margin: 0;
+}
+
+#place {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: none;
+  line-height: 14px;
+  margin: 0;
+}
+
+#a-footer {
+  margin: 20px 0;
+}
+
+.new-react-version {
+  padding: 20px 20px;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.new-react-version .react-svg-logo {
+  text-align: center;
+  max-width: 60px;
+  margin: 20px auto;
+  margin-top: 0;
+}
+
+.success-box {
+  margin: 50px 0;
+  padding: 10px 10px;
+  border: 1px solid #eee;
+  background: #f9f9f9;
+}
+.success-box img {
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+.success-box > div {
+  vertical-align: top;
+  display: inline-block;
+  color: #888;
+}
+
+#comment-section {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.rating-stars ul {
+  list-style-type: none;
+  padding: 0;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+.rating-stars ul > li.star {
+  display: inline-block;
+}
+.rating-stars ul > li.star > i.fa {
+  font-size: 2.5em;
+  color: #ccc;
+}
+.rating-stars ul > li.star.hover > i.fa {
+  color: #FFCC36;
+}
+.rating-stars ul > li.star.selected > i.fa {
+  color: #0084E3;
+}
+
+.bottom-container {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.detail-container {
+  display: grid;
+  grid-template-columns: auto;
+}
+.detail-container .description {
+  padding: 10px;
+}
+.detail-container #distance {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+
+@media screen and (min-width: 768px) {
+  .detail-container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+  }
+  .detail-container .description {
+    padding: 10px;
+  }
+
+  .bottom-container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+  }
+
+  .favourite_item_img {
+    height: 400px;
+    background-size: cover !important;
+  }
+
+  .contents {
+    padding: 300px 20px 0;
+  }
+
+  #district {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 46px;
+    letter-spacing: 0.15em;
+    margin: 10px 0;
+  }
+
+  #place {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+  }
+}
+
+/*# sourceMappingURL=favouriteItem.css.map */

@@ -1,0 +1,42 @@
+.main-contents {
+  padding: 10px 15px;
+  display: grid;
+  grid-template-columns: auto;
+}
+.main-contents p {
+  margin: 0 0 5px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.card-grid {
+  border: 0.5px solid #5B53FF;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 10px 0;
+}
+
+.score-grid img {
+  float: right;
+}
+
+.avatar-img {
+  max-width: 25% !important;
+}
+
+.score-grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+@media screen and (min-width: 768px) {
+  .main-contents {
+    padding: 0 150px;
+  }
+}
+
+/*# sourceMappingURL=LeaderBoard.css.map */
