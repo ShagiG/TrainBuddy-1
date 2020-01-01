@@ -26,14 +26,13 @@ $(function() {
       cuser.photoURL = user.photoURL;
       cuser.uid = user.uid;
 
-      $(".lds-hourglass").css("display", "none");
-      $("#profile-avatar").attr({ src: user.photoURL });
-
       try {
         dbRef.ref(`myPosts/${user.uid}`).on("child_added", snapshot => {
           totalPoints += parseInt(snapshot.val().score);
+          $(".lds-hourglass").css("display", "none");
+          $("#profile-avatar").attr({ src: user.photoURL });
           $("#point-show").html(totalPoints);
-          $("#my-feed").append(
+          $("#my-feed").prepend(
             createHtmlItem(snapshot.val(), snapshot.key, cuser.displayName)
           );
         });
@@ -53,7 +52,6 @@ $(function() {
 });
 
 function createHtmlItem(snap, id, author) {
-  $("#hour-glass").css("display", "none");
   let html = "";
   let date = new Date(snap.createdAt);
   let refinedDate =

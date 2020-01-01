@@ -4,7 +4,7 @@
   grid-template-columns: auto;
 }
 .main-contents p {
-  margin: 0 0 5px;
+  margin: 0;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -22,6 +22,7 @@
 
 .score-grid img {
   float: right;
+  width: 100%;
 }
 
 .avatar-img {
@@ -30,7 +31,7 @@
 
 .score-grid {
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 80% 20%;
 }
 
 @media screen and (min-width: 768px) {

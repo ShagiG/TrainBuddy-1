@@ -7,10 +7,10 @@ var locationInfo = {
 };
 
 $(function() {
-  $(".floating-btn").click(function(){
+  $(".floating-btn").click(function() {
     $("#success-body").css("display", "none");
     $("#main-body").css("display", "block");
-  })
+  });
   if (navigator.geolocation) {
     //Get Current Location
     navigator.geolocation.getCurrentPosition(position => {
@@ -20,6 +20,58 @@ $(function() {
       };
     });
   }
+
+  //Send email function to export favourites list
+  $("#submit").click(function() {
+    // getting the value of the send email modal inputs
+    var receiver = document.getElementById("email-to").value;
+    var emailSubject = document.getElementById("email-subject").value;
+    var emailBody = document.getElementById("email-body").value;
+
+    var doc = new jsPDF();
+    var specialElementHandlers = {
+      "#fav-items": function(element, renderer) {
+        return true;
+      }
+    };
+
+    if (!receiver) {
+      $("#email-to").css("border", "0.5px solid #CD4D4D");
+      $("#email-to").val("Email Required!");
+      return;
+    }
+
+    $("#main-body").css("display", "none");
+    $(".lds-hourglass").css("display", "block");
+    $(".modal-loader").css("display", "block");
+
+    doc.fromHTML($("#fav-items").html(), 15, 15, {
+      width: 170,
+      elementHandlers: specialElementHandlers
+    });
+
+    var pdfBase64 = doc.output("datauristring");
+
+    Email.send({
+      Host: "smtp.gmail.com",
+      Username: "trainbuddytest@gmail.com",
+      Password: "Buddy678",
+      To: receiver,
+      From: "trainbuddytest@gmail.com",
+      Subject: emailSubject,
+      Body: emailBody,
+      Attachments: [
+        {
+          name: "fav-list.pdf",
+          data: pdfBase64
+        }
+      ]
+    }).then(() => {
+      $(".lds-hourglass").css("display", "none");
+      $(".modal-loader").css("display", "none");
+      $("#success-body").css("display", "block");
+    });
+  });
 });
 
 //Export list array
@@ -144,45 +196,3 @@ $(document).on("change", "#order-by", e => {
   if (orderValue === "desc") favItems.reverse();
   createList(favItems);
 });
-
-
-//Send email function to export favourites list
-function sendEmail() {
-  var doc = new jsPDF();
-  var specialElementHandlers = {
-    "#fav-items": function(element, renderer) {
-      return true;
-    }
-  };
-
-  $("#submit").click(function() {
-    doc.fromHTML($("#fav-items").html(), 15, 15, {
-      width: 170,
-      elementHandlers: specialElementHandlers
-    });
-
-    var pdfBase64 = doc.output("datauristring");
-
-    // getting the value of the send email modal inputs
-    var receiver = document.getElementById("email-to").value;
-    var emailSubject = document.getElementById("email-subject").value;
-    var emailBody = document.getElementById("email-body").value;
-
-    Email.send({
-      Host: "smtp.gmail.com",
-      Username: "trainbuddytest@gmail.com",
-      Password: "Buddy678",
-      To: receiver,
-      From: "trainbuddytest@gmail.com",
-      Subject: emailSubject,
-      Body: emailBody,
-      Attachments: [{
-        name : "fav-list.pdf",
-        data : pdfBase64
-      }]
-    }).then(() =>{
-      $("#main-body").css("display", "none");
-      $("#success-body").css("display", "block");
-    });
-  });
-}

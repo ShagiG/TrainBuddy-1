@@ -28,8 +28,11 @@
   width: 100%;
   height: auto;
   padding: 5px 15px;
+  background-color: #ffffff;
   border: none;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
 }
 .search input {
   margin: 0 5px;
@@ -83,6 +86,9 @@
   line-height: 16px;
   color: #ffffff;
   background: linear-gradient(149.59deg, #5B53FF 9.21%, #56B7FF 90.79%);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   border: none;
@@ -161,6 +167,67 @@
     transform: rotate(1800deg);
   }
 }
+.load-ellipsis {
+  margin: auto;
+  display: none;
+  position: relative;
+  width: 80px;
+  height: 56px;
+}
+.load-ellipsis div {
+  position: absolute;
+  top: 23px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #5B53FF;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.load-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: load-ellipsis1 0.6s infinite;
+}
+.load-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: load-ellipsis2 0.6s infinite;
+}
+.load-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: load-ellipsis2 0.6s infinite;
+}
+.load-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: load-ellipsis3 0.6s infinite;
+}
+
+@keyframes load-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes load-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes load-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+.drop-downs select {
+  width: 98%;
+}
+
 label {
   font-family: "Roboto";
   font-style: normal;
@@ -168,6 +235,17 @@ label {
   font-size: 10px !important;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.email-error-label, .pw-error-label {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #EB5757;
+  display: none;
 }
 
 select {
@@ -188,7 +266,9 @@ select {
   height: 42px;
   background: #FFFFFF;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-  border: none !important;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  border: none;
   border-radius: 5px;
   font-family: "Roboto";
   font-style: normal;
@@ -199,6 +279,7 @@ select {
   padding: 12px 16px;
   margin-bottom: 10px;
   background-color: white !important;
+  -webkit-appearance: none;
 }
 
 .text-input::placeholder {

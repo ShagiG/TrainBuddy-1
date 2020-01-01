@@ -60,6 +60,9 @@
             data-role="none"
             placeholder="Email"
           />
+          <p class="email-error-label" data-role="none">
+            Please enter your email!!
+          </p>
 
           <label for="password" class="input-label">PASSWORD </label>
           <input
@@ -70,7 +73,7 @@
             data-role="none"
             placeholder="Password"
           />
-
+          <p class="pw-error-label">Oops Password cannot be empty!!</p>
           <button
             id="login-btn"
             class="prime-btn"
@@ -79,7 +82,12 @@
           >
             LOGIN
           </button>
-
+          <div class="load-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
           <div class="link-container">
             <p>
               <a data-ajax="false" href="register.html" data-role="none"
