@@ -5,7 +5,7 @@ let cuser = {};
 
 $(function() {
   $(".lds-hourglass").css("display", "block");
-  $("#hour-glass").css("display", "block");
+  $(".load-ellipsis").css("display", "block");
   $("#treasure-btn").click(() => {
     window.location.href = "/pages/ARDemo/index.html";
   });
@@ -29,8 +29,6 @@ $(function() {
       try {
         dbRef.ref(`myPosts/${user.uid}`).on("child_added", snapshot => {
           totalPoints += parseInt(snapshot.val().score);
-          $(".lds-hourglass").css("display", "none");
-          $("#profile-avatar").attr({ src: user.photoURL });
           $("#point-show").html(totalPoints);
           $("#my-feed").prepend(
             createHtmlItem(snapshot.val(), snapshot.key, cuser.displayName)
@@ -47,11 +45,14 @@ $(function() {
       } catch (error) {
         console.log(error);
       }
+      $(".load-ellipsis").css("display", "none");
+      $("#profile-avatar").attr({ src: user.photoURL });
     }
   });
 });
 
 function createHtmlItem(snap, id, author) {
+  $(".lds-hourglass").css("display", "none");
   let html = "";
   let date = new Date(snap.createdAt);
   let refinedDate =

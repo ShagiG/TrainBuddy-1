@@ -80,12 +80,22 @@ let expList = [];
 //load and sync faviourite items
 try {
   feedRef.on("child_added", snapshot => {
+    let isFaviourite;
+
+    //To check if isFaviourite is undefined
+    if (typeof snapshot.val().favBy[currentUser.uid] !== "undefined") {
+      isFaviourite = snapshot.val().favBy[currentUser.uid].isFaviourite;
+    } else {
+      isFaviourite = false;
+    }
+
     $(".fav-item-loading").css("display", "none");
-    if (snapshot.val().isFavourite) {
+    if (isFaviourite) {
       favItems.push(snapshot);
       expList.push(snapshot.val());
     }
     createList(favItems);
+    showAlternate();
   });
 } catch (error) {
   console.log(error);
@@ -94,7 +104,16 @@ try {
 function createList(listItems) {
   document.getElementById("fav-items").innerHTML = "";
   for (let i = 0; i < listItems.length; i++) {
-    $("#fav-items").append(createItem(listItems[i]));
+    $("#fav-items").prepend(createItem(listItems[i]));
+  }
+}
+
+function showAlternate() {
+  $(".fav-item-loading").css("display", "none");
+  if (favItems.length === 0) {
+    $(".no-items").css("display", "block");
+  } else {
+    $(".no-items").css("display", "none");
   }
 }
 

@@ -6,6 +6,10 @@ $(function() {
     let imgFile = document.getElementById("file-upload").files[0];
     let imgUpl = storeRef.child("avatars/" + imgFile.name).put(imgFile);
     let imgurl;
+
+    $("#signup-btn").css("display", "none");
+    $(".load-ellipsis").css("display", "block");
+
     imgUpl
       .then(snap => snap.ref.getDownloadURL())
       .then(url => {
@@ -17,7 +21,6 @@ $(function() {
           )
           .then(user => {
             let authUser = auth.currentUser;
-            console.log(imgurl);
             let value = {
               displayName: $("#full-name").val(),
               photoURL: imgurl

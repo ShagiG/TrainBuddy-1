@@ -4,17 +4,35 @@ let feeds = [];
 //Load all Newsfeed Items
 try {
   feedRef.on("child_added", snapshot => {
+    let liked, fav;
+
     feeds.push(snapshot.val());
     $(".feed-loading").css("display", "none");
     $("#feed-items").prepend(createHtmlItem(snapshot.val(), snapshot.key));
-    if (snapshot.val().isLiked) {
+    console.log(typeof snapshot.val().favBy[currentUser.uid] !== "undefined");
+    //To check if isLiked is undefined
+    if (typeof snapshot.val().likedBy[currentUser.uid] !== "undefined") {
+      liked = snapshot.val().likedBy[currentUser.uid].isLiked;
+    } else {
+      liked = false;
+    }
+
+    //To check if isFaviourite is undefined
+    if (typeof snapshot.val().favBy[currentUser.uid] !== "undefined") {
+      fav = snapshot.val().favBy[currentUser.uid].isFaviourite;
+    } else {
+      fav = false;
+    }
+
+    if (liked) {
       $("#unlike-" + snapshot.key).css("display", "none");
       $("#liked-" + snapshot.key).css("display", "block");
     } else {
       $("#unlike-" + snapshot.key).css("display", "block");
       $("#liked-" + snapshot.key).css("display", "none");
     }
-    if (snapshot.val().isFavourite) {
+
+    if (fav) {
       $("#unstar-" + snapshot.key).css("display", "none");
       $("#starred-" + snapshot.key).css("display", "block");
     } else {
@@ -35,7 +53,12 @@ function likeItem(key) {
     .ref("/newsFeed/" + key)
     .once("value")
     .then(snap => {
-      isLiked = snap.val().isLiked;
+      if (typeof snap.val().likedBy[currentUser.uid] !== "undefined") {
+        isLiked = snap.val().likedBy[currentUser.uid].isLiked;
+      } else {
+        isLiked = false;
+      }
+      console.log(isLiked);
       likes = snap.val().likes;
 
       if (!isLiked) {
@@ -43,17 +66,25 @@ function likeItem(key) {
         $("#liked-" + key).css("display", "block");
 
         updLikes = parseInt(likes) + 1;
-        console.log(updLikes);
+
         updatedVal["newsFeed/" + key + "/likes"] = updLikes;
-        updatedVal["newsFeed/" + key + "/isLiked"] = true;
+        // updatedVal[`newsFeed/${key}/likedBy/${currentUser.uid}/isLiked`] = true;
+        dbRef.ref(`newsFeed/${key}/likedBy/${currentUser.uid}/`).set({
+          isLiked: true
+        });
       } else {
         $("#unlike-" + key).css("display", "block");
         $("#liked-" + key).css("display", "none");
 
         updLikes = parseInt(likes) - 1;
-        console.log(updLikes);
+
         updatedVal["newsFeed/" + key + "/likes"] = updLikes;
-        updatedVal["newsFeed/" + key + "/isLiked"] = false;
+        // updatedVal[
+        //   `newsFeed/${key}/likedBy/${currentUser.uid}/isLiked`
+        // ] = false;
+        dbRef.ref(`newsFeed/${key}/likedBy/${currentUser.uid}/`).set({
+          isLiked: false
+        });
       }
 
       let success = firebase
@@ -72,21 +103,28 @@ function favItem(key) {
   dbRef
     .ref("/newsFeed/" + key)
     .once("value")
-    .then(snap => {
-      isFav = snap.val().isFavourite;
+    .then(snapshot => {
+      //To check if isFaviourite is undefined
+      if (typeof snapshot.val().favBy[currentUser.uid] !== "undefined") {
+        isFav = snapshot.val().favBy[currentUser.uid].isFaviourite;
+      } else {
+        isFav = false;
+      }
 
       if (!isFav) {
         $("#unstar-" + key).css("display", "none");
         $("#starred-" + key).css("display", "block");
 
-        console.log(isFav);
-        updatedVal["newsFeed/" + key + "/isFavourite"] = true;
+        updatedVal[
+          `newsFeed/${key}/favBy/${currentUser.uid}/isFaviourite`
+        ] = true;
       } else {
         $("#unstar-" + key).css("display", "block");
         $("#starred-" + key).css("display", "none");
 
-        console.log(isFav);
-        updatedVal["newsFeed/" + key + "/isFavourite"] = false;
+        updatedVal[
+          `newsFeed/${key}/favBy/${currentUser.uid}/isFaviourite`
+        ] = false;
       }
 
       let success = firebase

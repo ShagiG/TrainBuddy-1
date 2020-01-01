@@ -72,6 +72,26 @@
   text-transform: uppercase;
 }
 
+.no-items {
+  padding: 10px 15px;
+  display: none;
+}
+.no-items img {
+  margin: 20px auto;
+  display: block;
+  width: 50%;
+}
+.no-items p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #5a5a5a;
+}
+
 .prime-btn {
   font-family: "Roboto";
   font-style: normal;
