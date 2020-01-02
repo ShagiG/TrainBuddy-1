@@ -74,7 +74,9 @@ function initCameraUI() {
   takePhotoButton.addEventListener("click", function() {
     takeSnapshotUI();
     takeSnapshot();
-    window.location.href = `/pages/PostPicture/index.html`;
+    setTimeout(function() {
+      window.location.href = `/pages/PostPicture/index.html`;
+    }, 250);
   });
 
   // -- fullscreen part
