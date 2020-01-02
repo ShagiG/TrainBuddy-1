@@ -72,9 +72,7 @@ function initCameraUI() {
   // https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_button_role
 
   takePhotoButton.addEventListener("click", function() {
-    alert("clicked");
     takeSnapshotUI();
-    alert("clicked 2");
     takeSnapshot();
   });
 
@@ -240,7 +238,6 @@ function takeSnapshot() {
   getCanvasBlob(canvas).then(function(blob) {
     // do something with the image blob
     var image = canvas.toDataURL("image/png");
-    alert("clicked at transfer");
     window.localStorage.setItem("image", btoa(image));
     document.location.href = `/pages/PostPicture/index.html`;
   });
