@@ -74,6 +74,7 @@ function initCameraUI() {
   takePhotoButton.addEventListener("click", function() {
     takeSnapshotUI();
     takeSnapshot();
+    window.location.href = `/pages/PostPicture/index.html`;
   });
 
   // -- fullscreen part
@@ -236,7 +237,6 @@ function takeSnapshot() {
 
   let image = btoa(canvas.toDataURL("image/png"));
   window.localStorage.setItem("image", image);
-  window.location.href = `/pages/PostPicture/index.html`;
 
   // some API's (like Azure Custom Vision) need a blob with image data
   // getCanvasBlob(canvas).then(function(blob) {
