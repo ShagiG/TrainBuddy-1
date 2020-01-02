@@ -104,7 +104,7 @@ try {
 function createList(listItems) {
   document.getElementById("fav-items").innerHTML = "";
   for (let i = 0; i < listItems.length; i++) {
-    $("#fav-items").prepend(createItem(listItems[i]));
+    $("#fav-items").append(createItem(listItems[i]));
   }
 }
 

@@ -12,7 +12,7 @@ var takePhotoButton;
 var toggleFullScreenButton;
 var switchCameraButton;
 var amountOfCameras = 0;
-var currentFacingMode = "environment";
+var currentFacingMode = "user";
 
 document.addEventListener("DOMContentLoaded", function(event) {
   // do some WebRTC checks before creating the interface

@@ -9,7 +9,7 @@ try {
     feeds.push(snapshot.val());
     $(".feed-loading").css("display", "none");
     $("#feed-items").prepend(createHtmlItem(snapshot.val(), snapshot.key));
-    console.log(typeof snapshot.val().favBy[currentUser.uid] !== "undefined");
+
     //To check if isLiked is undefined
     if (typeof snapshot.val().likedBy[currentUser.uid] !== "undefined") {
       liked = snapshot.val().likedBy[currentUser.uid].isLiked;
@@ -58,7 +58,7 @@ function likeItem(key) {
       } else {
         isLiked = false;
       }
-      console.log(isLiked);
+
       likes = snap.val().likes;
 
       if (!isLiked) {
@@ -68,7 +68,6 @@ function likeItem(key) {
         updLikes = parseInt(likes) + 1;
 
         updatedVal["newsFeed/" + key + "/likes"] = updLikes;
-        // updatedVal[`newsFeed/${key}/likedBy/${currentUser.uid}/isLiked`] = true;
         dbRef.ref(`newsFeed/${key}/likedBy/${currentUser.uid}/`).set({
           isLiked: true
         });
@@ -79,9 +78,6 @@ function likeItem(key) {
         updLikes = parseInt(likes) - 1;
 
         updatedVal["newsFeed/" + key + "/likes"] = updLikes;
-        // updatedVal[
-        //   `newsFeed/${key}/likedBy/${currentUser.uid}/isLiked`
-        // ] = false;
         dbRef.ref(`newsFeed/${key}/likedBy/${currentUser.uid}/`).set({
           isLiked: false
         });
