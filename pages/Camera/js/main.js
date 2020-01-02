@@ -71,10 +71,10 @@ function initCameraUI() {
   // https://developer.mozilla.org/nl/docs/Web/HTML/Element/button
   // https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_button_role
 
-  takePhotoButton.addEventListener("click", function() {
-    // takeSnapshotUI();
-    takeSnapshot();
-  });
+  // takePhotoButton.addEventListener("click", function() {
+  //   // takeSnapshotUI();
+  //   takeSnapshot();
+  // });
 
   // -- fullscreen part
 
