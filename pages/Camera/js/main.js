@@ -234,14 +234,17 @@ function takeSnapshot() {
     });
   }
 
+  var image = canvas.toDataURL("image/png");
+  window.localStorage.setItem("image", btoa(image));
+  window.location.href = `/pages/PostPicture/index.html`;
+
   // some API's (like Azure Custom Vision) need a blob with image data
-  getCanvasBlob(canvas).then(function(blob) {
-    // do something with the image blob
-    var image = canvas.toDataURL("image/png");
-    alert("Clicked at transfer.");
-    window.location.href = `/pages/PostPicture/index.html`;
-    window.localStorage.setItem("image", btoa(image));
-  });
+  // getCanvasBlob(canvas).then(function(blob) {
+  //   // do something with the image blob
+  //   var image = canvas.toDataURL("image/png");
+  //   window.localStorage.setItem("image", btoa(image));
+  //   // window.location.href = `/pages/PostPicture/index.html`;
+  // });
 }
 
 // https://hackernoon.com/how-to-use-javascript-closures-with-confidence-85cd1f841a6b
