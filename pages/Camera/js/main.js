@@ -72,7 +72,7 @@ function initCameraUI() {
   // https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_button_role
 
   takePhotoButton.addEventListener("click", function() {
-    takeSnapshotUI();
+    // takeSnapshotUI();
     takeSnapshot();
   });
 
