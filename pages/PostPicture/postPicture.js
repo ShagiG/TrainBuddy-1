@@ -66,6 +66,12 @@ function initAutocomplete() {
     capturedMoment.description = $("#description-box").val();
     capturedMoment.createdAt = firebase.database.ServerValue.TIMESTAMP;
     capturedMoment.likes = 0;
+    capturedMoment.likedBy = {
+      isExist: false
+    };
+    capturedMoment.favBy = {
+      isExist: false
+    };
     capturedMoment.isLiked = false;
     capturedMoment.isFavourite = false;
     capturedMoment.author = firebase.auth().currentUser.displayName;
