@@ -238,10 +238,9 @@ function takeSnapshot() {
   getCanvasBlob(canvas).then(function(blob) {
     // do something with the image blob
     var image = canvas.toDataURL("image/png");
-    alert("Clicked at transfer!!!");
-    //issue is in local storage
-    window.localStorage.setItem("image", btoa(image));
+    alert("Clicked at transfer.");
     window.location.href = `/pages/PostPicture/index.html`;
+    window.localStorage.setItem("image", btoa(image));
   });
 }
 
