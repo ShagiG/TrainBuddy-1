@@ -10,7 +10,8 @@ $(document).on("click", "#share-btn", function() {
 });
 
 $(function() {
-  imageUrl = window.localStorage.getItem("image");
+  // imageUrl = window.localStorage.getItem("image");
+  imageUrl = window.sessionStorage.getItem("image");
   $("#captured-image").attr("src", atob(imageUrl));
   $("#cancel-btn").click(() => {
     window.location.href = "/pages/NewsFeed/index.html";

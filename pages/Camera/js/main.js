@@ -140,7 +140,7 @@ function initCameraStream() {
     video: {
       width: { ideal: size },
       height: { ideal: size },
-      facingMode: currentFacingMode
+      facingMode: { exact: currentFacingMode }
     }
   };
 
@@ -186,7 +186,7 @@ function takeSnapshot() {
   context.drawImage(video, 0, 0, width, height);
 
   let image = btoa(canvas.toDataURL("image/png"));
-  localStorage.setItem("image", image);
+  sessionStorage.setItem("image", image);
 
   // function getCanvasBlob(canvas) {
   //   return new Promise(function(resolve, reject) {
