@@ -238,8 +238,9 @@ function takeSnapshot() {
   getCanvasBlob(canvas).then(function(blob) {
     // do something with the image blob
     var image = canvas.toDataURL("image/png");
+    alert("Clicked at transfer");
     window.localStorage.setItem("image", btoa(image));
-    document.location.href = `/pages/PostPicture/index.html`;
+    document.location.replace = `/pages/PostPicture/index.html`;
   });
 }
 
