@@ -242,7 +242,7 @@ function takeSnapshot() {
     var image = canvas.toDataURL("image/png");
     alert("clicked at transfer");
     window.localStorage.setItem("image", btoa(image));
-    window.location.href = `/pages/PostPicture/index.html`;
+    window.location.href = `../../PostPicture/index.html`;
   });
 }
 
