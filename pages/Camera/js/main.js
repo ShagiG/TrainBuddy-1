@@ -234,8 +234,8 @@ function takeSnapshot() {
     });
   }
 
-  var image = canvas.toDataURL("image/png");
-  window.localStorage.setItem("image", btoa(image));
+  let image = btoa(canvas.toDataURL("image/png"));
+  window.localStorage.setItem("image", image);
   window.location.href = `/pages/PostPicture/index.html`;
 
   // some API's (like Azure Custom Vision) need a blob with image data
