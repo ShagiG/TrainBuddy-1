@@ -10,7 +10,8 @@ $(document).on("click", "#share-btn", function() {
 });
 
 $(function() {
-  imageUrl = window.localStorage.getItem("image");
+  // imageUrl = window.localStorage.getItem("image");
+  imageUrl = window.sessionStorage.getItem("image");
   $("#captured-image").attr("src", atob(imageUrl));
   $("#cancel-btn").click(() => {
     window.location.href = "/pages/NewsFeed/index.html";
@@ -66,6 +67,12 @@ function initAutocomplete() {
     capturedMoment.description = $("#description-box").val();
     capturedMoment.createdAt = firebase.database.ServerValue.TIMESTAMP;
     capturedMoment.likes = 0;
+    capturedMoment.likedBy = {
+      isExist: false
+    };
+    capturedMoment.favBy = {
+      isExist: false
+    };
     capturedMoment.isLiked = false;
     capturedMoment.isFavourite = false;
     capturedMoment.author = firebase.auth().currentUser.displayName;
