@@ -17,7 +17,7 @@
   height: 30px;
 }
 
-.avatar-img {
+.avatar-img, .menu-icon {
   vertical-align: middle;
   object-fit: contain;
   border-radius: 50%;
