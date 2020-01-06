@@ -37,14 +37,18 @@ $(function() {
       } catch (error) {
         console.log(error);
       }
+
       try {
         dbRef.ref(`treasures/${user.uid}`).on("child_added", snapshot => {
           totalPoints += 450;
+          treasurePoints += 1;
           $("#point-show").html(totalPoints);
+          $("#trophy-show").html(treasurePoints);
         });
       } catch (error) {
         console.log(error);
       }
+
       $(".load-ellipsis").css("display", "none");
       $("#profile-avatar").attr({ src: user.photoURL });
     }

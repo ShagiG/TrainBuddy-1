@@ -68,4 +68,10 @@
   color: #EB5757;
 }
 
+@media screen and (min-width: 768px) {
+  .auth-form {
+    padding: 2% 20%;
+  }
+}
+
 /*# sourceMappingURL=userauth.css.map */

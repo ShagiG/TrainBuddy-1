@@ -130,6 +130,10 @@ function favItem(key) {
     });
 }
 
+function navigatePageComments(itemId) {
+  window.location.href = `../FavouriteItem/index.html?favItemId=${itemId}#comment-section`;
+}
+
 function createHtmlItem(snap, id) {
   let html = "";
   let date = new Date(snap.createdAt);
@@ -188,7 +192,7 @@ function createHtmlItem(snap, id) {
   html += `<p id=likes-${id} class="like-count">${snap.likes}</p>`;
   html += "</div>";
   html += '<div class="comment-btn-cont">';
-  html += '<button class="comment-btn" data-role="none">';
+  html += `<button class="comment-btn" data-role="none" onclick=(navigatePageComments('${id}'))>`;
   html += '<img class="comment" src="/assets/icons/message-circle.svg" />';
   html += "</button>";
   html += "</div>";

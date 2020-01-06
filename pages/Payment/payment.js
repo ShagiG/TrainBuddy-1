@@ -79,6 +79,7 @@ $(() => {
         console.log("done");
         handler.close();
       });
+      window.location.href = "/pages/bookings/index.html";
     } else {
       dbRef
         .ref("bookings")

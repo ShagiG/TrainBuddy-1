@@ -23,7 +23,6 @@ $lightBlack: rgba(51, 51, 51, 0.5)
         padding: 20px
     .avatar-img
         img
-            margin: 10px 0
             max-width: 40%
             margin: auto
             display: block
@@ -39,9 +38,9 @@ $lightBlack: rgba(51, 51, 51, 0.5)
     .points
         display: grid
         grid-template-columns: auto auto
+        margin: 0 10px
         background: linear-gradient(125.17deg, #5B53FF 9.21%, #56B7FF 90.79%)
         border-radius: 35px
-        margin: 0 35%
         padding: 5px 10px
         p
             @include font('Roboto', 400, 18px, 0.15em)
@@ -84,3 +83,7 @@ $lightBlack: rgba(51, 51, 51, 0.5)
     .profile-section
         display: grid
         grid-template-columns: auto auto
+
+@media screen and ( min-width: 768px)
+    .profile-section
+        padding: 2% 20%
