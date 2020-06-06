@@ -8,6 +8,9 @@ TrainBuddy is a mobile web application which was implemented with a group effort
 - AR js
 - Firebase (Database)
 
+## Demo
+Video - https://youtu.be/-9OEkwnuLSA
+
 ## Contributors & Members
 - Thivagar Mahendran 
 - Shagiththiya Ganesalingam
